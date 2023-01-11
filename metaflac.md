@@ -9,6 +9,9 @@
 最終的にmetaflacで上手く行っただけである。
 
 ## インストール
-Arch linuxを使っているため、pacmanでインストールする。
+Arch Linuxではpacmanでflacを入れることでmetaflacが使える。
+```bash
+sudo pacman -S flac
+```
 
 ## 基本的な使い方
