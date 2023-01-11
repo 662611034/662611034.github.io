@@ -1,2 +1,2 @@
-# 662611034.github.io
+# ╰(　・´ｰ・｀)╯
 [metaflacの使い方](./metaflac.md)
