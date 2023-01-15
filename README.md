@@ -1,2 +1,2 @@
 # ╰(　・´ｰ・｀)╯
-[metaflacの使い方](./metaflac.md)
+[metaflacの使い方](./metaflac)
