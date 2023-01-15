@@ -13,4 +13,7 @@
 
 ## 実践
 手持ちのギターアンプの[VOX Pathfinder 10](https://amzn.asia/d/6270Kt3)の出力をパソコンのマザーボード([msi B450M MORTAR MAX](https://jp.msi.com/Motherboard/B450M-MORTAR-MAX))のライン入力に接続してWindows11純正の「サウンドレコーダー」で録音したものを添付する。
+
 [ギター録音](./guitar.wav)
+
+<audio controls src="./guitar.wav"></audio>
