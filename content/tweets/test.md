@@ -5,8 +5,11 @@ draft = false
 
 [taxonomies]
 tags = ["テストタグ"]
+
+[extra]
+section = "tweets"
 +++
 
 # これはテストタイトル
 
-これ以上ないほどのテスト
+これ以上ないほどのテスト本文
