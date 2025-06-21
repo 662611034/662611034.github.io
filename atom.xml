@@ -24,7 +24,7 @@
         <id>https://662611034.github.io/tweets/test/</id>
         
         <content type="html" xml:base="https://662611034.github.io/tweets/test/">&lt;h1 id=&quot;korehatesutotaitoru&quot;&gt;これはテストタイトル&lt;&#x2F;h1&gt;
-&lt;p&gt;これ以上ないほどのテスト&lt;&#x2F;p&gt;
+&lt;p&gt;これ以上ないほどのテスト本文&lt;&#x2F;p&gt;
 </content>
         
     </entry>
