@@ -1,0 +1,508 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    Px Downloaderの代用品 - 愛されたいねん
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="Px Downloaderの代用品" />
+  <meta name="author" content="662611034" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Px Downloaderの代用品" />
+  <meta property="og:site_name" content="愛されたいねん" />
+  <meta property="og:description" content="Px Downloaderの代用品" />
+  <meta property="og:url" content="https:&#x2F;&#x2F;662611034.github.io&#x2F;20250624-generic-px-downloader&#x2F;" />
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://662611034.github.io/icons/abstracted_anon_chihaya.png" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://662611034.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://662611034.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () =>
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, e.g.:
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      // • rendering keys, e.g.:
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://662611034.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://662611034.github.io/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://662611034.github.io/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;20250624-generic-px-downloader&#x2F;" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://662611034.github.io">愛されたいねん</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:[background-position:right] dark:invert"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+      <!-- Header Nav inject -->
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <!-- Body Start inject -->
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+<article>
+  <!-- Page Start inject -->
+  
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">Px Downloaderの代用品</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2025-06-24</time>
+  <span class="mx-1">&middot;</span>
+  <span>2min</span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>662611034</span>
+  
+  <!-- Page Info inject -->
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://662611034.github.io/20250624-generic-px-downloader/#px-downloadernodai-yong-pin"
+            >Px Downloaderの代用品</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://662611034.github.io/20250624-generic-px-downloader/#shi-ifang"
+                >使い方</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><h1 id="px-downloadernodai-yong-pin">Px Downloaderの代用品</h1>
+<p>AIイラストのおかげでPixivで質・ジャンル・量と三拍子そろった投稿が増えてきて、1つの投稿の画像を一括でローカルにダウンロードする<a href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">Px Downloader</a>に大変お世話になっているが、たまに調子が悪くなってファイルをダウンロードできなくなることがある（私はFirefoxしか使っていないが、Chromeの方の状況はどうなんだろうか）。</p>
+<p>そこで、Pythonを使って代用品を作ってみたた。</p>
+<pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#b48ead;">import </span><span>os
+</span><span style="color:#b48ead;">import </span><span>requests
+</span><span style="color:#b48ead;">from </span><span>bs4 </span><span style="color:#b48ead;">import </span><span>BeautifulSoup
+</span><span style="color:#b48ead;">import </span><span>re
+</span><span style="color:#b48ead;">import </span><span>sys
+</span><span>
+</span><span style="color:#65737e;"># リクエストヘッダ。リファラがPixivじゃないと画像にアクセスできない
+</span><span style="color:#bf616a;">HEADERS </span><span>= {
+</span><span>    &quot;</span><span style="color:#a3be8c;">Referer</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">https://www.pixiv.net/</span><span>&quot;,
+</span><span>    &quot;</span><span style="color:#a3be8c;">User-Agent</span><span>&quot;: (
+</span><span>        &quot;</span><span style="color:#a3be8c;">Mozilla/5.0 (Windows NT 10.0; Win64; x64) </span><span>&quot;
+</span><span>        &quot;</span><span style="color:#a3be8c;">AppleWebKit/537.36 (KHTML, like Gecko) </span><span>&quot;
+</span><span>        &quot;</span><span style="color:#a3be8c;">Chrome/123.0.0.0 Safari/537.36</span><span>&quot;
+</span><span>    ),
+</span><span>}
+</span><span>
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">extract_id_extension</span><span>(</span><span style="color:#bf616a;">url</span><span>):  </span><span style="color:#65737e;"># 投稿IDと拡張子の取得
+</span><span>    match = re.</span><span style="color:#bf616a;">search</span><span>(</span><span style="color:#b48ead;">r</span><span>&#39;</span><span style="color:#a3be8c;">/(</span><span style="color:#d08770;">\d</span><span>+</span><span style="color:#a3be8c;">)_p</span><span style="color:#d08770;">\d</span><span>+</span><span style="color:#96b5b4;">\.</span><span style="color:#a3be8c;">(</span><span style="color:#d08770;">\w</span><span>+</span><span style="color:#a3be8c;">)</span><span style="color:#b48ead;">$</span><span>&#39;, url)
+</span><span>    </span><span style="color:#b48ead;">if </span><span>match:
+</span><span>        post_id = match.</span><span style="color:#bf616a;">group</span><span>(</span><span style="color:#d08770;">1</span><span>)
+</span><span>        ext = match.</span><span style="color:#bf616a;">group</span><span>(</span><span style="color:#d08770;">2</span><span>)
+</span><span>        </span><span style="color:#b48ead;">return </span><span>post_id, ext
+</span><span>    </span><span style="color:#b48ead;">else</span><span>:
+</span><span>        </span><span style="color:#b48ead;">raise </span><span style="color:#bf616a;">Exception</span><span>(&quot;</span><span style="color:#a3be8c;">ポストIDと拡張子取得不可</span><span>&quot;)
+</span><span>
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">get_title</span><span>(</span><span style="color:#bf616a;">url</span><span>):  </span><span style="color:#65737e;"># 投稿タイトルの取得
+</span><span>    res = requests.</span><span style="color:#bf616a;">get</span><span>(url, </span><span style="color:#bf616a;">headers</span><span>=</span><span style="color:#bf616a;">HEADERS</span><span>)
+</span><span>    res.encoding = res.apparent_encoding
+</span><span>
+</span><span>    soup = </span><span style="color:#bf616a;">BeautifulSoup</span><span>(res.text, &quot;</span><span style="color:#a3be8c;">lxml</span><span>&quot;)
+</span><span>    desc = soup.</span><span style="color:#bf616a;">find</span><span>(&quot;</span><span style="color:#a3be8c;">meta</span><span>&quot;, </span><span style="color:#bf616a;">attrs</span><span>={&quot;</span><span style="color:#a3be8c;">name</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">description</span><span>&quot;})
+</span><span>
+</span><span>    title = </span><span style="color:#d08770;">None
+</span><span>    </span><span style="color:#b48ead;">if </span><span>desc:
+</span><span>        m = re.</span><span style="color:#bf616a;">search</span><span>(</span><span style="color:#b48ead;">r</span><span>&#39;</span><span style="color:#a3be8c;">この作品</span><span style="color:#d08770;">\s</span><span>*</span><span style="color:#a3be8c;">「(</span><span style="color:#d08770;">.</span><span>+?</span><span style="color:#a3be8c;">)」</span><span style="color:#d08770;">\s</span><span>*</span><span style="color:#a3be8c;">は</span><span>&#39;, desc.</span><span style="color:#bf616a;">get</span><span>(&quot;</span><span style="color:#a3be8c;">content</span><span>&quot;, &quot;&quot;))
+</span><span>        </span><span style="color:#b48ead;">if </span><span>m:
+</span><span>            title = m.</span><span style="color:#bf616a;">group</span><span>(</span><span style="color:#d08770;">1</span><span>)
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">if </span><span>title:
+</span><span>        </span><span style="color:#b48ead;">return </span><span>title
+</span><span>    </span><span style="color:#b48ead;">else</span><span>:
+</span><span>        </span><span style="color:#b48ead;">raise </span><span style="color:#bf616a;">Exception</span><span>(&quot;</span><span style="color:#a3be8c;">タイトルが見つかりません</span><span>&quot;)
+</span><span>
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">dl_1_file</span><span>(</span><span style="color:#bf616a;">url</span><span>, </span><span style="color:#bf616a;">outfile</span><span>):  </span><span style="color:#65737e;"># URLから画像ファイルをダウンロード
+</span><span>    response = requests.</span><span style="color:#bf616a;">get</span><span>(url, </span><span style="color:#bf616a;">headers</span><span>=</span><span style="color:#bf616a;">HEADERS</span><span>)
+</span><span>    response.</span><span style="color:#bf616a;">raise_for_status</span><span>()
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">with </span><span style="color:#96b5b4;">open</span><span>(outfile, &quot;</span><span style="color:#a3be8c;">wb</span><span>&quot;) </span><span style="color:#b48ead;">as </span><span>f:
+</span><span>        f.</span><span style="color:#bf616a;">write</span><span>(response.content)
+</span><span>    </span><span style="color:#b48ead;">return
+</span><span>
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">replace_unusable_char</span><span>(</span><span style="color:#bf616a;">text</span><span>):  </span><span style="color:#65737e;"># Windowsで使えない文字を全角に置換
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">/</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">／</span><span>&quot;)
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">?</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">？</span><span>&quot;)
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">&lt;</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">＜</span><span>&quot;)
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">&gt;</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">＞</span><span>&quot;)
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#96b5b4;">\\</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">￥</span><span>&quot;)
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">:</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">：</span><span>&quot;)
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">*</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">＊</span><span>&quot;)
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">|</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">｜</span><span>&quot;)
+</span><span>    text = text.</span><span style="color:#bf616a;">replace</span><span>(&quot;</span><span style="color:#96b5b4;">\&quot;</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">”</span><span>&quot;)
+</span><span>    </span><span style="color:#b48ead;">return </span><span>text
+</span><span>
+</span><span>
+</span><span style="color:#b48ead;">def </span><span style="color:#8fa1b3;">dl_all</span><span>(</span><span style="color:#bf616a;">url_0</span><span>, </span><span style="color:#bf616a;">how_many</span><span>):  </span><span style="color:#65737e;"># 1枚目URLと枚数指定で全部ダウンロード
+</span><span>    picid, extension = </span><span style="color:#bf616a;">extract_id_extension</span><span>(url_0)
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">try</span><span>:
+</span><span>        title = </span><span style="color:#bf616a;">get_title</span><span>(</span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">https://www.pixiv.net/artworks/</span><span>{picid}&quot;)
+</span><span>        dir_name = </span><span style="color:#bf616a;">replace_unusable_char</span><span>(title)
+</span><span>    </span><span style="color:#b48ead;">except</span><span>:
+</span><span>        dir_name = &quot;</span><span style="color:#a3be8c;">tmp</span><span>&quot;
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">if </span><span>not os.path.</span><span style="color:#bf616a;">isdir</span><span>(dir_name):
+</span><span>        os.</span><span style="color:#bf616a;">mkdir</span><span>(dir_name)
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">for </span><span>i </span><span style="color:#b48ead;">in </span><span style="color:#96b5b4;">range</span><span>(how_many):
+</span><span>        url = url_0[:url_0.</span><span style="color:#bf616a;">rfind</span><span>(&quot;</span><span style="color:#a3be8c;">_</span><span>&quot;)] + </span><span style="color:#b48ead;">f</span><span>&quot;</span><span style="color:#a3be8c;">_p</span><span>{i}</span><span style="color:#a3be8c;">.</span><span>{extension}&quot;
+</span><span>        outfile = </span><span style="color:#b48ead;">f</span><span>&quot;{dir_name}</span><span style="color:#a3be8c;">/</span><span>{picid}</span><span style="color:#a3be8c;">_p</span><span>{i</span><span style="color:#d08770;">:03</span><span>}</span><span style="color:#a3be8c;">.</span><span>{extension}&quot;
+</span><span>        </span><span style="color:#bf616a;">dl_1_file</span><span>(url, outfile)
+</span><span>    </span><span style="color:#b48ead;">return
+</span><span>
+</span><span>
+</span><span style="color:#b48ead;">if </span><span>__name__ == &quot;</span><span style="color:#a3be8c;">__main__</span><span>&quot;:
+</span><span>    url_0 = sys.argv[</span><span style="color:#d08770;">1</span><span>]
+</span><span>    how_many = </span><span style="color:#bf616a;">int</span><span>(sys.argv[</span><span style="color:#d08770;">2</span><span>])
+</span><span>    </span><span style="color:#bf616a;">dl_all</span><span>(url_0, how_many)
+</span><span>
+</span></code></pre>
+<h2 id="shi-ifang">使い方</h2>
+<p>本家の機能を完全には再現できなかったため、かなり手間が増えている。</p>
+<ol>
+<li>必要なパッケージをダウンロードする
+<ul>
+<li>requests</li>
+<li>lxml</li>
+<li>BeautifulSoup</li>
+</ul>
+</li>
+<li>投稿の1枚目の原本URLを取得
+<ul>
+<li>"https://i.pximg.net/img-original/img/2024/12/09/01/46/41/125025264_p0.png"みたいなやつ</li>
+</ul>
+</li>
+<li>urlと枚数を指定して実行
+<ul>
+<li>仮にpxdl.pyで保存したとする</li>
+<li>例：python pxdl.py https://i.pximg.net/img-original/img/9999/99/99/99/99/99/9999999_p0.png 334</li>
+</ul>
+</li>
+</ol>
+<p>画像の投稿ページURLのHTMLを取得してもファイルの拡張子、トータル枚数、ユーザIDが分からなかったため、その辺を手動で取得しないといけない。本家のありがたみが身に染みる。</p>
+<p>とはいえ、手動保存よりは楽なので、必要だったら使ってみてほしい。</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mr-1.5 mb-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://662611034.github.io/tags/python/"
+      >python</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://662611034.github.io/tags/pixiv/"
+      >pixiv</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;662611034.github.io&#x2F;test&#x2F;"
+    ><span class="mr-1.5">←</span><span>テスト記事</span></a
+  >
+  <!---->
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  
+
+  <!-- Page End inject -->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    <!---->
+    <!---->
+    &copy; 2025<!---->
+    
+    <a class="link" href="https://662611034.github.io">
+      662611034
+    </a>
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+
+    <!-- Body End inject -->
+    
+  </body>
+</html>

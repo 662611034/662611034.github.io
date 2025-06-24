@@ -4,16 +4,32 @@
         <loc>https://662611034.github.io/</loc>
     </url>
     <url>
+        <loc>https://662611034.github.io/20250624-generic-px-downloader/</loc>
+        <lastmod>2025-06-24</lastmod>
+    </url>
+    <url>
         <loc>https://662611034.github.io/about/</loc>
     </url>
     <url>
         <loc>https://662611034.github.io/archive/</loc>
     </url>
     <url>
-        <loc>https://662611034.github.io/list-tweets/</loc>
+        <loc>https://662611034.github.io/page/1/</loc>
     </url>
     <url>
         <loc>https://662611034.github.io/tags/</loc>
+    </url>
+    <url>
+        <loc>https://662611034.github.io/tags/pixiv/</loc>
+    </url>
+    <url>
+        <loc>https://662611034.github.io/tags/pixiv/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://662611034.github.io/tags/python/</loc>
+    </url>
+    <url>
+        <loc>https://662611034.github.io/tags/python/page/1/</loc>
     </url>
     <url>
         <loc>https://662611034.github.io/tags/tesutotagu/</loc>
@@ -22,10 +38,7 @@
         <loc>https://662611034.github.io/tags/tesutotagu/page/1/</loc>
     </url>
     <url>
-        <loc>https://662611034.github.io/tweets/</loc>
-    </url>
-    <url>
-        <loc>https://662611034.github.io/tweets/test/</loc>
+        <loc>https://662611034.github.io/test/</loc>
         <lastmod>2025-06-22</lastmod>
     </url>
 </urlset>
