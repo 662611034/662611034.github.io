@@ -4,6 +4,6 @@ path = "archive"
 template = "archive.html"
 
 [extra]
-section = "tweets/_index.md"
+section = "_index.md"
 +++
 

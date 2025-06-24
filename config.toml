@@ -29,7 +29,7 @@ taxonomies = [{ name = "tags", rss = true, paginate_by = 5 }]
 # Whether to do syntax highlighting
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
-# highlight_theme = "base16-ocean-dark"
+highlight_theme = "base16-ocean-dark"
 
 [extra]
 # Put all your custom variables here
@@ -79,10 +79,6 @@ name = "rss"
 url = "$BASE_URL/atom.xml"
 
 # The top menu.
-[[extra.menu]]
-name = "ツイート"
-url = "$BASE_URL/tweets"
-
 [[extra.menu]]
 name = "Archive"
 url = "$BASE_URL/archive"
