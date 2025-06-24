@@ -25,7 +25,7 @@
         
         <content type="html" xml:base="https://662611034.github.io/20250624-generic-px-downloader/">&lt;h1 id=&quot;px-downloadernodai-yong-pin&quot;&gt;Px Downloaderの代用品&lt;&#x2F;h1&gt;
 &lt;p&gt;AIイラストのおかげでPixivで質・ジャンル・量と三拍子そろった投稿が増えてきて、1つの投稿の画像を一括でローカルにダウンロードする&lt;a href=&quot;https:&#x2F;&#x2F;addons.mozilla.org&#x2F;ja&#x2F;firefox&#x2F;addon&#x2F;px-downloader&#x2F;&quot;&gt;Px Downloader&lt;&#x2F;a&gt;に大変お世話になっているが、たまに調子が悪くなってファイルをダウンロードできなくなることがある（私はFirefoxしか使っていないが、Chromeの方の状況はどうなんだろうか）。&lt;&#x2F;p&gt;
-&lt;p&gt;そこで、Pythonを使って代用品を作ってみたた。&lt;&#x2F;p&gt;
+&lt;p&gt;そこで、Pythonを使って代用品を作ってみた。&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;os
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;requests
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;from &lt;&#x2F;span&gt;&lt;span&gt;bs4 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;BeautifulSoup
