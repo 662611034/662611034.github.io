@@ -1,0 +1,551 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    ΔΣ変調について - 愛されたいねん
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="ΔΣ変調について" />
+  <meta name="author" content="662611034" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ΔΣ変調について" />
+  <meta property="og:site_name" content="愛されたいねん" />
+  <meta property="og:description" content="ΔΣ変調について" />
+  <meta property="og:url" content="https:&#x2F;&#x2F;662611034.github.io&#x2F;20250626-delta-sigma-explanation&#x2F;" />
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://662611034.github.io/icons/abstracted_anon_chihaya.png" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://662611034.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://662611034.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () =>
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, e.g.:
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      // • rendering keys, e.g.:
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://662611034.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://662611034.github.io/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://662611034.github.io/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;20250626-delta-sigma-explanation&#x2F;" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://662611034.github.io">愛されたいねん</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:[background-position:right] dark:invert"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+      <!-- Header Nav inject -->
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <!-- Body Start inject -->
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+<article>
+  <!-- Page Start inject -->
+  
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">ΔΣ変調について</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2025-06-26</time>
+  <span class="mx-1">&middot;</span>
+  <span>18min</span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>662611034</span>
+  
+  <!-- Page Info inject -->
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://662611034.github.io/20250626-delta-sigma-explanation/#yin-xiang-debaisudeyokushi-wareteiru"
+            >音響デバイスでよく使われている</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://662611034.github.io/20250626-delta-sigma-explanation/#dsbian-diao-noshao-jie"
+            >ΔΣ変調の紹介</a
+          >
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://662611034.github.io/20250626-delta-sigma-explanation/#dsbian-diao-nomerituto"
+            >ΔΣ変調のメリット</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://662611034.github.io/20250626-delta-sigma-explanation/#bu-zu"
+                >補足</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://662611034.github.io/20250626-delta-sigma-explanation/#dsbian-diao-nozhong-nodong-ki"
+            >ΔΣ変調の中の動き</a
+          >
+          
+          <ul>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://662611034.github.io/20250626-delta-sigma-explanation/#ding-shi-wu-noli-ehua"
+                >定食屋の例え話</a
+              >
+            </li>
+            
+            <li>
+              <a class="no-underline hover:underline" href="https://662611034.github.io/20250626-delta-sigma-explanation/#burotukutu-tonodui-ying"
+                >ブロック図との対応</a
+              >
+            </li>
+            
+          </ul>
+          
+        </li>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://662611034.github.io/20250626-delta-sigma-explanation/#saigoni"
+            >さいごに</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><h1 id="yin-xiang-debaisudeyokushi-wareteiru">音響デバイスでよく使われている</h1>
+<p>最近の高音質USB-DACなどのオーディオ機器では、アナログ−デジタル（AD）/ デジタル−アナログ（DA）変換部分にΔΣ（デルタシグマ）変調という技術がよく使われている。初めて聞くと原理がわかりにくいことも多い（少なくとも自分はそうだった）ので、その原理を紹介する。</p>
+<h1 id="dsbian-diao-noshao-jie">ΔΣ変調の紹介</h1>
+<p>ΔΣ変調はAD変換のアルゴリズムの一種だ。ただし、アナログ−デジタル変換だけでなく、デジタル−デジタルでビット数を減らすために使われたり、出力はデジタル信号なのにそのままアナログ信号として扱ったりもできる、不思議な方式でもある。</p>
+<p>AD変換と聞いて普通に思い浮かべるのは、信号の振幅の最大値と最小値の間をn分割して整数を割り当てる方式だ。これをリニアPCMという。たとえばCD音源だと16bitリニアPCMが使われていて、最小値が0、最大値が65,535といった具合になる。他には、段階を整数ではなく浮動小数点で表す浮動小数点PCMや、振幅の絶対値ではなく前の振幅との差を保存する差分PCMなどもあるが、ΔΣ変調はこれらとは根本的に考え方が違う。</p>
+<p>上で挙げたPCMは振幅方向を細かく（CDなら16bit、ハイレゾなら24bit）刻んでデジタル化するが、ΔΣ変調は振幅方向の分解能が荒く、場合によっては1bitしか使わないこともある。1bitで何ができるのかと思うかもしれないが、ΔΣ変調はデータを<strong>時間方向</strong>に細かく刻むことで高分解能を実現している。</p>
+<p>たとえば、0と1の1bitしか出力しないΔΣ変調器に0.6というアナログ入力が入ってきたとしよう。このときΔΣ変調器は0と1をだいたい4:6の割合で出力する。順番は決まっていない。「1, 1, 1, 0, 1, 0, 0, 1, 1, 0, …」かもしれないし、「0, 1, 0, 1, 0, 1, 1, 0, 1, 1, …」かもしれない。とにかく0と1の割合が4:6になるように出力される。だから出力データを<strong>ある程度集めて平均化</strong>すれば、入力のアナログ値に近い値が得られる。</p>
+<p>時間平均を取るため、ΔΣ変調は入力信号の周波数に比べて<strong>かなり速く</strong>動作しなければならない。ΔΣ変調器が「速く動作する」というのは相対的に「信号の変化が遅い」ことを意味している。たとえばΔΣ変調器が10回動作している間に入力が0.3変わるより、0.003しか変わらないほうが、出力の平均化精度は高くなるのは想像できるだろう。</p>
+<h1 id="dsbian-diao-nomerituto">ΔΣ変調のメリット</h1>
+<p>ややこしそうに見えるΔΣ変調がなぜ広く使われているかというと、<strong>実装がシンプル</strong>だからだ。</p>
+<p>リニアPCM方式で音質を上げようとすると、振幅を分ける段階を細かくしなければならない。電子回路で振幅を細かく均等に分割するには同じ抵抗が何個も必要になるが、高精度で同じ抵抗値を揃えるのは難しいし、抵抗が増えれば回路も大きくなる。ざっくり言うと、「<strong>性能を上げるのがとにかく大変</strong>」になるわけだ。</p>
+<p>一方、ΔΣ変調器は1つの積分器と1つの比較器、いくつかの遅延器だけで構成されるので、回路規模が小さくて実装が簡単だ。性能を上げたいなら動作周波数を上げればいい。</p>
+<p>もちろん「速く動かすのも大変じゃないか」という疑問は出るが、集積回路技術の進歩で高速動作は安価に実現できるため、リニアPCMよりはずっとやりやすい。</p>
+<h2 id="bu-zu">補足</h2>
+<blockquote>
+<p>ここまでもこれからも1次のΔΣ変調器を基準に説明しているが、実際のオーディオ回路では次数（段数）が増えた「高次」ΔΣ変調器が多く使われている。段数が増えれば回路規模は大きくなるが、それでもリニアPCMより実装は簡単なので、ΔΣ変調が採用されている。</p>
+</blockquote>
+<p>ΔΣ変調のもう一つのメリットは、DA変換が楽という点だ。
+リニアPCMの場合、DA変換を行うためには細かい段階で高精度な電圧を作らなければならず、AD変換のときと同じで要求される回路の精度と規模が大きくなる。</p>
+<p>反面ΔΣ変調は適切な<strong>ローパスフィルタ(LPF)を通すだけで</strong>元の信号が復元できてしまう。デジタル信号処理の世界ではLPF処理は信号をある程度まとめて平均化するような働きをするためである。</p>
+<p>もう一つのメリットは、DA変換が楽になる点だ。</p>
+<p>リニアPCMの場合、DA変換では細かい段階で高精度な電圧を作らなければならず、AD変換と同様に回路の精度や規模が大きくなる。</p>
+<p>対してΔΣ変調は適切な<strong>ローパスフィルタ(LPF)を通すだけで</strong>元の信号が復元できる。デジタル信号処理の世界でLPFは、信号をまとめて平均化するような働きをするからだ。</p>
+<p>このメリットのため、コンピュータ上で扱う音源データはファイルとしてはリニアPCM形式を使う(コンピュータ内の処理は振幅をそのまま数字で扱う方が便利)が、DA変換するときは<strong>一旦ΔΣ変調をかけてから</strong>アナログ変換する構成がよく用いられる。回路的には遠回りしているように見えて、むしろシンプルになる。</p>
+<h1 id="dsbian-diao-nozhong-nodong-ki">ΔΣ変調の中の動き</h1>
+<p>ΔΣ変調が時間平均で入力信号を表現する仕組みはわかったとして、どうやって「平均すると入力になるデータ」を出力できるのかを説明する。</p>
+<p>図はΔΣ変調器をブロック図で表したものだ。</p>
+<p><img src="/20250626_delta_sigma_explanation/block.png" alt="ΔΣ変調のブロック図" /></p>
+<p>動作の流れは次のようになる。</p>
+<ol>
+<li>左からアナログ信号が入力される。</li>
+<li>次に、ΔΣ変調器の1クロック前の出力を入力から引く。</li>
+<li>引き算の結果を積分器で積分する。
+<ul>
+<li>ここでいう「積分」は高校数学の積分とは違って、これまでの入力の総和を求める処理だ。</li>
+</ul>
+</li>
+<li>積分の結果があるしきい値（たとえば0.5）を超えていれば「1」、下回っていれば「0」を出力する。この0か1の出力がΔΣ変調の出力になる。
+<ul>
+<li>※ ※ 実際の回路では出力値やしきい値は必要に応じて別の値を使うこともあるが、ここでは基本動作の説明として0/1で示している。</li>
+</ul>
+</li>
+</ol>
+<p>これを読んだ感想としては「結局よくわからない」「どうして都合のいい0/1が出てくるのか」と思うかもしれない。自分もそうだった。
+そこで、理解の助けになる「定食屋の例え話」を紹介する。あくまで説明のための例え話なので、設定の不自然さは気にしないでほしい。</p>
+<p>そこで「定食屋の例え話」を紹介する。あくまでも説明のための例え話なため、設定の不自然さには目をつぶってほしい。</p>
+<h2 id="ding-shi-wu-noli-ehua">定食屋の例え話</h2>
+<p>ある定食屋に、毎日お昼にやって来る常連客がいる。この常連は毎日欠かさず643円の日替わり定食を食べている。しかしある日、常連客は「毎日中途半端な額を払うのは面倒だ。小銭もたくさん出るし」と思い始めた。店主も同じことを考えていたため、2人は次のようなルールを決めた。</p>
+<ul>
+<li>
+<p>客が食べた料金（643円）を毎日合計していく</p>
+</li>
+<li>
+<p>合計が500円以上になったときにだけ、1000円支払う</p>
+</li>
+<li>
+<p>払いすぎた分（おつり）はお店側で預かる（つまり“借り”として記録される）</p>
+</li>
+</ul>
+<p>言葉だけではわかりにくいので、具体例で確認する。</p>
+<ul>
+<li>
+<p>1日目：定食代643円 → 合計643円 → 500円以上なので
+→ 1000円支払う → 357円預ける（1000−643）</p>
+</li>
+<li>
+<p>2日目：定食643円 → 昨日の預り金357円がある → 合計286円（643−357）
+→ 500円未満なので支払いなし</p>
+</li>
+<li>
+<p>3日目：定食643円 → 前日残り286円 → 合計929円
+→ 1000円支払う → 71円預ける</p>
+</li>
+<li>
+<p>4日目：定食643円 → 残り71円 → 合計572円
+→ 1000円支払う → 428円預ける</p>
+</li>
+</ul>
+<table><thead><tr><th>日数</th><th>定食代</th><th>繰越金と合計</th><th>500円以上？</th><th>支払い</th><th>繰越金</th></tr></thead><tbody>
+<tr><td>1日目</td><td>643円</td><td>643円</td><td>○</td><td>1000円</td><td>-357円</td></tr>
+<tr><td>2日目</td><td>643円</td><td>286円</td><td>×</td><td>0円</td><td>286円</td></tr>
+<tr><td>3日目</td><td>643円</td><td>929円</td><td>○</td><td>1000円</td><td>-71円</td></tr>
+<tr><td>4日目</td><td>643円</td><td>572円</td><td>○</td><td>1000円</td><td>-428円</td></tr>
+</tbody></table>
+<p>こうして100日経ったあと、常連客が支払った総額はいくらになるだろうか。鋭い人なら気づくかもしれないが、客が100日間に支払った金額の合計は<strong>64,000円</strong>になる。1日あたり平均すると640円で、定食の価格<strong>643円に近い値</strong>になる。</p>
+<p>支払い額の平均がどのように定食の価格に近づくのかは、グラフで見るとより直感的に理解できる。</p>
+<p><img src="/20250626_delta_sigma_explanation/graph.png" alt="支払い額平均の推移" /></p>
+<p>今回は「毎日同じ価格の定食を100日間食べる」という固定条件で話したが、もし定食の価格が月ごとに少しずつ変わっても、たとえば1か月ごとに50円程度の変動なら、その変化に合わせて「1か月単位での平均支払い額」もゆっくり変わっていくはずだ。</p>
+<p>このように「合計額を記録し、あるしきい値を超えたときに支払う」というルールにより、支払い(=出力)が2値であっても、一定期間の平均支払額が元の定食価格(=入力)に近づく。この仕組みこそΔΣ変調の動作そのものである。</p>
+<h2 id="burotukutu-tonodui-ying">ブロック図との対応</h2>
+<p>それでは、この例え話と先に示したΔΣ変調のブロック図の各要素を対応させてみる。</p>
+<ul>
+<li>定食の代金：入力信号(時間の経過とともにゆっくり変化する)</li>
+<li>帳簿上の残高：積分器の出力
+<ul>
+<li>この値は「これまでに食べた合計額」から「これまでに支払った合計額」を引いたものであり、すなわち「過去の差の累積」となる（ブロック図説明の1〜3に対応）</li>
+</ul>
+</li>
+<li>支払いの判定と支払額：比較器の動作
+<ul>
+<li>残高がしきい値(例えば500円)を超えたら1000円を支払う(=1を出力)、そうでなければ支払いなし(=0を出力)</li>
+</ul>
+</li>
+<li>数日間の平均支払額：ΔΣ変調の出力信号にローパスフィルタ(LPF)を通したもの
+<ul>
+<li>一定期間で平均をとることで元の入力信号を再現する</li>
+</ul>
+</li>
+</ul>
+<p>ブロック図上で比較器が扱うのは「差の合計」だが、例え話では「合計同士の差」と説明しているため、表現の視点に多少のズレがあるかもしれない。しかし、本質的な対応関係は理解できるはずだ。</p>
+<p>このようにしてΔΣ変調は<strong>ある程度まとめて平均をとると入力信号になる</strong>ように、0か1の2値を出力し続けることを可能にしている。</p>
+<p>ちなみに、理工学系では2つの数値の差をΔ(デルタ)、複数の数値の和をΣ(シグマ)で表すため、「差の合計」を計算する方式としてΔΣ変調と呼ばれている。</p>
+<h3 id="bu-zu-ji-suan-nochun-qing-nituite">補足:計算の純情について</h3>
+<p>「差の合計」と「合計同士の差」は最終的に同じ結果になる。理論上はΔΣ変調を「合計同士の差」で計算しても問題なさそうに思える。しかし実際にはほとんどの場合「差の合計」で計算される。その理由は何か。</p>
+<p>もし「合計同士の差」方式で計算しようとすると、まず「入力の合計」と「出力の合計」を別々に計算しなければならない。これらの合計は時間とともに際限なく大きくなる可能性があり、計算処理に時間がかかるうえ、大きなメモリも必要になる。</p>
+<p>一方「差の合計」を計算する方法では、そのような無限に大きくなる値が存在しないため、計算や記憶の効率化が図れる。
+見た目は些細な違いに思えるが、こうした細かい工夫がΔΣ変調の設計には施されている特徴である。</p>
+<h1 id="saigoni">さいごに</h1>
+<p>上記内容をサウンドハウスに寄稿したら「専門性が高すぎて読者のニーズと合致しない」と却下された。ごもっともな判断であり、返す言葉もない。</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mr-1.5 mb-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://662611034.github.io/tags/xin-hao-chu-li/"
+      >信号処理</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://662611034.github.io/tags/dsbian-diao/"
+      >ΔΣ変調</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;662611034.github.io&#x2F;20250624-generic-px-downloader&#x2F;"
+    ><span class="mr-1.5">←</span><span>Px Downloaderの代用品</span></a
+  >
+  <!---->
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  
+
+  <!-- Page End inject -->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    <!---->
+    <!---->
+    &copy; 2025<!---->
+    
+    <a class="link" href="https://662611034.github.io">
+      662611034
+    </a>
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+
+    <!-- Body End inject -->
+    
+  </body>
+</html>

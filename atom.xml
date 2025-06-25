@@ -5,8 +5,146 @@
     <link rel="self" type="application/atom+xml" href="https://662611034.github.io/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://662611034.github.io/"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2025-06-24T00:00:00+00:00</updated>
+    <updated>2025-06-26T00:00:00+00:00</updated>
     <id>https://662611034.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>ΔΣ変調について</title>
+        <published>2025-06-26T00:00:00+00:00</published>
+        <updated>2025-06-26T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              662611034
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/20250626-delta-sigma-explanation/"/>
+        <id>https://662611034.github.io/20250626-delta-sigma-explanation/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/20250626-delta-sigma-explanation/">&lt;h1 id=&quot;yin-xiang-debaisudeyokushi-wareteiru&quot;&gt;音響デバイスでよく使われている&lt;&#x2F;h1&gt;
+&lt;p&gt;最近の高音質USB-DACなどのオーディオ機器では、アナログ−デジタル（AD）&#x2F; デジタル−アナログ（DA）変換部分にΔΣ（デルタシグマ）変調という技術がよく使われている。初めて聞くと原理がわかりにくいことも多い（少なくとも自分はそうだった）ので、その原理を紹介する。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;dsbian-diao-noshao-jie&quot;&gt;ΔΣ変調の紹介&lt;&#x2F;h1&gt;
+&lt;p&gt;ΔΣ変調はAD変換のアルゴリズムの一種だ。ただし、アナログ−デジタル変換だけでなく、デジタル−デジタルでビット数を減らすために使われたり、出力はデジタル信号なのにそのままアナログ信号として扱ったりもできる、不思議な方式でもある。&lt;&#x2F;p&gt;
+&lt;p&gt;AD変換と聞いて普通に思い浮かべるのは、信号の振幅の最大値と最小値の間をn分割して整数を割り当てる方式だ。これをリニアPCMという。たとえばCD音源だと16bitリニアPCMが使われていて、最小値が0、最大値が65,535といった具合になる。他には、段階を整数ではなく浮動小数点で表す浮動小数点PCMや、振幅の絶対値ではなく前の振幅との差を保存する差分PCMなどもあるが、ΔΣ変調はこれらとは根本的に考え方が違う。&lt;&#x2F;p&gt;
+&lt;p&gt;上で挙げたPCMは振幅方向を細かく（CDなら16bit、ハイレゾなら24bit）刻んでデジタル化するが、ΔΣ変調は振幅方向の分解能が荒く、場合によっては1bitしか使わないこともある。1bitで何ができるのかと思うかもしれないが、ΔΣ変調はデータを&lt;strong&gt;時間方向&lt;&#x2F;strong&gt;に細かく刻むことで高分解能を実現している。&lt;&#x2F;p&gt;
+&lt;p&gt;たとえば、0と1の1bitしか出力しないΔΣ変調器に0.6というアナログ入力が入ってきたとしよう。このときΔΣ変調器は0と1をだいたい4:6の割合で出力する。順番は決まっていない。「1, 1, 1, 0, 1, 0, 0, 1, 1, 0, …」かもしれないし、「0, 1, 0, 1, 0, 1, 1, 0, 1, 1, …」かもしれない。とにかく0と1の割合が4:6になるように出力される。だから出力データを&lt;strong&gt;ある程度集めて平均化&lt;&#x2F;strong&gt;すれば、入力のアナログ値に近い値が得られる。&lt;&#x2F;p&gt;
+&lt;p&gt;時間平均を取るため、ΔΣ変調は入力信号の周波数に比べて&lt;strong&gt;かなり速く&lt;&#x2F;strong&gt;動作しなければならない。ΔΣ変調器が「速く動作する」というのは相対的に「信号の変化が遅い」ことを意味している。たとえばΔΣ変調器が10回動作している間に入力が0.3変わるより、0.003しか変わらないほうが、出力の平均化精度は高くなるのは想像できるだろう。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;dsbian-diao-nomerituto&quot;&gt;ΔΣ変調のメリット&lt;&#x2F;h1&gt;
+&lt;p&gt;ややこしそうに見えるΔΣ変調がなぜ広く使われているかというと、&lt;strong&gt;実装がシンプル&lt;&#x2F;strong&gt;だからだ。&lt;&#x2F;p&gt;
+&lt;p&gt;リニアPCM方式で音質を上げようとすると、振幅を分ける段階を細かくしなければならない。電子回路で振幅を細かく均等に分割するには同じ抵抗が何個も必要になるが、高精度で同じ抵抗値を揃えるのは難しいし、抵抗が増えれば回路も大きくなる。ざっくり言うと、「&lt;strong&gt;性能を上げるのがとにかく大変&lt;&#x2F;strong&gt;」になるわけだ。&lt;&#x2F;p&gt;
+&lt;p&gt;一方、ΔΣ変調器は1つの積分器と1つの比較器、いくつかの遅延器だけで構成されるので、回路規模が小さくて実装が簡単だ。性能を上げたいなら動作周波数を上げればいい。&lt;&#x2F;p&gt;
+&lt;p&gt;もちろん「速く動かすのも大変じゃないか」という疑問は出るが、集積回路技術の進歩で高速動作は安価に実現できるため、リニアPCMよりはずっとやりやすい。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;bu-zu&quot;&gt;補足&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ここまでもこれからも1次のΔΣ変調器を基準に説明しているが、実際のオーディオ回路では次数（段数）が増えた「高次」ΔΣ変調器が多く使われている。段数が増えれば回路規模は大きくなるが、それでもリニアPCMより実装は簡単なので、ΔΣ変調が採用されている。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;ΔΣ変調のもう一つのメリットは、DA変換が楽という点だ。
+リニアPCMの場合、DA変換を行うためには細かい段階で高精度な電圧を作らなければならず、AD変換のときと同じで要求される回路の精度と規模が大きくなる。&lt;&#x2F;p&gt;
+&lt;p&gt;反面ΔΣ変調は適切な&lt;strong&gt;ローパスフィルタ(LPF)を通すだけで&lt;&#x2F;strong&gt;元の信号が復元できてしまう。デジタル信号処理の世界ではLPF処理は信号をある程度まとめて平均化するような働きをするためである。&lt;&#x2F;p&gt;
+&lt;p&gt;もう一つのメリットは、DA変換が楽になる点だ。&lt;&#x2F;p&gt;
+&lt;p&gt;リニアPCMの場合、DA変換では細かい段階で高精度な電圧を作らなければならず、AD変換と同様に回路の精度や規模が大きくなる。&lt;&#x2F;p&gt;
+&lt;p&gt;対してΔΣ変調は適切な&lt;strong&gt;ローパスフィルタ(LPF)を通すだけで&lt;&#x2F;strong&gt;元の信号が復元できる。デジタル信号処理の世界でLPFは、信号をまとめて平均化するような働きをするからだ。&lt;&#x2F;p&gt;
+&lt;p&gt;このメリットのため、コンピュータ上で扱う音源データはファイルとしてはリニアPCM形式を使う(コンピュータ内の処理は振幅をそのまま数字で扱う方が便利)が、DA変換するときは&lt;strong&gt;一旦ΔΣ変調をかけてから&lt;&#x2F;strong&gt;アナログ変換する構成がよく用いられる。回路的には遠回りしているように見えて、むしろシンプルになる。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;dsbian-diao-nozhong-nodong-ki&quot;&gt;ΔΣ変調の中の動き&lt;&#x2F;h1&gt;
+&lt;p&gt;ΔΣ変調が時間平均で入力信号を表現する仕組みはわかったとして、どうやって「平均すると入力になるデータ」を出力できるのかを説明する。&lt;&#x2F;p&gt;
+&lt;p&gt;図はΔΣ変調器をブロック図で表したものだ。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;20250626_delta_sigma_explanation&#x2F;block.png&quot; alt=&quot;ΔΣ変調のブロック図&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;動作の流れは次のようになる。&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;左からアナログ信号が入力される。&lt;&#x2F;li&gt;
+&lt;li&gt;次に、ΔΣ変調器の1クロック前の出力を入力から引く。&lt;&#x2F;li&gt;
+&lt;li&gt;引き算の結果を積分器で積分する。
+&lt;ul&gt;
+&lt;li&gt;ここでいう「積分」は高校数学の積分とは違って、これまでの入力の総和を求める処理だ。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;積分の結果があるしきい値（たとえば0.5）を超えていれば「1」、下回っていれば「0」を出力する。この0か1の出力がΔΣ変調の出力になる。
+&lt;ul&gt;
+&lt;li&gt;※ ※ 実際の回路では出力値やしきい値は必要に応じて別の値を使うこともあるが、ここでは基本動作の説明として0&#x2F;1で示している。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;これを読んだ感想としては「結局よくわからない」「どうして都合のいい0&#x2F;1が出てくるのか」と思うかもしれない。自分もそうだった。
+そこで、理解の助けになる「定食屋の例え話」を紹介する。あくまで説明のための例え話なので、設定の不自然さは気にしないでほしい。&lt;&#x2F;p&gt;
+&lt;p&gt;そこで「定食屋の例え話」を紹介する。あくまでも説明のための例え話なため、設定の不自然さには目をつぶってほしい。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ding-shi-wu-noli-ehua&quot;&gt;定食屋の例え話&lt;&#x2F;h2&gt;
+&lt;p&gt;ある定食屋に、毎日お昼にやって来る常連客がいる。この常連は毎日欠かさず643円の日替わり定食を食べている。しかしある日、常連客は「毎日中途半端な額を払うのは面倒だ。小銭もたくさん出るし」と思い始めた。店主も同じことを考えていたため、2人は次のようなルールを決めた。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;客が食べた料金（643円）を毎日合計していく&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;合計が500円以上になったときにだけ、1000円支払う&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;払いすぎた分（おつり）はお店側で預かる（つまり“借り”として記録される）&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;言葉だけではわかりにくいので、具体例で確認する。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;1日目：定食代643円 → 合計643円 → 500円以上なので
+→ 1000円支払う → 357円預ける（1000−643）&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;2日目：定食643円 → 昨日の預り金357円がある → 合計286円（643−357）
+→ 500円未満なので支払いなし&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;3日目：定食643円 → 前日残り286円 → 合計929円
+→ 1000円支払う → 71円預ける&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;4日目：定食643円 → 残り71円 → 合計572円
+→ 1000円支払う → 428円預ける&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;日数&lt;&#x2F;th&gt;&lt;th&gt;定食代&lt;&#x2F;th&gt;&lt;th&gt;繰越金と合計&lt;&#x2F;th&gt;&lt;th&gt;500円以上？&lt;&#x2F;th&gt;&lt;th&gt;支払い&lt;&#x2F;th&gt;&lt;th&gt;繰越金&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;1日目&lt;&#x2F;td&gt;&lt;td&gt;643円&lt;&#x2F;td&gt;&lt;td&gt;643円&lt;&#x2F;td&gt;&lt;td&gt;○&lt;&#x2F;td&gt;&lt;td&gt;1000円&lt;&#x2F;td&gt;&lt;td&gt;-357円&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;2日目&lt;&#x2F;td&gt;&lt;td&gt;643円&lt;&#x2F;td&gt;&lt;td&gt;286円&lt;&#x2F;td&gt;&lt;td&gt;×&lt;&#x2F;td&gt;&lt;td&gt;0円&lt;&#x2F;td&gt;&lt;td&gt;286円&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;3日目&lt;&#x2F;td&gt;&lt;td&gt;643円&lt;&#x2F;td&gt;&lt;td&gt;929円&lt;&#x2F;td&gt;&lt;td&gt;○&lt;&#x2F;td&gt;&lt;td&gt;1000円&lt;&#x2F;td&gt;&lt;td&gt;-71円&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;4日目&lt;&#x2F;td&gt;&lt;td&gt;643円&lt;&#x2F;td&gt;&lt;td&gt;572円&lt;&#x2F;td&gt;&lt;td&gt;○&lt;&#x2F;td&gt;&lt;td&gt;1000円&lt;&#x2F;td&gt;&lt;td&gt;-428円&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;こうして100日経ったあと、常連客が支払った総額はいくらになるだろうか。鋭い人なら気づくかもしれないが、客が100日間に支払った金額の合計は&lt;strong&gt;64,000円&lt;&#x2F;strong&gt;になる。1日あたり平均すると640円で、定食の価格&lt;strong&gt;643円に近い値&lt;&#x2F;strong&gt;になる。&lt;&#x2F;p&gt;
+&lt;p&gt;支払い額の平均がどのように定食の価格に近づくのかは、グラフで見るとより直感的に理解できる。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;20250626_delta_sigma_explanation&#x2F;graph.png&quot; alt=&quot;支払い額平均の推移&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;今回は「毎日同じ価格の定食を100日間食べる」という固定条件で話したが、もし定食の価格が月ごとに少しずつ変わっても、たとえば1か月ごとに50円程度の変動なら、その変化に合わせて「1か月単位での平均支払い額」もゆっくり変わっていくはずだ。&lt;&#x2F;p&gt;
+&lt;p&gt;このように「合計額を記録し、あるしきい値を超えたときに支払う」というルールにより、支払い(=出力)が2値であっても、一定期間の平均支払額が元の定食価格(=入力)に近づく。この仕組みこそΔΣ変調の動作そのものである。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;burotukutu-tonodui-ying&quot;&gt;ブロック図との対応&lt;&#x2F;h2&gt;
+&lt;p&gt;それでは、この例え話と先に示したΔΣ変調のブロック図の各要素を対応させてみる。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;定食の代金：入力信号(時間の経過とともにゆっくり変化する)&lt;&#x2F;li&gt;
+&lt;li&gt;帳簿上の残高：積分器の出力
+&lt;ul&gt;
+&lt;li&gt;この値は「これまでに食べた合計額」から「これまでに支払った合計額」を引いたものであり、すなわち「過去の差の累積」となる（ブロック図説明の1〜3に対応）&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;支払いの判定と支払額：比較器の動作
+&lt;ul&gt;
+&lt;li&gt;残高がしきい値(例えば500円)を超えたら1000円を支払う(=1を出力)、そうでなければ支払いなし(=0を出力)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;数日間の平均支払額：ΔΣ変調の出力信号にローパスフィルタ(LPF)を通したもの
+&lt;ul&gt;
+&lt;li&gt;一定期間で平均をとることで元の入力信号を再現する&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;ブロック図上で比較器が扱うのは「差の合計」だが、例え話では「合計同士の差」と説明しているため、表現の視点に多少のズレがあるかもしれない。しかし、本質的な対応関係は理解できるはずだ。&lt;&#x2F;p&gt;
+&lt;p&gt;このようにしてΔΣ変調は&lt;strong&gt;ある程度まとめて平均をとると入力信号になる&lt;&#x2F;strong&gt;ように、0か1の2値を出力し続けることを可能にしている。&lt;&#x2F;p&gt;
+&lt;p&gt;ちなみに、理工学系では2つの数値の差をΔ(デルタ)、複数の数値の和をΣ(シグマ)で表すため、「差の合計」を計算する方式としてΔΣ変調と呼ばれている。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;bu-zu-ji-suan-nochun-qing-nituite&quot;&gt;補足:計算の純情について&lt;&#x2F;h3&gt;
+&lt;p&gt;「差の合計」と「合計同士の差」は最終的に同じ結果になる。理論上はΔΣ変調を「合計同士の差」で計算しても問題なさそうに思える。しかし実際にはほとんどの場合「差の合計」で計算される。その理由は何か。&lt;&#x2F;p&gt;
+&lt;p&gt;もし「合計同士の差」方式で計算しようとすると、まず「入力の合計」と「出力の合計」を別々に計算しなければならない。これらの合計は時間とともに際限なく大きくなる可能性があり、計算処理に時間がかかるうえ、大きなメモリも必要になる。&lt;&#x2F;p&gt;
+&lt;p&gt;一方「差の合計」を計算する方法では、そのような無限に大きくなる値が存在しないため、計算や記憶の効率化が図れる。
+見た目は些細な違いに思えるが、こうした細かい工夫がΔΣ変調の設計には施されている特徴である。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;saigoni&quot;&gt;さいごに&lt;&#x2F;h1&gt;
+&lt;p&gt;上記内容をサウンドハウスに寄稿したら「専門性が高すぎて読者のニーズと合致しない」と却下された。ごもっともな判断であり、返す言葉もない。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Px Downloaderの代用品</title>
         <published>2025-06-24T00:00:00+00:00</published>
