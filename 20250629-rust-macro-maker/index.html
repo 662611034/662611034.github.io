@@ -1,0 +1,497 @@
+<!doctype html>
+<html class="not-ready lg:text-base" lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Title -->
+  <title>
+    RustでRustを書く - 愛されたいねん
+  </title>
+
+  <!-- Meta -->
+  <meta name="theme-color" />
+
+  
+  <!-- Author -->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  <meta name="description" content="RustでRustを書く" />
+  <meta name="author" content="662611034" />
+  <!-- The Open Graph protocol -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="RustでRustを書く" />
+  <meta property="og:site_name" content="愛されたいねん" />
+  <meta property="og:description" content="RustでRustを書く" />
+  <meta property="og:url" content="https:&#x2F;&#x2F;662611034.github.io&#x2F;20250629-rust-macro-maker&#x2F;" />
+  
+  <!---->
+  
+  <!---->
+  
+  <!---->
+  
+  <meta property="og:image" content="https://662611034.github.io/icons/abstracted_anon_chihaya.png" />
+  
+  <!---->
+  
+
+  <!-- CSS & JS -->
+  <link rel="preload stylesheet" as="style" href="https://662611034.github.io/main.css" />
+  <style>
+    :root {
+      --bg: #f4f4f5;
+      --bg-dark: #18181b;
+      --header: #e4e4e7;
+      --header-dark: #27272a;
+    }
+  </style>
+
+  
+
+  <!-- Dark Icon -->
+  <link rel="preload" as="image" href="https://662611034.github.io/icons/theme.svg" />
+
+  <!-- Math -->
+  
+  <!---->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.css"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/katex.min.js"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16/dist/contrib/auto-render.min.js"
+  crossorigin="anonymous"
+></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () =>
+    renderMathInElement(document.body, {
+      // customised options
+      // • auto-render specific keys, e.g.:
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+      ],
+      // • rendering keys, e.g.:
+      throwOnError: false,
+    }),
+  );
+</script>
+
+  <!---->
+  
+  <!---->
+
+  <!-- Mermaid -->
+  
+  <!---->
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://662611034.github.io/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://662611034.github.io/apple-touch-icon.png" />
+
+  <!-- Feeds -->
+  
+  <!---->
+  
+  <link
+    rel="alternate"
+    type="application/atom+xml"
+    title="Atom"
+    href="https://662611034.github.io/atom.xml"
+  />
+   
+  <!---->
+  
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;20250629-rust-macro-maker&#x2F;" />
+
+  <!-- Head inject -->
+  
+</head>
+
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header
+  class="header fixed top-0 z-40 mx-auto min-h-[3.5rem] w-full"
+>
+  <div class="mx-auto w-full max-w-4xl p-3 lg:flex lg:justify-between">
+    <div class="flex justify-between">
+      <div class="flex items-center">
+        <a class="text-2xl font-semibold" href="https://662611034.github.io">愛されたいねん</a>
+        <div
+          class="btn-dark ml-4 h-6 w-6 shrink-0 cursor-pointer text-[0px] [background:url(./icons/theme.svg)_left_center/cover_no-repeat] dark:[background-position:right] dark:invert"
+          role="button"
+          aria-label="Dark"
+        ></div>
+      </div>
+      
+      <div
+        class="btn-menu relative z-50 flex h-8 w-8 shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+        role="button"
+        aria-label="Menu"
+      ></div>
+      
+    </div>
+    <script>
+      // base
+      const htmlClass = document.documentElement.classList;
+      setTimeout(() => {
+        htmlClass.remove("not-ready");
+      }, 10);
+
+      // mobile menu
+      const btnMenu = document.querySelector(".btn-menu");
+      btnMenu?.addEventListener("click", () => {
+        htmlClass.toggle("open");
+      });
+
+      // dark theme
+      const setDark = (isDark) => {
+        if (isDark) {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "dark" }));
+          htmlClass.add("dark");
+        } else {
+          document.body.dispatchEvent(new CustomEvent("set-theme", { detail: "light" }));
+          htmlClass.remove("dark");
+        }
+        localStorage.setItem("dark", isDark);
+      };
+
+      // init
+      const darkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+      if (htmlClass.contains("dark")) {
+        setDark(true);
+      } else {
+        const darkVal = localStorage.getItem("dark");
+        setDark(darkVal ? darkVal === "true" : darkScheme.matches);
+      }
+
+      // listen system
+      darkScheme.addEventListener("change", (event) => {
+        setDark(event.matches);
+      });
+
+      // manual switch
+      const btnDark = document.querySelector(".btn-dark");
+      btnDark.addEventListener("click", () => {
+        setDark(localStorage.getItem("dark") !== "true");
+      });
+    </script>
+    
+    <nav class="flex w-full items-center lg:w-auto">
+      <ul
+        class="nav-wrapper flex w-full flex-col py-2 lg:w-auto lg:flex-row lg:self-center lg:py-0"
+      >
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//archive"
+            >Archive</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//tags"
+            >Tags</a
+          >
+        </li>
+        
+        <li>
+          <a
+            class="primary-link block py-2 text-center text-lg font-medium lg:px-3 lg:py-0"
+            href="https://662611034.github.io//about"
+            >About</a
+          >
+        </li>
+        
+      </ul>
+      <!-- Header Nav inject -->
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <!-- Body Start inject -->
+    
+
+    <main
+      class="prose prose-neutral dark:prose-invert prose-pre:rounded-lg prose-img:rounded-lg relative mx-auto min-h-[calc(100vh-9rem)] max-w-3xl px-4 pt-24 pb-16 break-words lg:pt-32"
+    >
+      
+<article>
+  <!-- Page Start inject -->
+  
+
+  <header class="mb-16">
+    <h1 class="my-0! pb-2.5">RustでRustを書く</h1>
+    <div class="text-sm antialiased opacity-60">
+  
+  <time>2025-06-29</time>
+  <span class="mx-1">&middot;</span>
+  <span>3min</span>
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <span class="mx-1">&middot;</span>
+  <span>662611034</span>
+  
+  <!-- Page Info inject -->
+  
+</div>
+
+  </header>
+
+  
+
+  <!-- TOC -->
+  <!---->
+<div class="block-bg mb-12 flex rounded-lg p-2 text-lg">
+  <details>
+    <summary class="cursor-pointer py-1 pl-4">
+      <span>Table of Contents</span>
+    </summary>
+    <div class="px-2">
+      <ul>
+        
+        <li>
+          <a class="no-underline hover:underline" href="https://662611034.github.io/20250629-rust-macro-maker/#enumhabian-li-dakedoshou-jian-gakakaru"
+            >Enumは便利だけど手間がかかる</a
+          >
+          
+        </li>
+        
+      </ul>
+    </div>
+  </details>
+</div>
+
+<!---->
+
+  <!-- Content -->
+  <section><h1 id="enumhabian-li-dakedoshou-jian-gakakaru">Enumは便利だけど手間がかかる</h1>
+<p>Rustを書くときenumをかなり頻繁に使う。引数が取りうる値を型で制限できるから安全だし、文字列リテラルじゃないから補完が効くし、名前がついてるから分かりやすい。ChatGPTに聞いてみたところ、入力が2種類の場合でも「Yes / No」での判定が微妙なケースではenumを使った方がいいとか。</p>
+<p>しかし、1点面倒なことがある。enumはiter()が使えない。例えばGUIでコンボボックスを作るとき</p>
+<pre data-lang="Rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-Rust "><code class="language-Rust" data-lang="Rust"><span>egui::ComboBox::from_label(&quot;</span><span style="color:#a3be8c;">Select one!</span><span>&quot;)
+</span><span>    .</span><span style="color:#96b5b4;">selected_text</span><span>(format!(&quot;</span><span style="color:#d08770;">{:?}</span><span>&quot;, selected))
+</span><span>    .</span><span style="color:#96b5b4;">show_ui</span><span>(ui, |</span><span style="color:#bf616a;">ui</span><span>| {
+</span><span>        </span><span style="color:#65737e;">// こんなことはできない
+</span><span>        MyEnum.</span><span style="color:#96b5b4;">for_each</span><span>(|</span><span style="color:#bf616a;">variant</span><span>|
+</span><span>            ui.</span><span style="color:#96b5b4;">selectable_value</span><span>(&amp;</span><span style="color:#b48ead;">mut</span><span> selected, variant, variant.</span><span style="color:#96b5b4;">as_str</span><span>());
+</span><span>        );
+</span><span>    }
+</span><span>);
+</span></code></pre>
+<p>みたいなことができれば幸せになれるんじゃないかと思うことが多々ある。まあ、今どきのIDE、エディタは便利な編集機能がいろいろあるので、1～2回するぐらいなら手動で全然間に合うし、大量で書かなきゃならないようなときは、<a href="https://docs.rs/strum/latest/strum/">専用のクレイト</a>を使えばいいし、特に困りはしないのだが、ふと「文字列操作でマクロを自動生成すれば、楽しいんじゃないかな」（"便利"ではなi）と思い立ったので、作ってみた。</p>
+<pre data-lang="Rust" style="background-color:#2b303b;color:#c0c5ce;" class="language-Rust "><code class="language-Rust" data-lang="Rust"><span style="color:#b48ead;">use </span><span>std::io::Read;
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">variants_iter</span><span>(</span><span style="color:#bf616a;">definition</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>) -&gt; impl Iterator&lt;Item = String&gt; {
+</span><span>    definition
+</span><span>        .</span><span style="color:#96b5b4;">split</span><span>(&#39;</span><span style="color:#96b5b4;">\n</span><span>&#39;)
+</span><span>        .</span><span style="color:#96b5b4;">map</span><span>(|</span><span style="color:#bf616a;">line</span><span>| line.</span><span style="color:#96b5b4;">trim</span><span>())
+</span><span>        .</span><span style="color:#96b5b4;">filter</span><span>(|&amp;</span><span style="color:#bf616a;">line</span><span>| {
+</span><span>            !(line.</span><span style="color:#96b5b4;">contains</span><span>(&quot;</span><span style="color:#a3be8c;">{</span><span>&quot;) || line.</span><span style="color:#96b5b4;">contains</span><span>(&quot;</span><span style="color:#a3be8c;">}</span><span>&quot;) || line.</span><span style="color:#96b5b4;">is_empty</span><span>() || line.</span><span style="color:#96b5b4;">starts_with</span><span>(&quot;</span><span style="color:#a3be8c;">//</span><span>&quot;))
+</span><span>        })
+</span><span>        .</span><span style="color:#96b5b4;">map</span><span>(|</span><span style="color:#bf616a;">s</span><span>| s.</span><span style="color:#96b5b4;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">,</span><span>&quot;, &quot;&quot;))
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">get_enum_name</span><span>(</span><span style="color:#bf616a;">definition</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>) -&gt; Option&lt;String&gt; {
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> flag = </span><span style="color:#d08770;">false</span><span>;
+</span><span>    </span><span style="color:#b48ead;">for</span><span> word in definition
+</span><span>        .</span><span style="color:#96b5b4;">split</span><span>(&#39;</span><span style="color:#96b5b4;">\n</span><span>&#39;)
+</span><span>        .</span><span style="color:#96b5b4;">map</span><span>(|</span><span style="color:#bf616a;">line</span><span>| line.</span><span style="color:#96b5b4;">trim</span><span>())
+</span><span>        .</span><span style="color:#96b5b4;">filter</span><span>(|&amp;</span><span style="color:#bf616a;">line</span><span>| line.</span><span style="color:#96b5b4;">contains</span><span>(&quot;</span><span style="color:#a3be8c;">{</span><span>&quot;) &amp;&amp; line.</span><span style="color:#96b5b4;">contains</span><span>(&quot;</span><span style="color:#a3be8c;">enum</span><span>&quot;))
+</span><span>        .</span><span style="color:#96b5b4;">next</span><span>()
+</span><span>        .</span><span style="color:#96b5b4;">unwrap_or</span><span>(&quot;&quot;)
+</span><span>        .</span><span style="color:#96b5b4;">replace</span><span>(&quot;</span><span style="color:#a3be8c;">{</span><span>&quot;, &quot;&quot;)
+</span><span>        .</span><span style="color:#96b5b4;">trim</span><span>()
+</span><span>        .</span><span style="color:#96b5b4;">split_whitespace</span><span>()
+</span><span>    {
+</span><span>        </span><span style="color:#b48ead;">if</span><span> word.</span><span style="color:#96b5b4;">trim</span><span>().</span><span style="color:#96b5b4;">is_empty</span><span>() {
+</span><span>            </span><span style="color:#b48ead;">continue</span><span>;
+</span><span>        }
+</span><span>        </span><span style="color:#b48ead;">if</span><span> word == &quot;</span><span style="color:#a3be8c;">enum</span><span>&quot; {
+</span><span>            flag = </span><span style="color:#d08770;">true</span><span>;
+</span><span>            </span><span style="color:#b48ead;">continue</span><span>;
+</span><span>        }
+</span><span>        </span><span style="color:#b48ead;">if</span><span> flag {
+</span><span>            </span><span style="color:#b48ead;">return </span><span>Some(String::from(word));
+</span><span>        }
+</span><span>    }
+</span><span>    None
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">gen_enum_iter</span><span>(</span><span style="color:#bf616a;">definition</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>, </span><span style="color:#bf616a;">macro_name</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>) -&gt; Option&lt;String&gt; {
+</span><span>    </span><span style="color:#b48ead;">let</span><span> enum_name = </span><span style="color:#96b5b4;">get_enum_name</span><span>(definition)?;
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> description = String::from(&quot;</span><span style="color:#a3be8c;">macro_rules! </span><span>&quot;);
+</span><span>    description += &amp;macro_name;
+</span><span>    description += &quot;</span><span style="color:#a3be8c;"> {</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">()=&gt;{</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">[</span><span style="color:#96b5b4;">\n</span><span>&quot;;
+</span><span>    </span><span style="color:#96b5b4;">variants_iter</span><span>(definition)
+</span><span>        .</span><span style="color:#96b5b4;">for_each</span><span>(|</span><span style="color:#bf616a;">variant</span><span>| description += &amp;format!(&quot;</span><span style="color:#d08770;">{}</span><span style="color:#a3be8c;">::</span><span style="color:#d08770;">{}</span><span style="color:#a3be8c;">,</span><span style="color:#96b5b4;">\n</span><span>&quot;, enum_name, variant));
+</span><span>    Some(description + &quot;</span><span style="color:#a3be8c;">]</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">.iter()</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">};</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">}</span><span style="color:#96b5b4;">\n</span><span>&quot;)
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">gen_vec_mapping</span><span>(</span><span style="color:#bf616a;">definition</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>, </span><span style="color:#bf616a;">macro_name</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>) -&gt; Option&lt;String&gt; {
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> description = String::from(&quot;</span><span style="color:#a3be8c;">macro_rules! </span><span>&quot;);
+</span><span>    description += &amp;macro_name;
+</span><span>    description += &quot;</span><span style="color:#a3be8c;"> {</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">($self:expr =&gt; $table:ident) =&gt; {</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">match $self {</span><span style="color:#96b5b4;">\n</span><span>&quot;;
+</span><span>
+</span><span>    </span><span style="color:#96b5b4;">variants_iter</span><span>(definition)
+</span><span>        .</span><span style="color:#96b5b4;">enumerate</span><span>()
+</span><span>        .</span><span style="color:#96b5b4;">for_each</span><span>(|(</span><span style="color:#bf616a;">idx</span><span>, </span><span style="color:#bf616a;">variant</span><span>)| description += &amp;format!(&quot;</span><span style="color:#a3be8c;">Self::</span><span style="color:#d08770;">{variant}</span><span style="color:#a3be8c;"> =&gt; $table[</span><span style="color:#d08770;">{idx}</span><span style="color:#a3be8c;">],</span><span style="color:#96b5b4;">\n</span><span>&quot;));
+</span><span>    Some(description + &quot;</span><span style="color:#a3be8c;">}</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">};</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">}</span><span>&quot;)
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">gen_as_str</span><span>(</span><span style="color:#bf616a;">definition</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>, </span><span style="color:#bf616a;">macro_name</span><span>: &amp;</span><span style="color:#b48ead;">str</span><span>) -&gt; String {
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> description = String::from(&quot;</span><span style="color:#a3be8c;">macro_rules! </span><span>&quot;);
+</span><span>    description += &amp;macro_name;
+</span><span>    description += &quot;</span><span style="color:#a3be8c;"> {</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">($self:expr) =&gt; {</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">match $self {</span><span style="color:#96b5b4;">\n</span><span>&quot;;
+</span><span>    </span><span style="color:#96b5b4;">variants_iter</span><span>(definition).</span><span style="color:#96b5b4;">for_each</span><span>(|</span><span style="color:#bf616a;">variant</span><span>| {
+</span><span>        description += &amp;format!(&quot;</span><span style="color:#a3be8c;">Self::</span><span style="color:#d08770;">{variant}</span><span style="color:#a3be8c;"> =&gt; </span><span style="color:#96b5b4;">\&quot;</span><span style="color:#d08770;">{variant}</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;">,</span><span style="color:#96b5b4;">\n</span><span>&quot;);
+</span><span>    });
+</span><span>    description + &quot;</span><span style="color:#a3be8c;">}</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">};</span><span style="color:#96b5b4;">\n</span><span style="color:#a3be8c;">}</span><span>&quot;
+</span><span>}
+</span><span>
+</span><span style="color:#b48ead;">fn </span><span style="color:#8fa1b3;">main</span><span>() {
+</span><span>    </span><span style="color:#b48ead;">let mut</span><span> definition = String::new();
+</span><span>    std::io::stdin()
+</span><span>        .</span><span style="color:#96b5b4;">read_to_string</span><span>(&amp;</span><span style="color:#b48ead;">mut</span><span> definition)
+</span><span>        .</span><span style="color:#96b5b4;">expect</span><span>(&quot;</span><span style="color:#a3be8c;">Failed to read from stdin</span><span>&quot;);
+</span><span>
+</span><span>    </span><span style="color:#b48ead;">match </span><span style="color:#96b5b4;">get_enum_name</span><span>(&amp;definition) {
+</span><span>        Some(_) =&gt; {}
+</span><span>        None =&gt; panic!(&quot;</span><span style="color:#a3be8c;">enumの名前の取得に失敗</span><span>&quot;),
+</span><span>    };
+</span><span>
+</span><span>    println!(&quot;</span><span style="color:#a3be8c;">/*</span><span style="color:#96b5b4;">\n</span><span>&quot;);
+</span><span>    println!(&quot;</span><span style="color:#d08770;">{}</span><span style="color:#96b5b4;">\n</span><span>&quot;, </span><span style="color:#96b5b4;">gen_enum_iter</span><span>(&amp;definition, &quot;</span><span style="color:#a3be8c;">enum_iter</span><span>&quot;).</span><span style="color:#96b5b4;">unwrap</span><span>());
+</span><span>    println!(&quot;</span><span style="color:#d08770;">{}</span><span style="color:#96b5b4;">\n</span><span>&quot;, </span><span style="color:#96b5b4;">gen_vec_mapping</span><span>(&amp;definition, &quot;</span><span style="color:#a3be8c;">enum_map</span><span>&quot;).</span><span style="color:#96b5b4;">unwrap</span><span>());
+</span><span>    println!(&quot;</span><span style="color:#d08770;">{}</span><span style="color:#96b5b4;">\n</span><span>&quot;, </span><span style="color:#96b5b4;">gen_as_str</span><span>(&amp;definition, &quot;</span><span style="color:#a3be8c;">enum_str</span><span>&quot;));
+</span><span>    println!(&quot;</span><span style="color:#a3be8c;">*/</span><span>&quot;);
+</span><span>}
+</span></code></pre>
+<p>なんてことはない。enumの定義を標準入力でなげると、文字列操作してマクロを作って出力する。ターミナルで</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">head -n</span><span> 50 main.rs | </span><span style="color:#bf616a;">tail -n</span><span> 6
+</span></code></pre>
+<p>みたいな感じでenum定義部分を投げればマクロが出来上がるという想定だ。</p>
+<p>コマンドライン引数でどのマクロを選ぶかとマクロ名なんかを指定できるようにしてもいいが、手間を考えると張り付けてから消すなり書き換えるなりする方が多分速いと思ったから「問答無用で全部出力」するようにしてる。</p>
+<p>コメントや、要素を持つenumには対応できないが、そういうenumはどのみち手動で細かな作業が必用になるから、別にこれでいいだろうと考えている。</p>
+</section>
+
+  <hr />
+
+  <!-- Post Taxonomies -->
+  
+<footer class="mt-12 flex flex-col">
+  <!---->
+  <!---->
+  <!---->
+  <!---->
+  
+  <div class="mb-2 flex flex-wrap">
+    <span class="block-bg mr-1.5 mb-1.5 rounded-lg px-5 py-1.5">Tags </span>
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://662611034.github.io/tags/rust/"
+      >Rust</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://662611034.github.io/tags/makuro/"
+      >マクロ</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://662611034.github.io/tags/puroguramingu/"
+      >プログラミング</a
+    >
+    
+    <a
+      class="block-bg block-hover mr-1.5 mb-1.5 rounded-lg px-5 py-1.5 no-underline"
+      href="https://662611034.github.io/tags/enum/"
+      >enum</a
+    >
+    
+  </div>
+  
+</footer>
+
+<!---->
+
+  <!-- Post Nav -->
+  
+<nav class="block-bg mt-12 flex flex-wrap rounded-lg text-lg">
+  
+  <a
+    class="block-hover-mask flex min-w-[50%] grow items-center rounded-l-md p-6 pr-3 font-semibold no-underline"
+    href="https:&#x2F;&#x2F;662611034.github.io&#x2F;20250626-delta-sigma-explanation&#x2F;"
+    ><span class="mr-1.5">←</span><span>ΔΣ変調について</span></a
+  >
+  <!---->
+  
+</nav>
+
+<!---->
+
+  <!-- Comment -->
+  
+
+  <!-- Page End inject -->
+  
+</article>
+
+    </main>
+
+    <footer class="mx-auto flex max-w-3xl flex-wrap items-center px-8 py-4 text-sm opacity-60">
+  <div class="mr-auto basis-full lg:basis-1/2">
+    <!---->
+    <!---->
+    &copy; 2025<!---->
+    
+    <a class="link" href="https://662611034.github.io">
+      662611034
+    </a>
+    
+  </div>
+  <div class="flex basis-full lg:basis-1/2 lg:justify-end">
+    <a class="link mr-6 lg:ml-6" href="https://www.getzola.org/" rel="noopener" target="_blank">
+      Powered by Zola
+    </a>
+    <a class="link" href="https://github.com/st1020/kita" rel="noopener" target="_blank">✎ Kita</a>
+  </div>
+  <!-- Footer inject -->
+  
+</footer>
+
+
+    <!-- Body End inject -->
+    
+  </body>
+</html>
