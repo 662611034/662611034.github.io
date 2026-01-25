@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8"><meta http-equiv="Content-Security-Policy"
+content="default-src 'self';font-src 'self' data:;img-src 'self' https://* data:;media-src 'self';style-src 'self';frame-src player.vimeo.com https://www.youtube-nocookie.com;connect-src 'self';script-src 'self' 'self'">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="base" content="https://662611034.github.io">
+
+    
+    <title>
+愛されたいねん • RustでRustマクロを書く</title>
+
+    
+    
+    
+
+    
+    
+        
+            
+            
+                
+                    <link rel="alternate" type="application/atom+xml" title="愛されたいねん - Atom Feed" href="https://662611034.github.io/atom.xml">
+                
+            
+        
+    
+
+    
+    
+    
+        
+            <link rel="stylesheet" href="https://662611034.github.io/custom_subset.css?h=0b9535a28bc3d5bf2321">
+        
+    
+
+    
+        <link rel="stylesheet" href="https://662611034.github.io/main.css?h=045c365e19a4d50a64bb" />
+
+    <meta name="color-scheme" content="light dark" />
+        <meta name="description" content="個人ブログ" />
+        <meta property="og:description" content="個人ブログ" />
+
+    
+
+    <meta property="og:title" content="RustでRustマクロを書く" />
+    <meta property="og:type" content="article" />
+
+    
+<meta property="og:locale" content="en_GB" />
+
+    <meta property="og:url" content="https:&#x2F;&#x2F;662611034.github.io&#x2F;blog&#x2F;rust-macro-maker&#x2F;" /><meta property="og:site_name" content="愛されたいねん">
+        <noscript><link rel="stylesheet" href="https://662611034.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://662611034.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://662611034.github.io/js/themeSwitcher.min.js"></script><script defer src="https://662611034.github.io/search_index.en.js?h=b5f9a4e3d84485e7f9e9"></script>
+        <script defer src="https://662611034.github.io/js/searchElasticlunr.min.js?h=3626c0ef99daa745b31e"></script>
+
+        
+    
+</head>
+
+
+<body>
+    <a href="#main-content" id="skip-link">Skip to content</a>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href="https://662611034.github.io/">愛されたいねん</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://662611034.github.io/blog/">blog
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://662611034.github.io/archive/">archive
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://662611034.github.io/tags/">tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a class="nav-links no-hover-padding" href="https://662611034.github.io/projects/">projects
+                                </a>
+                            </li>
+                        <li class="menu-icons-container">
+                        <ul class="menu-icons-group">
+                            <li class="js menu-icon">
+                                <div role="button" tabindex="0" id="search-button" class="search-icon interactive-icon" title="Click or press $SHORTCUT to open search" aria-label="Click or press $SHORTCUT to open search">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                                        <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                                    </svg>
+                                </div>
+                            </li>
+
+                            
+                            
+
+                            <li class="theme-switcher-wrapper js"><div
+        title="Toggle dark&#x2F;light mode"
+        class="theme-switcher"
+        tabindex="0"
+        role="button"
+        aria-label="Toggle dark mode"
+        aria-pressed="false">
+    </div><div
+        title="Reset mode to default"
+        class="theme-resetter arrow"
+        tabindex="0"
+        role="button"
+        aria-hidden="true"
+        aria-label="Reset mode to default">
+    </div>
+
+</li>
+</ul>
+                    </li>
+                </ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content" id="main-content">
+
+        
+        
+
+
+
+
+
+<main>
+    <article class="h-entry">
+        <h1 class="p-name article-title">
+            RustでRustマクロを書く
+        </h1>
+        <a class="u-url u-uid" href="https://662611034.github.io/blog/rust-macro-maker/"></a>
+
+        <ul class="meta"><span class="hidden p-author h-card">
+<a rel="author" href="https:&#x2F;&#x2F;662611034.github.io" class="u-url " title=""></a>
+</span>
+<li><time class="dt-published" datetime="2025-06-29">29th Jun 2025</time></li><li title="545 words"><span class='separator' aria-hidden='true'>•</span>3 min read</li><li class="tag"><span class='separator' aria-hidden='true'>•</span>Tags:&nbsp;</li><li class="tag"><a class="p-category" href="https://662611034.github.io/tags/rust/">rust</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://662611034.github.io/tags/makuro/">マクロ</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://662611034.github.io/tags/enum/">enum</a>,&nbsp;</li><li class="tag"><a class="p-category" href="https://662611034.github.io/tags/puroguramingu/">プログラミング</a></li>
+        </ul><section class="e-content body"><h1 id="enumhabian-li-dakedoshou-jian-gakakaru">Enumは便利だけど手間がかかる</h1>
+<p>Rustを書くときenumをかなり頻繁に使う。引数が取りうる値を型で制限できるから安全だし、文字列リテラルじゃないから補完が効くし、名前がついてるから分かりやすい。ChatGPTに聞いてみたところ、入力が2種類の場合でも「Yes / No」での判定が微妙なケースではenumを使った方がいいとか。</p>
+<p>しかし、1点面倒なことがある。enumはiter()が使えない。例えばGUIでコンボボックスを作るとき</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-entity z-name z-namespace">egui</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">ComboBox</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">from_label</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Select one!&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">    .</span><span class="z-entity z-name z-function">selected_text</span><span class="z-punctuation">(</span><span class="z-entity z-name z-function z-macro z-rust">format!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">{</span><span class="z-string">:?</span><span class="z-punctuation">}</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> selected</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">    .</span><span class="z-entity z-name z-function">show_ui</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">ui</span><span class="z-punctuation">,</span><span class="z-keyword z-operator"> |</span><span class="z-variable z-other z-rust">ui</span><span class="z-keyword z-operator">|</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        // こんなことはできない</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">        MyEnum</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">for_each</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust">variant</span><span class="z-keyword z-operator">|</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">            ui</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">selectable_value</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-storage z-modifier">mut</span><span class="z-variable z-other z-rust"> selected</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> variant</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> variant</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">as_str</span><span class="z-punctuation">());</span></span>
+<span class="giallo-l"><span class="z-punctuation">        );</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-punctuation">);</span></span></code></pre>
+<p>みたいなことができれば幸せになれるんじゃないかと思うことが多々ある。まあ、今どきのIDE、エディタは便利な編集機能がいろいろあるので、1～2回するぐらいなら手動で全然間に合うし、大量で書かなきゃならないようなときは、<a rel="external" href="https://docs.rs/strum/latest/strum/">専用のクレイト</a>を使えばいいし、特に困りはしないのだが、ふと「文字列操作でマクロを自動生成すれば、楽しいんじゃないかな」（"便利"ではない）と思い立ったので、作ってみた。</p>
+<pre class="giallo z-code"><code data-lang="rust"><span class="giallo-l"><span class="z-keyword">use</span><span class="z-entity z-name z-namespace"> std</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">io</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-type">Read</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">fn</span><span class="z-entity z-name z-function"> variants_iter</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-keyword z-operator">: &amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-keyword"> impl</span><span class="z-entity z-name z-type"> Iterator</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">Item</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> String</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">    definition</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">split</span><span class="z-punctuation">(&#39;</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation">&#39;)</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">map</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust">line</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust"> line</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">trim</span><span class="z-punctuation">())</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">filter</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|&amp;</span><span class="z-variable z-other z-rust">line</span><span class="z-keyword z-operator">|</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">            !</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">line</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">contains</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;{&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> ||</span><span class="z-variable z-other z-rust"> line</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">contains</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;}&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> ||</span><span class="z-variable z-other z-rust"> line</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">is_empty</span><span class="z-punctuation">()</span><span class="z-keyword z-operator"> ||</span><span class="z-variable z-other z-rust"> line</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">starts_with</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;//&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-punctuation">        })</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">map</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust">s</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust"> s</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;,&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string"> &quot;&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">fn</span><span class="z-entity z-name z-function"> get_enum_name</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-keyword z-operator">: &amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-type"> Option</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">String</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">    let mut</span><span class="z-source"> flag</span><span class="z-keyword z-operator"> =</span><span class="z-constant z-language"> false</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-keyword">    for</span><span class="z-source"> word</span><span class="z-keyword"> in</span><span class="z-source"> definition</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">split</span><span class="z-punctuation">(&#39;</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation">&#39;)</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">map</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust">line</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust"> line</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">trim</span><span class="z-punctuation">())</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">filter</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|&amp;</span><span class="z-variable z-other z-rust">line</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust"> line</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">contains</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;{&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> &amp;&amp;</span><span class="z-variable z-other z-rust"> line</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">contains</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;enum&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">next</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">unwrap_or</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;{&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string"> &quot;&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">trim</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">split_whitespace</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation">    {</span></span>
+<span class="giallo-l"><span class="z-keyword">        if</span><span class="z-source"> word</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">trim</span><span class="z-punctuation">()</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">is_empty</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-keyword">            continue</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-keyword">        if</span><span class="z-source"> word</span><span class="z-keyword z-operator"> ==</span><span class="z-punctuation z-definition z-string z-string"> &quot;enum&quot;</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-source">            flag</span><span class="z-keyword z-operator"> =</span><span class="z-constant z-language"> true</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-keyword">            continue</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-keyword">        if</span><span class="z-source"> flag</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-keyword">            return</span><span class="z-entity z-name z-type"> Some</span><span class="z-punctuation">(</span><span class="z-entity z-name z-type">String</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">from</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">word</span><span class="z-punctuation">));</span></span>
+<span class="giallo-l"><span class="z-punctuation">        }</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    None</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">fn</span><span class="z-entity z-name z-function"> gen_enum_iter</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-keyword z-operator">: &amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> macro_name</span><span class="z-keyword z-operator">: &amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-type"> Option</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">String</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust">    let</span><span class="z-source"> enum_name</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-function"> get_enum_name</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">?</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">    let mut</span><span class="z-source"> description</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> String</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">from</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;macro_rules! &quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-source">    description</span><span class="z-keyword z-operator"> += &amp;</span><span class="z-source">macro_name</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">    description</span><span class="z-keyword z-operator"> +=</span><span class="z-punctuation z-definition z-string z-string"> &quot; {</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">()=&gt;{</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">[</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    variants_iter</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">for_each</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust">variant</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust"> description</span><span class="z-keyword z-operator"> += &amp;</span><span class="z-entity z-name z-function z-macro z-rust">format!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">{}</span><span class="z-string">::</span><span class="z-punctuation">{}</span><span class="z-string">,</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> enum_name</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> variant</span><span class="z-punctuation">));</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Some</span><span class="z-punctuation">(</span><span class="z-source">description</span><span class="z-keyword z-operator"> +</span><span class="z-punctuation z-definition z-string z-string"> &quot;]</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">.iter()</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">};</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">}</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">fn</span><span class="z-entity z-name z-function"> gen_vec_mapping</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-keyword z-operator">: &amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> macro_name</span><span class="z-keyword z-operator">: &amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-type"> Option</span><span class="z-punctuation z-brackets z-angle z-rust">&lt;</span><span class="z-entity z-name z-type">String</span><span class="z-punctuation z-brackets z-angle z-rust">&gt;</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">    let mut</span><span class="z-source"> description</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> String</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">from</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;macro_rules! &quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-source">    description</span><span class="z-keyword z-operator"> += &amp;</span><span class="z-source">macro_name</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">    description</span><span class="z-keyword z-operator"> +=</span><span class="z-punctuation z-definition z-string z-string"> &quot; {</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">($self:expr =&gt; $table:ident) =&gt; {</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">match $self {</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    variants_iter</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">enumerate</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">for_each</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">idx</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> variant</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">|</span><span class="z-source"> description</span><span class="z-keyword z-operator"> += &amp;</span><span class="z-entity z-name z-function z-macro z-rust">format!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Self::</span><span class="z-punctuation">{</span><span class="z-string">variant</span><span class="z-punctuation">}</span><span class="z-string"> =&gt; $table[</span><span class="z-punctuation">{</span><span class="z-string">idx</span><span class="z-punctuation">}</span><span class="z-string">],</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">));</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">    Some</span><span class="z-punctuation">(</span><span class="z-source">description</span><span class="z-keyword z-operator"> +</span><span class="z-punctuation z-definition z-string z-string"> &quot;}</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">};</span><span class="z-constant z-character z-escape">\n</span><span class="z-string z-punctuation z-definition z-string">}&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">fn</span><span class="z-entity z-name z-function"> gen_as_str</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-keyword z-operator">: &amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">,</span><span class="z-variable z-other z-rust"> macro_name</span><span class="z-keyword z-operator">: &amp;</span><span class="z-entity z-name z-type">str</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> -&gt;</span><span class="z-entity z-name z-type"> String</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">    let mut</span><span class="z-source"> description</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> String</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">from</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;macro_rules! &quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-source">    description</span><span class="z-keyword z-operator"> += &amp;</span><span class="z-source">macro_name</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-source">    description</span><span class="z-keyword z-operator"> +=</span><span class="z-punctuation z-definition z-string z-string"> &quot; {</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">($self:expr) =&gt; {</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">match $self {</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">;</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function">    variants_iter</span><span class="z-punctuation">(</span><span class="z-variable z-other z-rust">definition</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">for_each</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">|</span><span class="z-variable z-other z-rust">variant</span><span class="z-keyword z-operator">|</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-variable z-other z-rust">        description</span><span class="z-keyword z-operator"> += &amp;</span><span class="z-entity z-name z-function z-macro z-rust">format!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Self::</span><span class="z-punctuation">{</span><span class="z-string">variant</span><span class="z-punctuation">}</span><span class="z-string"> =&gt; </span><span class="z-constant z-character z-escape">\&quot;</span><span class="z-punctuation">{</span><span class="z-string">variant</span><span class="z-punctuation">}</span><span class="z-constant z-character z-escape">\&quot;</span><span class="z-string">,</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-punctuation">    });</span></span>
+<span class="giallo-l"><span class="z-source">    description</span><span class="z-keyword z-operator"> +</span><span class="z-punctuation z-definition z-string z-string"> &quot;}</span><span class="z-constant z-character z-escape">\n</span><span class="z-string">};</span><span class="z-constant z-character z-escape">\n</span><span class="z-string z-punctuation z-definition z-string">}&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">fn</span><span class="z-entity z-name z-function"> main</span><span class="z-punctuation">() {</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-rust z-storage z-modifier">    let mut</span><span class="z-source"> definition</span><span class="z-keyword z-operator"> =</span><span class="z-entity z-name z-type"> String</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">new</span><span class="z-punctuation">();</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-namespace">    std</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-namespace">io</span><span class="z-keyword z-operator">::</span><span class="z-entity z-name z-function">stdin</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">read_to_string</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-storage z-modifier">mut</span><span class="z-variable z-other z-rust"> definition</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">        .</span><span class="z-entity z-name z-function">expect</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;Failed to read from stdin&quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">    match</span><span class="z-entity z-name z-function"> get_enum_name</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-other z-rust">definition</span><span class="z-punctuation">) {</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">        Some</span><span class="z-punctuation">(</span><span class="z-source">_</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-punctuation"> {}</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-type">        None</span><span class="z-keyword z-operator"> =&gt;</span><span class="z-entity z-name z-function z-macro z-rust"> panic!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;enumの名前の取得に失敗&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation">    };</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-entity z-name z-function z-macro z-rust">    println!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;/*</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function z-macro z-rust">    println!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">{}</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-entity z-name z-function"> gen_enum_iter</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-other z-rust">definition</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;enum_iter&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">unwrap</span><span class="z-punctuation">());</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function z-macro z-rust">    println!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">{}</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-entity z-name z-function"> gen_vec_mapping</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-other z-rust">definition</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;enum_map&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator">.</span><span class="z-entity z-name z-function">unwrap</span><span class="z-punctuation">());</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function z-macro z-rust">    println!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">{}</span><span class="z-constant z-character z-escape">\n</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-entity z-name z-function"> gen_as_str</span><span class="z-punctuation">(</span><span class="z-keyword z-operator">&amp;</span><span class="z-variable z-other z-rust">definition</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;enum_str&quot;</span><span class="z-punctuation">));</span></span>
+<span class="giallo-l"><span class="z-entity z-name z-function z-macro z-rust">    println!</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;*/&quot;</span><span class="z-punctuation">);</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span></code></pre>
+<p>なんてことはない。enumの定義を標準入力でなげると、文字列操作してマクロを作って出力する。ターミナルで</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name z-function">head</span><span class="z-string"> -n</span><span class="z-constant z-numeric"> 50</span><span class="z-string"> main.rs</span><span class="z-keyword z-operator"> |</span><span class="z-entity z-name z-function"> tail</span><span class="z-string"> -n</span><span class="z-constant z-numeric"> 6</span></span></code></pre>
+<p>みたいな感じでenum定義部分を投げればマクロが出来上がるという想定だ。</p>
+<p>コマンドライン引数でどのマクロを選ぶかとマクロ名なんかを指定できるようにしてもいいが、手間を考えると張り付けてから消すなり書き換えるなりする方が多分速いと思ったから「問答無用で全部出力」するようにしてる。</p>
+<p>コメントや、要素を持つenumには対応できないが、そういうenumはどのみち手動で細かな作業が必用になるから、別にこれでいいだろうと考えている。</p>
+
+        </section>
+        
+        
+
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+            
+            
+            
+
+            
+        
+        </article>
+</main>
+
+
+<span id="copy-success" class="hidden">
+        Copied!
+    </span>
+    <span id="copy-init" class="hidden">
+        Copy code to clipboard
+    </span>
+    <script defer src="https://662611034.github.io/js/copyCodeToClipboard.min.js"></script>
+
+
+    </div>
+    <footer>
+    <section>
+        <nav class="socials nav-navs"><ul><li>
+                        <a class="nav-links no-hover-padding social" rel="" 
+
+ href="https://662611034.github.io/atom.xml">
+                        <img loading="lazy" alt="feed" title="feed" src="https://662611034.github.io/social_icons/rss.svg">
+                        </a>
+                    </li>
+                </ul>
+            
+        </nav>
+
+        
+        <nav class="nav-navs">
+        </nav>
+
+        <div class="credits">
+            <small>
+                
+
+                
+                Powered by
+                <a rel="" 
+
+ href="https://www.getzola.org">Zola</a>
+                &amp;
+                <a rel="" 
+
+ href="https://github.com/welpo/tabi">tabi</a>
+
+                </small>
+        </div>
+    </section>
+
+    <div id="searchModal" class="search-modal js" role="dialog" aria-labelledby="modalTitle">
+    <h1 id="modalTitle" class="visually-hidden">Search</h1>
+    <div id="modal-content">
+        <div id="searchBar">
+            <div class="search-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+                </svg>
+            </div>
+            <input id="searchInput" role="combobox" autocomplete="off" spellcheck="false" aria-expanded="false" aria-controls="results-container" placeholder="Search…"/>
+            <div id="clear-search" class="close-icon interactive-icon" tabindex="0" role="button" title="Clear search">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                </svg>
+            </div>
+        </div>
+        <div id="results-container">
+            <div id="results-info"><span id="zero_results"> No results</span>
+                <span id="one_results"> $NUMBER result</span>
+                <span id="many_results"> $NUMBER results</span><span id="two_results"> $NUMBER results</span>
+                <span id="few_results"> $NUMBER results</span>
+            </div>
+            <div id="results" role="listbox"></div>
+        </div>
+    </div>
+</div>
+</footer>
+
+
+    
+    
+</body>
+
+</html>
