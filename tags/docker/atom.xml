@@ -1,30 +1,86 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="https://662611034.github.io/feed_style.xsl" type="text/xsl"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
-        <tabi:base_url>https:&#x2F;&#x2F;662611034.github.io</tabi:base_url>
-        <tabi:separator>
-            •
-        </tabi:separator>
-        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
-        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
-        <tabi:recent_posts>Recent posts</tabi:recent_posts>
-        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
-        <tabi:default_theme></tabi:default_theme>
-        <tabi:post_listing_date>date</tabi:post_listing_date>
-        <tabi:current_section>Docker</tabi:current_section>
-    </tabi:metadata><title>愛されたいねん - Docker</title>
-        <subtitle>個人ブログ</subtitle>
-    <link href="https://662611034.github.io/tags/docker/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://662611034.github.io/tags/docker/" rel="alternate" type="text/html"/>
-    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-26T00:00:00+00:00</updated><id>https://662611034.github.io/tags/docker/atom.xml</id><entry xml:lang="en">
+    <title>愛されたいねん - Docker</title>
+    <subtitle>個人ブログ</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://662611034.github.io/tags/docker/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://662611034.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-01-26T00:00:00+00:00</updated>
+    <id>https://662611034.github.io/tags/docker/atom.xml</id>
+    <entry xml:lang="en">
         <title>自作NASで動かしているサービス</title>
         <published>2026-01-26T00:00:00+00:00</published>
         <updated>2026-01-26T00:00:00+00:00</updated>
+        
         <author>
-            <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://662611034.github.io/blog/self-made-nas-dockers/" type="text/html"/>
-        <id>https://662611034.github.io/blog/self-made-nas-dockers/</id>
-        </entry>
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/self-made-nas-dockers/"/>
+        <id>https://662611034.github.io/self-made-nas-dockers/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/self-made-nas-dockers/">&lt;p&gt;[去年作ったNAS]({% post_url 2026-01-25-self-made-nas %})上で動かしてるサービスの類を紹介したい。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;yue-lan-xi-turu&quot;&gt;閲覧系ツール&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;dao-ru-nodong-ji-du-mifei-basiteii&quot;&gt;導入の動機(読み飛ばしていい)&lt;&#x2F;h2&gt;
+&lt;p&gt;NASで動かしているDockerはほとんどNASに保存しているコンテンツを閲覧するためのものだ。というのも、MacOSではコンテンツビュワー系アプリがかなり弱いからだ。特にWindowsにあった&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;jp.bandisoft.com&#x2F;bandizip&#x2F;&quot;&gt;Bandizip&lt;&#x2F;a&gt;が便利すぎたばかりに、自炊した漫画や同人誌を読むための画像アーカイブでの不便が強かった。&lt;&#x2F;p&gt;
+&lt;p&gt;少し本筋とはずれるが、Bandizipの機能をいくつか紹介すると&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;zipだけでなくRARや7zもアーカイブのまま読める&lt;&#x2F;li&gt;
+&lt;li&gt;画像フォーマット対応も広く、.webpも問題なく読める&lt;&#x2F;li&gt;
+&lt;li&gt;「[」キーや「]」キーを使って、前のアーカイブ、次のアーカイブにスムーズに移動できる&lt;&#x2F;li&gt;
+&lt;li&gt;動作が極めて軽い&lt;&#x2F;li&gt;
+&lt;li&gt;拡大縮小や回転など、画像を鑑賞するのに必要な基本機能が揃っている&lt;&#x2F;li&gt;
+&lt;li&gt;アーカイブ内のファイル一覧ウィンドウを呼び出すことができ(Enterキー)、多数ある中の真ん中あたりのファイルにも簡単に飛べる&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;などという至れり尽くせり具合である。流石にBandizip同等の性能までは望まないが、MacOSのXeeやComicViewerは、そもそも画像の表示がうまくできなかったりサイズ操作が簡単にできなかったりと、あまりに不便が大きい。&lt;&#x2F;p&gt;
+&lt;p&gt;動画のVLCプレイヤーも、Windowsで使っていたPotPlayerと比べてMKVの再生で不安定さを感じた。もしかしたらMacOSであるが故の制限があるのかもしれないが、不便なものは不便だ。&lt;&#x2F;p&gt;
+&lt;p&gt;そこでどうしたものかと調査をしてみたところ、サーバー上でファイルを参照して、クライアントからウェブブラウザで閲覧できる各種便利ツールが世の中にあることを知り、これならパソコンだけでなくスマホやタブレットを使ってお風呂に入ってるときなどもNASに保存してある漫画や動画を楽しめると思っていくつか導入した。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;jellyfin&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;jellyfin.org&#x2F;&quot;&gt;Jellyfin&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;動画再生用サービスだ。映画やテレビ番組などを管理できる。一度だけAV1でエンコードした.mkvで、2秒ほど映像を飛ばされる不具合が生じた以外に特に問題はない。Androidテレビ用のクライアントもあるそうだ。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;kavita&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.kavitareader.com&#x2F;&quot;&gt;Kavita&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;漫画の管理閲覧サービスだ。PDFにもzipにもcbzにも対応している。ライブラリルートの下にディレクトリーを作り、その中に複数のPDFやzipを配置すれば、それらを1つのシリーズの各巻として認識する。逆に、シリーズものではない、1冊のみの本の場合、1冊ごとにディレクトリーを1つずつ作らなければならないため、次で紹介するBookloreの方が向いている。&lt;&#x2F;p&gt;
+&lt;p&gt;表紙サムネも見れるし、ライブラリで既読、未読を管理したりできる。Kavitaに限った話ではないが、見るだけでなく管理するための機能が豊富なところが便利だ。流石に読むことだけに限るとBandizipに劣るが、管理の部分まで含めるとKavitaに軍配が上がる。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;booklore&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;booklore.org&#x2F;&quot;&gt;Booklore&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;上でも書いたが、一般書籍向け閲覧ツールだ。Amazon.comやGoogleから著者、出版社など書籍情報を自動で取得したり、タグで管理することができる。書籍用なので当然EPUBにも対応している。Kindleの書籍はDRMがかかっているためBookloreでは管理できないが、PDF販売される技術書などと相性が良さそうだ。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lanraragi&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;sugoi.gitbook.io&#x2F;lanraragi&quot;&gt;Lanraragi&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;こっちは同人誌を管理するためのサービスで、名前は西尾維新の物語シリーズの主人公である阿良々木暦から因んでいることがドキュメントの随所から伺える。同人誌向けを標榜しているだけあって、何とは言わないが非常に似ている。LanraragiもBooklore同様、ネットから同人誌の情報を自動で取得する機能があり、管理しやすい。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;navidrome&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.navidrome.org&#x2F;&quot;&gt;Navidrome&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;音楽鑑賞のためのサービスだ。メタデータがしっかり付いていれば、アルバム名やアーティスト名などでかなり自由に検索できるし、音楽再生ツールとして当たり前の、プレイリストといった機能も対応している。&lt;&#x2F;p&gt;
+&lt;p&gt;また、NavidromeはSubsonic APIというものに&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;substreamerapp.com&#x2F;&quot;&gt;対応しているアプリ&lt;&#x2F;a&gt;を使えばスマホから音楽を聞けるし、適切な設定をすることで、PCではFLAC音源だけどスマホアプリにはビットレートの低いMP3で配信するといったことができる。VPNがあれば出先から自宅のNavidromeに繋げて音楽を聞くといったことも可能だ。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;immich&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;immich.app&#x2F;&quot;&gt;Immich&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Google Photoの自前バージョン、とでも考えるとわかりやすい、写真をアルバムとして管理するためのサービスだ。ファイル名検索ができるため、写真に限らず画像一般の検索ツールとして使うこともできる。機械学習を使って顔面やシチュエーションなどを抽出して検索することもできるそうだが、私のNASはCPUがIntel N150と非力なため使っていない。Google Photoのサービス改変に備えたバックアップや、追加ストレージのための費用がもったいない人におすすめだ。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;immichhasabupasunige-ridang-terutodong-kanai&quot;&gt;Immichはサブパスに割り当てると動かない&lt;&#x2F;h3&gt;
+&lt;p&gt;複数のサービスをNASという1つのマシンで動かす都合上、それぞれのWebUIに別のポートを割り当てているが、サービスが増えるとポート番号とサービス名を覚えるのが段々と困難になってくる。そこで、ローカルDNSとリバースプロキシを組み合わせて、例えばnas.local&#x2F;immichのようなサブパスでImmichにアクセスできるようにしたくなるものだが、それはできない。&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.immich.app&#x2F;administration&#x2F;reverse-proxy&#x2F;&quot;&gt;ドキュメント&lt;&#x2F;a&gt;にそう書いてある。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Immich does not support being served on a sub-path such as location &#x2F;immich {. It has to be served on the root path of a (sub)domain.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;リバースプロキシを導入するならimmich.nas.localのようなサブドメイン形式にしなければならない。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;ji-neng-xing-turu&quot;&gt;機能性ツール&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;filebrowser&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;filebrowser.org&#x2F;index.html&quot;&gt;FileBrowser&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;シンプルで軽いウェブベースのファイル管理ツールだ。Google Drive的なものを想像するといい。どの程度シンプルかというと、ゴミ箱の機能がないぐらいだ。&lt;&#x2F;p&gt;
+&lt;p&gt;FileBrowserは、永続的なウェブストレージとしてではなく、一時的なファイル転送ツールとして入れている。NASのファイルはSambaでマウントして管理した方が楽なためウェブベースで操作する意義がない。スマホとパソコンの間でファイルを転送するツールも充実してきているが、基本的に何かをインストールする必要があったり、あるいはインターネットを経由したりといった制約がつき、何もインストールせず、ローカルネットワークのみで完結する方法は限られている。FileBrowserはブラウザさえあれば使えて、なおかつLAN内で完結するため、スマホや、立ち上げたばかりのパソコンにデータを渡すとき重宝している。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;syncthing&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;syncthing.net&#x2F;&quot;&gt;Syncthing&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;ネットワーク越しのファイル同期ツールで、ホームディレクトリーのバックアップに使っている。同期間隔は自由に設定することができ、同期方向も双方向と一方向で自由に選択できる。数時間に一度、ホームのディレクトリーのDocumentsやDownloadsをスキャンして、NASのバックアップ用ディスクの所定のディレクトリーに同期させている。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;adguard-home&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;adguard.com&#x2F;ja&#x2F;adguard-home&#x2F;overview.html&quot;&gt;AdGuard Home&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;説明するまでもない有名な広告ブロックDNSだ。Immichの項目で少し触れたが、Dockerで動かすサービスが増えてくるとポートを覚えるのが大変だからリバースプロキシを入れたくなるし、リバースプロキシを使うにはDNSがセットで必要になる。最初はdnsmasqを使っていたが、サーバーのリソースも余っているものだし、より高性能なものを入れたくなって導入した。kavita.local、immich.localといったドメインをすべてNASのIPアドレスで解決している。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;nginx&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nginx.org&#x2F;en&#x2F;&quot;&gt;nginx&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Immichのところで少し触れた、リバースプロキシのために入れている。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;cron-sukuriputolei&quot;&gt;cron、スクリプト類&lt;&#x2F;h1&gt;
+&lt;p&gt;現在我が家で24時間稼働しているマシンはNASだけで、繰り返しになるがCPUのリソースは逼迫していない。そのため、ほとんどリソースを消費しないような軽いスクリプトは、電気代を節約するためにも、マシンを分けずNAS上で動かしている。例えば&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ハイパワーマシンの消し忘れチェック&lt;&#x2F;li&gt;
+&lt;li&gt;グローバルIPの変動チェック&lt;&#x2F;li&gt;
+&lt;li&gt;HDDのSmartctl&lt;&#x2F;li&gt;
+&lt;li&gt;ツイッターの自動投稿&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;などがある。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;suo-gan&quot;&gt;所感&lt;&#x2F;h1&gt;
+&lt;p&gt;自作NASはいいぞ。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
 </feed>

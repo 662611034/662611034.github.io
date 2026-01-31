@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+      <meta name="description" content="個人ブログ" />
+      
+    
+
+      <title>愛されたいねん - Px Downloaderの代用品改</title>
+
+      
+          
+          <link rel="alternate" type="application/atom+xml" title="RSS" href="https://662611034.github.io/atom.xml">
+          
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https://662611034.github.io/site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="https:&#x2F;&#x2F;662611034.github.io" class="logo">Even</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;662611034.github.io">Even</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://662611034.github.io/generic-px-downloader-g/#za-shuo-w" class="toc-link">雑説w</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/generic-px-downloader-g/#ben-ti" class="toc-link">本体</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/generic-px-downloader-g/#phpsessidnodiao-befang" class="toc-link">PHPSESSIDの調べ方</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;generic-px-downloader-g&#x2F;">Px Downloaderの代用品改</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2025-08-09</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <h1 id="za-shuo-w">雑説w</h1>
+<p>以前Firefoxアドオンの「<a rel="external" href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">Px Downloader</a>」の代わりになるようなコードを<a href="https://662611034.github.io/generic-px-downloader/">Pythonで作った</a>Pythonで作ったのだが、</p>
+<ul>
+<li>画像のオリジナルurl</li>
+<li>枚数</li>
+</ul>
+<p>をいちいち手動で調べて手動でコピペするのがどうもめんどくさい。</p>
+<p>前回は画像の枚数の調べ方を聞いてもいい感じのコードを書いてくれなかったが、ちょうど数日前にChatGPTの有料プランも契約したし(別件)、GPT5もリリースされたしでもう一度試してみたら、本家のデフォルト設定には大体近づいたできになったので公開する。</p>
+<p>「/ajax API」という、外部に公開していないAPIを使って取得するらしい。非公開だけどブラウザの開発者ツールで確認できちゃうらしい。</p>
+<h1 id="ben-ti">本体</h1>
+<p><strong>pxdl.py</strong></p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># -*- coding: utf-8 -*-</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">&quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">Pixiv 静止画一括ダウンロード（/ajax 利用）</span></span>
+<span class="giallo-l"><span class="z-string">要：自分の PHPSESSID（ログイン済み）</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">&quot;&quot;&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> os</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> re</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> time</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> pathlib</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> typing</span><span class="z-keyword"> import</span><span class="z-source"> Dict</span><span class="z-punctuation">,</span><span class="z-source"> List</span><span class="z-punctuation">,</span><span class="z-source"> Tuple</span><span class="z-punctuation">,</span><span class="z-source"> Optional</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> requests</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> urllib</span><span class="z-punctuation">.</span><span class="z-source">parse</span><span class="z-keyword"> import</span><span class="z-source"> urlsplit</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> sys</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">UA</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> (</span><span class="z-punctuation z-definition z-string z-string">&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) &quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">      &quot;AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">      &quot;Chrome/123.0.0.0 Safari/537.36&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># ---------- 1) 情報取得関数 ----------</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> get_post_info</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">artwork_url</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> phpsessid</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">) -&gt;</span><span class="z-source"> Dict</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">    入力: 作品URL（例: https://www.pixiv.net/artworks/133650546）, PHPSESSID</span></span>
+<span class="giallo-l"><span class="z-string">    返却: {</span></span>
+<span class="giallo-l"><span class="z-string">        &quot;user_name&quot;: str,</span></span>
+<span class="giallo-l"><span class="z-string">        &quot;user_id&quot;: str,</span></span>
+<span class="giallo-l"><span class="z-string">        &quot;title&quot;: str,</span></span>
+<span class="giallo-l"><span class="z-string">        &quot;post_id&quot;: str,</span></span>
+<span class="giallo-l"><span class="z-string">        &quot;count&quot;: int,</span></span>
+<span class="giallo-l"><span class="z-string">        &quot;image_urls&quot;: List[str],  # original が取れない時は regular で代替</span></span>
+<span class="giallo-l"><span class="z-string">    }</span></span>
+<span class="giallo-l"><span class="z-string">    ※ うごイラ(illustType==2)は未対応 -&gt; 例外</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    m</span><span class="z-keyword z-operator"> =</span><span class="z-source"> re</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">search</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">r</span><span class="z-punctuation z-definition z-string z-begin">&quot;</span><span class="z-string">/artworks/</span><span class="z-punctuation">(</span><span class="z-string">\d</span><span class="z-keyword z-operator z-quantifier z-regexp">+</span><span class="z-punctuation">)</span><span class="z-punctuation z-definition z-string z-end">&quot;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> artwork_url</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python z-keyword z-operator z-logical z-python">    if not</span><span class="z-source"> m</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        raise</span><span class="z-support z-type z-exception z-python"> ValueError</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;artwork URL から投稿IDを抽出できませんでした。&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    post_id</span><span class="z-keyword z-operator"> =</span><span class="z-source"> m</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">group</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    s</span><span class="z-keyword z-operator"> =</span><span class="z-source"> requests</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">Session</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">    s</span><span class="z-punctuation">.</span><span class="z-source">headers</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">update</span><span class="z-punctuation">({</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;User-Agent&quot;</span><span class="z-punctuation">:</span><span class="z-meta z-function-call z-arguments z-python"> UA</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;Referer&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;https://www.pixiv.net/&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;Accept&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;application/json, text/plain, */*&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">    })</span></span>
+<span class="giallo-l"><span class="z-source">    s</span><span class="z-punctuation">.</span><span class="z-source">cookies</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">set</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;PHPSESSID&quot;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> phpsessid</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">strip</span><span class="z-punctuation">().</span><span class="z-meta z-function-call z-python">strip</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&#39;&quot;&#39;</span><span class="z-punctuation">).</span><span class="z-meta z-function-call z-python">strip</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;&#39;&quot;</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                  domain</span><span class="z-keyword z-operator">=</span><span class="z-punctuation z-definition z-string z-string">&quot;.pixiv.net&quot;</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> path</span><span class="z-keyword z-operator">=</span><span class="z-punctuation z-definition z-string z-string">&quot;/&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 基本情報</span></span>
+<span class="giallo-l"><span class="z-source">    r</span><span class="z-keyword z-operator"> =</span><span class="z-source"> s</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;https://www.pixiv.net/ajax/illust/</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">post_id</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> timeout</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">15</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">raise_for_status</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">    meta</span><span class="z-keyword z-operator"> =</span><span class="z-source"> r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">json</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> meta</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;error&quot;</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        raise</span><span class="z-support z-type z-exception z-python"> RuntimeError</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">meta</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;message&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;ajax/illust エラー&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-source">    body</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> meta</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">body</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    illust_type</span><span class="z-keyword z-operator"> =</span><span class="z-support z-type z-python"> int</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">body</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;illustType&quot;</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 0</span><span class="z-punctuation">))</span><span class="z-punctuation z-definition z-comment z-comment">  # 0/1:静止画, 2:ugoira</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> illust_type</span><span class="z-keyword z-operator"> ==</span><span class="z-constant z-numeric"> 2</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        raise</span><span class="z-support z-type z-exception z-python"> NotImplementedError</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;うごイラは非対応です（静止画のみ）。&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    user_name</span><span class="z-keyword z-operator"> =</span><span class="z-source"> body</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;userName&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator z-logical z-python"> or</span><span class="z-punctuation z-definition z-string"> &quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    user_id</span><span class="z-keyword z-operator"> =</span><span class="z-source"> body</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;userId&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator z-logical z-python"> or</span><span class="z-punctuation z-definition z-string"> &quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    title</span><span class="z-keyword z-operator"> =</span><span class="z-source"> body</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;illustTitle&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator z-logical z-python"> or</span><span class="z-punctuation z-definition z-string"> &quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    count</span><span class="z-keyword z-operator"> =</span><span class="z-support z-type z-python"> int</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">body</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;pageCount&quot;</span><span class="z-punctuation">,</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 各ページのURL</span></span>
+<span class="giallo-l"><span class="z-source">    r</span><span class="z-keyword z-operator"> =</span><span class="z-source"> s</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;https://www.pixiv.net/ajax/illust/</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">post_id</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">/pages&quot;</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> timeout</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">15</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">raise_for_status</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">    pj</span><span class="z-keyword z-operator"> =</span><span class="z-source"> r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">json</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> pj</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;error&quot;</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        raise</span><span class="z-support z-type z-exception z-python"> RuntimeError</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">pj</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;message&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;ajax/illust/pages エラー&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    image_urls</span><span class="z-punctuation">:</span><span class="z-meta z-indexed-name z-python"> List</span><span class="z-punctuation">[</span><span class="z-support z-type z-python">str</span><span class="z-punctuation">]</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> []</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> p</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-meta z-indexed-name z-python"> pj</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">body</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">]:</span></span>
+<span class="giallo-l"><span class="z-source">        urls</span><span class="z-keyword z-operator"> =</span><span class="z-source"> p</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;urls&quot;</span><span class="z-punctuation">, {})</span><span class="z-keyword z-operator z-logical z-python"> or</span><span class="z-punctuation"> {}</span></span>
+<span class="giallo-l"><span class="z-source">        u</span><span class="z-keyword z-operator"> =</span><span class="z-source"> urls</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;original&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-operator z-logical z-python"> or</span><span class="z-source"> urls</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;regular&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        if</span><span class="z-source"> u</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">            image_urls</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">append</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">u</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 念のため整合</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python z-keyword z-operator z-logical z-python">    if not</span><span class="z-source"> image_urls</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        raise</span><span class="z-support z-type z-exception z-python"> RuntimeError</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;画像URLを取得できませんでした（ログイン状態や権限を確認してください）。&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;user_name&quot;</span><span class="z-punctuation">:</span><span class="z-source"> user_name</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;user_id&quot;</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">user_id</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;title&quot;</span><span class="z-punctuation">:</span><span class="z-source"> title</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;post_id&quot;</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">post_id</span><span class="z-punctuation">),</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;count&quot;</span><span class="z-punctuation">:</span><span class="z-source"> count</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;image_urls&quot;</span><span class="z-punctuation">:</span><span class="z-source"> image_urls</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">    }</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># ---------- 2) Windows用ディレクトリ名生成 ----------</span></span>
+<span class="giallo-l"><span class="z-source">_WIN_FORBIDDEN</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">    &#39;&lt;&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;＜&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;&gt;&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;＞&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;:&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;：&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;&quot;&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;”&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;/&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;／&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &#39;</span><span class="z-constant z-character z-escape">\\</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;＼&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;|&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;｜&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;?&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;？&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &#39;*&#39;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &#39;＊&#39;</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"><span class="z-source">_WIN_RESERVED</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">    &#39;CON&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string">&#39;PRN&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string">&#39;AUX&#39;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string">&#39;NUL&#39;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">    *</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&#39;COM</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">i</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&#39;</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-source"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">,</span><span class="z-constant z-numeric">10</span><span class="z-punctuation">)),</span></span>
+<span class="giallo-l"><span class="z-keyword z-operator">    *</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&#39;LPT</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">i</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&#39;</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-source"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">,</span><span class="z-constant z-numeric">10</span><span class="z-punctuation">)),</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> _sanitize_for_windows</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">name</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">) -&gt;</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 禁止記号を全角へ</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> bad</span><span class="z-punctuation">,</span><span class="z-source"> rep</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> _WIN_FORBIDDEN</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">items</span><span class="z-punctuation">():</span></span>
+<span class="giallo-l"><span class="z-source">        name</span><span class="z-keyword z-operator"> =</span><span class="z-source"> name</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">bad</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> rep</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 制御文字や末尾のピリオド/空白を除去</span></span>
+<span class="giallo-l"><span class="z-source">    name</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string"> &#39;&#39;</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">join</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">ch</span><span class="z-keyword z-control z-flow z-python"> for</span><span class="z-meta z-function-call z-arguments z-python"> ch</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-meta z-function-call z-arguments z-python"> name</span><span class="z-keyword z-control z-flow z-python"> if</span><span class="z-constant z-numeric"> 32</span><span class="z-keyword z-operator"> &lt;=</span><span class="z-support z-function z-builtin z-python"> ord</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">ch</span><span class="z-punctuation">)</span><span class="z-keyword z-operator"> !=</span><span class="z-constant z-numeric"> 127</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    name</span><span class="z-keyword z-operator"> =</span><span class="z-source"> name</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">rstrip</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&#39; .&#39;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python z-keyword z-operator z-logical z-python">    if not</span><span class="z-source"> name</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">        name</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &#39;無題&#39;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 予約名は末尾に全角アンダーを追加</span></span>
+<span class="giallo-l"><span class="z-source">    base</span><span class="z-keyword z-operator"> =</span><span class="z-source"> name</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">split</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&#39;.&#39;</span><span class="z-punctuation">)[</span><span class="z-constant z-numeric">0</span><span class="z-punctuation">].</span><span class="z-meta z-function-call z-python">upper</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> base</span><span class="z-keyword z-operator z-logical z-python"> in</span><span class="z-source"> _WIN_RESERVED</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">        name</span><span class="z-keyword z-operator"> +=</span><span class="z-punctuation z-definition z-string z-string"> &#39;＿&#39;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 長すぎ防止（NTFSは255推奨）</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-meta z-indexed-name z-python"> name</span><span class="z-punctuation">[:</span><span class="z-constant z-numeric">200</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> make_dirnames</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">user_name</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> user_id</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> title</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> post_id</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">) -&gt;</span><span class="z-meta z-indexed-name z-python"> Tuple</span><span class="z-punctuation">[</span><span class="z-support z-type z-python">str</span><span class="z-punctuation">,</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">]:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">    入力: ユーザー名, ユーザーID, タイトル, 投稿ID</span></span>
+<span class="giallo-l"><span class="z-string">    返却: (&quot;ユーザー名(ユーザーID)&quot;, &quot;投稿タイトル(投稿ID)&quot;)</span></span>
+<span class="giallo-l"><span class="z-string">    ※ Windowsで使えない文字は全角に置換</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    user_part</span><span class="z-keyword z-operator"> =</span><span class="z-storage z-type z-string z-python"> f</span><span class="z-string">&quot;</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">user_name</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">(</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">user_id</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">)&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    title_part</span><span class="z-keyword z-operator"> =</span><span class="z-storage z-type z-string z-python"> f</span><span class="z-string">&quot;</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">title</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">(</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">post_id</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">)&quot;</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-meta z-function-call z-python"> _sanitize_for_windows</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">user_part</span><span class="z-punctuation">),</span><span class="z-meta z-function-call z-python"> _sanitize_for_windows</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">title_part</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># ---------- 3) ディレクトリ作成 ----------</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> ensure_dirs</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">base_dir</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> os</span><span class="z-punctuation">.</span><span class="z-meta z-function z-parameters">PathLike</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> user_dir</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> post_dir</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">) -&gt;</span><span class="z-source"> pathlib</span><span class="z-punctuation">.</span><span class="z-source">Path</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">    base_dir/user_dir/post_dir を作成（存在しなければ）</span></span>
+<span class="giallo-l"><span class="z-string">    返却: 作成/既存の最終ディレクトリ Path</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    base</span><span class="z-keyword z-operator"> =</span><span class="z-source"> pathlib</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">Path</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">base_dir</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    final</span><span class="z-keyword z-operator"> =</span><span class="z-source"> base</span><span class="z-keyword z-operator"> /</span><span class="z-source"> user_dir</span><span class="z-keyword z-operator"> /</span><span class="z-source"> post_dir</span></span>
+<span class="giallo-l"><span class="z-source">    final</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">mkdir</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">parents</span><span class="z-keyword z-operator">=</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> exist_ok</span><span class="z-keyword z-operator">=</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-source"> final</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># ---------- 4) 一括ダウンロード ----------</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> _ext_from_url</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">u</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">) -&gt;</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">    path</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> urlsplit</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">u</span><span class="z-punctuation">).</span><span class="z-source">path</span></span>
+<span class="giallo-l"><span class="z-source">    ext</span><span class="z-keyword z-operator"> =</span><span class="z-source"> os</span><span class="z-punctuation">.</span><span class="z-source">path</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">splitext</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">path</span><span class="z-punctuation">)[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-source"> ext</span><span class="z-keyword z-control z-flow z-python"> if</span><span class="z-source"> ext</span><span class="z-keyword z-control z-flow z-python"> else</span><span class="z-punctuation z-definition z-string z-string"> &quot;.jpg&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> _download_with_retry</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">session</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> requests</span><span class="z-punctuation">.</span><span class="z-meta z-function z-parameters">Session</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> url</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> dst</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> pathlib</span><span class="z-punctuation">.</span><span class="z-meta z-function z-parameters">Path</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">                         max_retry</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> int</span><span class="z-keyword z-operator"> =</span><span class="z-constant z-numeric"> 3</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> backoff</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> float</span><span class="z-keyword z-operator"> =</span><span class="z-constant z-numeric"> 1.0</span><span class="z-punctuation">) -&gt;</span><span class="z-constant z-language z-python"> None</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> attempt</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> max_retry</span><span class="z-keyword z-operator"> +</span><span class="z-constant z-numeric"> 1</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        try</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">            with</span><span class="z-source"> session</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">url</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> stream</span><span class="z-keyword z-operator">=</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> timeout</span><span class="z-keyword z-operator">=</span><span class="z-constant z-numeric">30</span><span class="z-punctuation">)</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> r</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">                r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">raise_for_status</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">                with</span><span class="z-support z-function z-builtin z-python"> open</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">dst</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;wb&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> f</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">                    for</span><span class="z-source"> chunk</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> r</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">iter_content</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">1</span><span class="z-keyword z-operator"> &lt;&lt;</span><span class="z-constant z-numeric"> 14</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">                        if</span><span class="z-source"> chunk</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">                            f</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">write</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">chunk</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">            return</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        except</span><span class="z-support z-type z-exception z-python"> Exception</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> e</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">            if</span><span class="z-source"> attempt</span><span class="z-keyword z-operator"> ==</span><span class="z-source"> max_retry</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">                raise</span></span>
+<span class="giallo-l"><span class="z-source">            time</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">sleep</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">backoff</span><span class="z-keyword z-operator"> *</span><span class="z-meta z-function-call z-arguments z-python"> attempt</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> download_post</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">artwork_url</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> phpsessid</span><span class="z-punctuation">:</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> base_dir</span><span class="z-punctuation">:</span><span class="z-meta z-function z-parameters"> os</span><span class="z-punctuation">.</span><span class="z-meta z-function z-parameters">PathLike</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;.&quot;</span><span class="z-punctuation">) -&gt;</span><span class="z-source"> pathlib</span><span class="z-punctuation">.</span><span class="z-source">Path</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-string">    URLを受け取り、投稿のすべての画像を</span></span>
+<span class="giallo-l"><span class="z-string">    「投稿id_000.ext」形式で base_dir/ユーザー名(ユーザid)/投稿タイトル(投稿id)/ に保存。</span></span>
+<span class="giallo-l"><span class="z-string">    返却: 保存先ディレクトリ Path</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string">    &quot;&quot;&quot;</span></span>
+<span class="giallo-l"><span class="z-source">    info</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> get_post_info</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">artwork_url</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> phpsessid</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    user_dir</span><span class="z-punctuation">,</span><span class="z-source"> post_dir</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> make_dirnames</span><span class="z-punctuation">(</span><span class="z-meta z-indexed-name z-python">info</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">user_name</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">],</span><span class="z-meta z-indexed-name z-python"> info</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">user_id</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">],</span><span class="z-meta z-indexed-name z-python"> info</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">title</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">],</span><span class="z-meta z-indexed-name z-python"> info</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">post_id</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">])</span></span>
+<span class="giallo-l"><span class="z-source">    out_dir</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> ensure_dirs</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">base_dir</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> user_dir</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> post_dir</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    s</span><span class="z-keyword z-operator"> =</span><span class="z-source"> requests</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">Session</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">    s</span><span class="z-punctuation">.</span><span class="z-source">headers</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">update</span><span class="z-punctuation">({</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;User-Agent&quot;</span><span class="z-punctuation">:</span><span class="z-meta z-function-call z-arguments z-python"> UA</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;Referer&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;https://www.pixiv.net/&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">    })</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    urls</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> info</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">image_urls</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 枚数に対してURLが不足している場合はURL長を優先（稀に非公開ページ等）</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> idx</span><span class="z-punctuation">,</span><span class="z-source"> u</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> enumerate</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">urls</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">        ext</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> _ext_from_url</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">u</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">        fname</span><span class="z-keyword z-operator"> =</span><span class="z-storage z-type z-string z-python"> f</span><span class="z-string">&quot;</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-indexed-name z-python">info</span><span class="z-punctuation">[</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-string">post_id</span><span class="z-punctuation z-definition z-string">&#39;</span><span class="z-punctuation">]</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">_</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">idx</span><span class="z-storage z-type">:03d</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}{</span><span class="z-source">ext</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span></span>
+<span class="giallo-l"><span class="z-source">        dst</span><span class="z-keyword z-operator"> =</span><span class="z-source"> out_dir</span><span class="z-keyword z-operator"> /</span><span class="z-source"> fname</span></span>
+<span class="giallo-l"><span class="z-meta z-function-call z-python">        _download_with_retry</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">s</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> u</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> dst</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-source"> out_dir</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># ---------- サンプル実行 ----------</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">if</span><span class="z-support z-variable z-magic z-python"> __name__</span><span class="z-keyword z-operator"> ==</span><span class="z-punctuation z-definition z-string z-string"> &quot;__main__&quot;</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 使い方例：</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 1) 自分の PHPSESSID を入れる</span></span>
+<span class="giallo-l"><span class="z-source">    PHPSESSID</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;自分のPHPSESSID&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # 2) 対象URL</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # URL = &quot;https://www.pixiv.net/artworks/133650546&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # URL = sys.argv[1]</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> URL</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> sys</span><span class="z-punctuation">.</span><span class="z-meta z-indexed-name z-python">argv</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">:]:</span></span>
+<span class="giallo-l"><span class="z-source">        URL</span><span class="z-keyword z-operator"> =</span><span class="z-source"> URL</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">strip</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python z-keyword z-operator z-logical z-python">        if not</span><span class="z-source"> URL</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">            continue</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">        # 3) 実行</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        try</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">            saved_dir</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> download_post</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">URL</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> PHPSESSID</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> base_dir</span><span class="z-keyword z-operator">=</span><span class="z-punctuation z-definition z-string z-string">&quot;.&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">            print</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;保存先:&quot;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> saved_dir</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        except</span><span class="z-support z-type z-exception z-python"> NotImplementedError</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> e</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">            print</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;非対応:&quot;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> e</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        except</span><span class="z-support z-type z-exception z-python"> Exception</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> e</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">            print</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;エラー:&quot;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> e</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span></code></pre>
+<p>使い方は</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name z-function">python</span><span class="z-string"> pxdl.py https://www.pixiv.net/artworks/133393158 https://www.pixiv.net/artworks/133226483 https://www.pixiv.net/artworks/131910195</span></span></code></pre>
+<p>みたいに、コマンドライン引数でurlを与えるだけだ。そうすると</p>
+<p>ユーザ名(ユーザID)/投稿タイトル(投稿id)</p>
+<p>のフォルダに一括ダウンロードする。</p>
+<h1 id="phpsessidnodiao-befang">PHPSESSIDの調べ方</h1>
+<p>R-18など、ログインしてないと見れない画像を取得するためにPHPSESSIDというものが必要だそうだ。これはPixivにログインしている状態でブラウザのクッキー情報から確認できる。</p>
+<p>Firefoxなら</p>
+<ol>
+<li>Pixiv にログインして作品ページを開く。</li>
+<li>F12 キーで 開発ツール を開く。</li>
+<li>上部タブの「ストレージ」をクリック。</li>
+<li>左メニューから Cookies → https://www.pixiv.net を選択。</li>
+<li>一覧の中から PHPSESSID を探し、その値をコピー。</li>
+</ol>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://662611034.github.io/tags/python/">#python</a>
+                    
+                        <a href="https://662611034.github.io/tags/pixiv/">#pixiv</a>
+                    
+                        <a href="https://662611034.github.io/tags/puroguramingu/">#プログラミング</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;router-fail&#x2F;">‹ 自作ルーター作ろうとして諦めた</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;amagozenn-misaki&#x2F;">尼御前岬に行ってきた ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://662611034.github.io/even.js" ></script>
+      
+    </body>
+
+</html>

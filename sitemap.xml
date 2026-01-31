@@ -1,52 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="https://662611034.github.io/sitemap_style.xsl" type="text/xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://662611034.github.io/</loc>
     </url>
     <url>
-        <loc>https://662611034.github.io/archive/</loc>
+        <loc>https://662611034.github.io/about/</loc>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/</loc>
-    </url>
-    <url>
-        <loc>https://662611034.github.io/blog/amagozenn-misaki/</loc>
+        <loc>https://662611034.github.io/amagozenn-misaki/</loc>
         <lastmod>2025-07-20</lastmod>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/generic-px-downloader-g/</loc>
+        <loc>https://662611034.github.io/categories/</loc>
+    </url>
+    <url>
+        <loc>https://662611034.github.io/categories/it/</loc>
+    </url>
+    <url>
+        <loc>https://662611034.github.io/categories/sheng/</loc>
+    </url>
+    <url>
+        <loc>https://662611034.github.io/generic-px-downloader-g/</loc>
         <lastmod>2025-08-09</lastmod>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/generic-px-downloader/</loc>
+        <loc>https://662611034.github.io/generic-px-downloader/</loc>
         <lastmod>2025-06-24</lastmod>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/page/1/</loc>
+        <loc>https://662611034.github.io/page/1/</loc>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/router-fail/</loc>
+        <loc>https://662611034.github.io/router-fail/</loc>
         <lastmod>2026-01-24</lastmod>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/rust-macro-maker/</loc>
+        <loc>https://662611034.github.io/rust-macro-maker/</loc>
         <lastmod>2025-06-29</lastmod>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/self-made-nas-dockers/</loc>
+        <loc>https://662611034.github.io/self-made-nas-dockers/</loc>
         <lastmod>2026-01-26</lastmod>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/self-made-nas/</loc>
+        <loc>https://662611034.github.io/self-made-nas/</loc>
         <lastmod>2026-01-25</lastmod>
     </url>
     <url>
-        <loc>https://662611034.github.io/blog/sudokugame-trouble/</loc>
+        <loc>https://662611034.github.io/sudokugame-trouble/</loc>
         <lastmod>2026-01-27</lastmod>
-    </url>
-    <url>
-        <loc>https://662611034.github.io/projects/</loc>
     </url>
     <url>
         <loc>https://662611034.github.io/tags/</loc>

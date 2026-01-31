@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+      <meta name="description" content="個人ブログ" />
+      
+    
+
+      <title>愛されたいねん - Px Downloaderの代用品</title>
+
+      
+          
+          <link rel="alternate" type="application/atom+xml" title="RSS" href="https://662611034.github.io/atom.xml">
+          
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https://662611034.github.io/site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="https:&#x2F;&#x2F;662611034.github.io" class="logo">Even</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;662611034.github.io">Even</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://662611034.github.io/generic-px-downloader/#px-downloadernodai-yong-pin" class="toc-link">Px Downloaderの代用品</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/generic-px-downloader/#shi-ifang" class="toc-link">使い方</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;generic-px-downloader&#x2F;">Px Downloaderの代用品</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2025-06-24</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <h1 id="px-downloadernodai-yong-pin">Px Downloaderの代用品</h1>
+<p>AIイラストのおかげでPixivで質・ジャンル・量と三拍子そろった投稿が増えてきて、1つの投稿の画像を一括でローカルにダウンロードする<a rel="external" href="https://addons.mozilla.org/ja/firefox/addon/px-downloader/">Px Downloader</a>に大変お世話になっているが、たまに調子が悪くなってファイルをダウンロードできなくなることがある（私はFirefoxしか使っていないが、Chromeの方の状況はどうなんだろうか）。</p>
+<p>そこで、Pythonを使って代用品を作ってみた。</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> os</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> requests</span></span>
+<span class="giallo-l"><span class="z-keyword">from</span><span class="z-source"> bs4</span><span class="z-keyword"> import</span><span class="z-source"> BeautifulSoup</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> re</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> sys</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment"># リクエストヘッダ。リファラがPixivじゃないと画像にアクセスできない</span></span>
+<span class="giallo-l"><span class="z-source">HEADERS</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation"> {</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">    &quot;Referer&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;https://www.pixiv.net/&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">    &quot;User-Agent&quot;</span><span class="z-punctuation">: (</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) &quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;AppleWebKit/537.36 (KHTML, like Gecko) &quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">        &quot;Chrome/123.0.0.0 Safari/537.36&quot;</span></span>
+<span class="giallo-l"><span class="z-punctuation">    ),</span></span>
+<span class="giallo-l"><span class="z-punctuation">}</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> extract_id_extension</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">url</span><span class="z-punctuation">):</span><span class="z-punctuation z-definition z-comment z-comment">  # 投稿IDと拡張子の取得</span></span>
+<span class="giallo-l"><span class="z-source">    match</span><span class="z-keyword z-operator"> =</span><span class="z-source"> re</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">search</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">r</span><span class="z-punctuation z-definition z-string z-begin">&#39;</span><span class="z-string">/</span><span class="z-punctuation">(</span><span class="z-string">\d</span><span class="z-keyword z-operator z-quantifier z-regexp">+</span><span class="z-punctuation">)</span><span class="z-string">_p\d</span><span class="z-keyword z-operator z-quantifier z-regexp">+</span><span class="z-constant z-character z-escape">\.</span><span class="z-punctuation">(</span><span class="z-string">\w</span><span class="z-keyword z-operator z-quantifier z-regexp">+</span><span class="z-punctuation">)</span><span class="z-string">$</span><span class="z-punctuation z-definition z-string z-end">&#39;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> url</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> match</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">        post_id</span><span class="z-keyword z-operator"> =</span><span class="z-source"> match</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">group</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">        ext</span><span class="z-keyword z-operator"> =</span><span class="z-source"> match</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">group</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">2</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        return</span><span class="z-source"> post_id</span><span class="z-punctuation">,</span><span class="z-source"> ext</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    else</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        raise</span><span class="z-support z-type z-exception z-python"> Exception</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;ポストIDと拡張子取得不可&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> get_title</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">url</span><span class="z-punctuation">):</span><span class="z-punctuation z-definition z-comment z-comment">  # 投稿タイトルの取得</span></span>
+<span class="giallo-l"><span class="z-source">    res</span><span class="z-keyword z-operator"> =</span><span class="z-source"> requests</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">url</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> headers</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">HEADERS</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    res</span><span class="z-punctuation">.</span><span class="z-source">encoding</span><span class="z-keyword z-operator"> =</span><span class="z-source"> res</span><span class="z-punctuation">.</span><span class="z-source">apparent_encoding</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    soup</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> BeautifulSoup</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">res</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">text</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;lxml&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    desc</span><span class="z-keyword z-operator"> =</span><span class="z-source"> soup</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">find</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;meta&quot;</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> attrs</span><span class="z-keyword z-operator">=</span><span class="z-punctuation">{</span><span class="z-punctuation z-definition z-string z-string">&quot;name&quot;</span><span class="z-punctuation">:</span><span class="z-punctuation z-definition z-string z-string"> &quot;description&quot;</span><span class="z-punctuation">})</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    title</span><span class="z-keyword z-operator"> =</span><span class="z-constant z-language z-python"> None</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> desc</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">        m</span><span class="z-keyword z-operator"> =</span><span class="z-source"> re</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">search</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">r</span><span class="z-punctuation z-definition z-string z-begin">&#39;</span><span class="z-string">この作品\s</span><span class="z-keyword z-operator z-quantifier z-regexp">*</span><span class="z-string">「</span><span class="z-punctuation">(</span><span class="z-string">.</span><span class="z-keyword z-operator z-quantifier z-regexp">+?</span><span class="z-punctuation">)</span><span class="z-string">」\s</span><span class="z-keyword z-operator z-quantifier z-regexp">*</span><span class="z-string">は</span><span class="z-punctuation z-definition z-string z-end">&#39;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> desc</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;content&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string"> &quot;&quot;</span><span class="z-punctuation">))</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        if</span><span class="z-source"> m</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">            title</span><span class="z-keyword z-operator"> =</span><span class="z-source"> m</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">group</span><span class="z-punctuation">(</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> title</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        return</span><span class="z-source"> title</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    else</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">        raise</span><span class="z-support z-type z-exception z-python"> Exception</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;タイトルが見つかりません&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> dl_1_file</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">url</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> outfile</span><span class="z-punctuation">):</span><span class="z-punctuation z-definition z-comment z-comment">  # URLから画像ファイルをダウンロード</span></span>
+<span class="giallo-l"><span class="z-source">    response</span><span class="z-keyword z-operator"> =</span><span class="z-source"> requests</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">get</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">url</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> headers</span><span class="z-keyword z-operator">=</span><span class="z-meta z-function-call z-arguments z-python">HEADERS</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    response</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">raise_for_status</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    with</span><span class="z-support z-function z-builtin z-python"> open</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">outfile</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;wb&quot;</span><span class="z-punctuation">)</span><span class="z-keyword z-control z-flow z-python"> as</span><span class="z-source"> f</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">        f</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">write</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">response</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">content</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> replace_unusable_char</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">text</span><span class="z-punctuation">):</span><span class="z-punctuation z-definition z-comment z-comment">  # Windowsで使えない文字を全角に置換</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;/&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;／&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;?&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;？&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;&lt;&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;＜&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;&gt;&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;＞&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-constant z-character z-escape">\\</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;￥&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;:&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;：&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;*&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;＊&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;|&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;｜&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">    text</span><span class="z-keyword z-operator"> =</span><span class="z-source"> text</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-constant z-character z-escape">\&quot;</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;”&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span><span class="z-source"> text</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-storage z-type z-function z-python">def</span><span class="z-entity z-name z-function"> dl_all</span><span class="z-punctuation">(</span><span class="z-variable z-parameter">url_0</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> how_many</span><span class="z-punctuation">):</span><span class="z-punctuation z-definition z-comment z-comment">  # 1枚目URLと枚数指定で全部ダウンロード</span></span>
+<span class="giallo-l"><span class="z-source">    picid</span><span class="z-punctuation">,</span><span class="z-source"> extension</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> extract_id_extension</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">url_0</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    try</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">        title</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> get_title</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;https://www.pixiv.net/artworks/</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">picid</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-source">        dir_name</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-function-call z-python"> replace_unusable_char</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">title</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    except</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">        dir_name</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;tmp&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python z-keyword z-operator z-logical z-python">    if not</span><span class="z-source"> os</span><span class="z-punctuation">.</span><span class="z-source">path</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">isdir</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">dir_name</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">        os</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">mkdir</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">dir_name</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    for</span><span class="z-source"> i</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-support z-function z-builtin z-python"> range</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">how_many</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-source">        url</span><span class="z-keyword z-operator"> =</span><span class="z-meta z-indexed-name z-python"> url_0</span><span class="z-punctuation">[:</span><span class="z-meta z-item-access z-python">url_0</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">rfind</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-string">_</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">)]</span><span class="z-keyword z-operator"> +</span><span class="z-storage z-type z-string z-python"> f</span><span class="z-string">&quot;_p</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">i</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">.</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">extension</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span></span>
+<span class="giallo-l"><span class="z-source">        outfile</span><span class="z-keyword z-operator"> =</span><span class="z-storage z-type z-string z-python"> f</span><span class="z-string">&quot;</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">dir_name</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">/</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">picid</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">_p</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">i</span><span class="z-storage z-type">:03</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">.</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">extension</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span></span>
+<span class="giallo-l"><span class="z-meta z-function-call z-python">        dl_1_file</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">url</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> outfile</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    return</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">if</span><span class="z-support z-variable z-magic z-python"> __name__</span><span class="z-keyword z-operator"> ==</span><span class="z-punctuation z-definition z-string z-string"> &quot;__main__&quot;</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">    url_0</span><span class="z-keyword z-operator"> =</span><span class="z-source"> sys</span><span class="z-punctuation">.</span><span class="z-meta z-indexed-name z-python">argv</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">1</span><span class="z-punctuation">]</span></span>
+<span class="giallo-l"><span class="z-source">    how_many</span><span class="z-keyword z-operator"> =</span><span class="z-support z-type z-python"> int</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">sys</span><span class="z-punctuation">.</span><span class="z-meta z-indexed-name z-python">argv</span><span class="z-punctuation">[</span><span class="z-constant z-numeric">2</span><span class="z-punctuation">])</span></span>
+<span class="giallo-l"><span class="z-meta z-function-call z-python">    dl_all</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">url_0</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> how_many</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span></code></pre><h2 id="shi-ifang">使い方</h2>
+<p>本家の機能を完全には再現できなかったため、かなり手間が増えている。</p>
+<ol>
+<li>必要なパッケージをダウンロードする
+<ul>
+<li>requests</li>
+<li>lxml</li>
+<li>BeautifulSoup</li>
+</ul>
+</li>
+<li>投稿の1枚目の原本URLを取得
+<ul>
+<li>"https://i.pximg.net/img-original/img/2024/12/09/01/46/41/125025264_p0.png"みたいなやつ</li>
+</ul>
+</li>
+<li>urlと枚数を指定して実行
+<ul>
+<li>仮にpxdl.pyで保存したとする</li>
+<li>例：python pxdl.py https://i.pximg.net/img-original/img/9999/99/99/99/99/99/9999999_p0.png 334</li>
+</ul>
+</li>
+</ol>
+<p>画像の投稿ページURLのHTMLを取得してもファイルの拡張子、トータル枚数、ユーザIDが分からなかったため、その辺を手動で取得しないといけない。本家のありがたみが身に染みる。</p>
+<p>とはいえ、手動保存よりは楽なので、必要だったら使ってみてほしい。</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://662611034.github.io/tags/python/">#python</a>
+                    
+                        <a href="https://662611034.github.io/tags/pixiv/">#pixiv</a>
+                    
+                        <a href="https://662611034.github.io/tags/puroguramingu/">#プログラミング</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;rust-macro-maker&#x2F;">‹ RustでRustマクロを書く</a>
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://662611034.github.io/even.js" ></script>
+      
+    </body>
+
+</html>

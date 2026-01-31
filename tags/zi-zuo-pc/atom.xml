@@ -1,39 +1,184 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="https://662611034.github.io/feed_style.xsl" type="text/xsl"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
-        <tabi:base_url>https:&#x2F;&#x2F;662611034.github.io</tabi:base_url>
-        <tabi:separator>
-            •
-        </tabi:separator>
-        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
-        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
-        <tabi:recent_posts>Recent posts</tabi:recent_posts>
-        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
-        <tabi:default_theme></tabi:default_theme>
-        <tabi:post_listing_date>date</tabi:post_listing_date>
-        <tabi:current_section>自作PC</tabi:current_section>
-    </tabi:metadata><title>愛されたいねん - 自作PC</title>
-        <subtitle>個人ブログ</subtitle>
-    <link href="https://662611034.github.io/tags/zi-zuo-pc/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://662611034.github.io/tags/zi-zuo-pc/" rel="alternate" type="text/html"/>
-    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-26T00:00:00+00:00</updated><id>https://662611034.github.io/tags/zi-zuo-pc/atom.xml</id><entry xml:lang="en">
+    <title>愛されたいねん - 自作PC</title>
+    <subtitle>個人ブログ</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://662611034.github.io/tags/zi-zuo-pc/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://662611034.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-01-26T00:00:00+00:00</updated>
+    <id>https://662611034.github.io/tags/zi-zuo-pc/atom.xml</id>
+    <entry xml:lang="en">
         <title>自作NASで動かしているサービス</title>
         <published>2026-01-26T00:00:00+00:00</published>
         <updated>2026-01-26T00:00:00+00:00</updated>
+        
         <author>
-            <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://662611034.github.io/blog/self-made-nas-dockers/" type="text/html"/>
-        <id>https://662611034.github.io/blog/self-made-nas-dockers/</id>
-        </entry><entry xml:lang="en">
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/self-made-nas-dockers/"/>
+        <id>https://662611034.github.io/self-made-nas-dockers/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/self-made-nas-dockers/">&lt;p&gt;[去年作ったNAS]({% post_url 2026-01-25-self-made-nas %})上で動かしてるサービスの類を紹介したい。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;yue-lan-xi-turu&quot;&gt;閲覧系ツール&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;dao-ru-nodong-ji-du-mifei-basiteii&quot;&gt;導入の動機(読み飛ばしていい)&lt;&#x2F;h2&gt;
+&lt;p&gt;NASで動かしているDockerはほとんどNASに保存しているコンテンツを閲覧するためのものだ。というのも、MacOSではコンテンツビュワー系アプリがかなり弱いからだ。特にWindowsにあった&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;jp.bandisoft.com&#x2F;bandizip&#x2F;&quot;&gt;Bandizip&lt;&#x2F;a&gt;が便利すぎたばかりに、自炊した漫画や同人誌を読むための画像アーカイブでの不便が強かった。&lt;&#x2F;p&gt;
+&lt;p&gt;少し本筋とはずれるが、Bandizipの機能をいくつか紹介すると&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;zipだけでなくRARや7zもアーカイブのまま読める&lt;&#x2F;li&gt;
+&lt;li&gt;画像フォーマット対応も広く、.webpも問題なく読める&lt;&#x2F;li&gt;
+&lt;li&gt;「[」キーや「]」キーを使って、前のアーカイブ、次のアーカイブにスムーズに移動できる&lt;&#x2F;li&gt;
+&lt;li&gt;動作が極めて軽い&lt;&#x2F;li&gt;
+&lt;li&gt;拡大縮小や回転など、画像を鑑賞するのに必要な基本機能が揃っている&lt;&#x2F;li&gt;
+&lt;li&gt;アーカイブ内のファイル一覧ウィンドウを呼び出すことができ(Enterキー)、多数ある中の真ん中あたりのファイルにも簡単に飛べる&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;などという至れり尽くせり具合である。流石にBandizip同等の性能までは望まないが、MacOSのXeeやComicViewerは、そもそも画像の表示がうまくできなかったりサイズ操作が簡単にできなかったりと、あまりに不便が大きい。&lt;&#x2F;p&gt;
+&lt;p&gt;動画のVLCプレイヤーも、Windowsで使っていたPotPlayerと比べてMKVの再生で不安定さを感じた。もしかしたらMacOSであるが故の制限があるのかもしれないが、不便なものは不便だ。&lt;&#x2F;p&gt;
+&lt;p&gt;そこでどうしたものかと調査をしてみたところ、サーバー上でファイルを参照して、クライアントからウェブブラウザで閲覧できる各種便利ツールが世の中にあることを知り、これならパソコンだけでなくスマホやタブレットを使ってお風呂に入ってるときなどもNASに保存してある漫画や動画を楽しめると思っていくつか導入した。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;jellyfin&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;jellyfin.org&#x2F;&quot;&gt;Jellyfin&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;動画再生用サービスだ。映画やテレビ番組などを管理できる。一度だけAV1でエンコードした.mkvで、2秒ほど映像を飛ばされる不具合が生じた以外に特に問題はない。Androidテレビ用のクライアントもあるそうだ。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;kavita&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.kavitareader.com&#x2F;&quot;&gt;Kavita&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;漫画の管理閲覧サービスだ。PDFにもzipにもcbzにも対応している。ライブラリルートの下にディレクトリーを作り、その中に複数のPDFやzipを配置すれば、それらを1つのシリーズの各巻として認識する。逆に、シリーズものではない、1冊のみの本の場合、1冊ごとにディレクトリーを1つずつ作らなければならないため、次で紹介するBookloreの方が向いている。&lt;&#x2F;p&gt;
+&lt;p&gt;表紙サムネも見れるし、ライブラリで既読、未読を管理したりできる。Kavitaに限った話ではないが、見るだけでなく管理するための機能が豊富なところが便利だ。流石に読むことだけに限るとBandizipに劣るが、管理の部分まで含めるとKavitaに軍配が上がる。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;booklore&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;booklore.org&#x2F;&quot;&gt;Booklore&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;上でも書いたが、一般書籍向け閲覧ツールだ。Amazon.comやGoogleから著者、出版社など書籍情報を自動で取得したり、タグで管理することができる。書籍用なので当然EPUBにも対応している。Kindleの書籍はDRMがかかっているためBookloreでは管理できないが、PDF販売される技術書などと相性が良さそうだ。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;lanraragi&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;sugoi.gitbook.io&#x2F;lanraragi&quot;&gt;Lanraragi&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;こっちは同人誌を管理するためのサービスで、名前は西尾維新の物語シリーズの主人公である阿良々木暦から因んでいることがドキュメントの随所から伺える。同人誌向けを標榜しているだけあって、何とは言わないが非常に似ている。LanraragiもBooklore同様、ネットから同人誌の情報を自動で取得する機能があり、管理しやすい。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;navidrome&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.navidrome.org&#x2F;&quot;&gt;Navidrome&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;音楽鑑賞のためのサービスだ。メタデータがしっかり付いていれば、アルバム名やアーティスト名などでかなり自由に検索できるし、音楽再生ツールとして当たり前の、プレイリストといった機能も対応している。&lt;&#x2F;p&gt;
+&lt;p&gt;また、NavidromeはSubsonic APIというものに&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;substreamerapp.com&#x2F;&quot;&gt;対応しているアプリ&lt;&#x2F;a&gt;を使えばスマホから音楽を聞けるし、適切な設定をすることで、PCではFLAC音源だけどスマホアプリにはビットレートの低いMP3で配信するといったことができる。VPNがあれば出先から自宅のNavidromeに繋げて音楽を聞くといったことも可能だ。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;immich&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;immich.app&#x2F;&quot;&gt;Immich&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Google Photoの自前バージョン、とでも考えるとわかりやすい、写真をアルバムとして管理するためのサービスだ。ファイル名検索ができるため、写真に限らず画像一般の検索ツールとして使うこともできる。機械学習を使って顔面やシチュエーションなどを抽出して検索することもできるそうだが、私のNASはCPUがIntel N150と非力なため使っていない。Google Photoのサービス改変に備えたバックアップや、追加ストレージのための費用がもったいない人におすすめだ。&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;immichhasabupasunige-ridang-terutodong-kanai&quot;&gt;Immichはサブパスに割り当てると動かない&lt;&#x2F;h3&gt;
+&lt;p&gt;複数のサービスをNASという1つのマシンで動かす都合上、それぞれのWebUIに別のポートを割り当てているが、サービスが増えるとポート番号とサービス名を覚えるのが段々と困難になってくる。そこで、ローカルDNSとリバースプロキシを組み合わせて、例えばnas.local&#x2F;immichのようなサブパスでImmichにアクセスできるようにしたくなるものだが、それはできない。&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.immich.app&#x2F;administration&#x2F;reverse-proxy&#x2F;&quot;&gt;ドキュメント&lt;&#x2F;a&gt;にそう書いてある。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Immich does not support being served on a sub-path such as location &#x2F;immich {. It has to be served on the root path of a (sub)domain.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;リバースプロキシを導入するならimmich.nas.localのようなサブドメイン形式にしなければならない。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;ji-neng-xing-turu&quot;&gt;機能性ツール&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;filebrowser&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;filebrowser.org&#x2F;index.html&quot;&gt;FileBrowser&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;シンプルで軽いウェブベースのファイル管理ツールだ。Google Drive的なものを想像するといい。どの程度シンプルかというと、ゴミ箱の機能がないぐらいだ。&lt;&#x2F;p&gt;
+&lt;p&gt;FileBrowserは、永続的なウェブストレージとしてではなく、一時的なファイル転送ツールとして入れている。NASのファイルはSambaでマウントして管理した方が楽なためウェブベースで操作する意義がない。スマホとパソコンの間でファイルを転送するツールも充実してきているが、基本的に何かをインストールする必要があったり、あるいはインターネットを経由したりといった制約がつき、何もインストールせず、ローカルネットワークのみで完結する方法は限られている。FileBrowserはブラウザさえあれば使えて、なおかつLAN内で完結するため、スマホや、立ち上げたばかりのパソコンにデータを渡すとき重宝している。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;syncthing&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;syncthing.net&#x2F;&quot;&gt;Syncthing&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;ネットワーク越しのファイル同期ツールで、ホームディレクトリーのバックアップに使っている。同期間隔は自由に設定することができ、同期方向も双方向と一方向で自由に選択できる。数時間に一度、ホームのディレクトリーのDocumentsやDownloadsをスキャンして、NASのバックアップ用ディスクの所定のディレクトリーに同期させている。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;adguard-home&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;adguard.com&#x2F;ja&#x2F;adguard-home&#x2F;overview.html&quot;&gt;AdGuard Home&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;説明するまでもない有名な広告ブロックDNSだ。Immichの項目で少し触れたが、Dockerで動かすサービスが増えてくるとポートを覚えるのが大変だからリバースプロキシを入れたくなるし、リバースプロキシを使うにはDNSがセットで必要になる。最初はdnsmasqを使っていたが、サーバーのリソースも余っているものだし、より高性能なものを入れたくなって導入した。kavita.local、immich.localといったドメインをすべてNASのIPアドレスで解決している。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;nginx&quot;&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;nginx.org&#x2F;en&#x2F;&quot;&gt;nginx&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Immichのところで少し触れた、リバースプロキシのために入れている。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;cron-sukuriputolei&quot;&gt;cron、スクリプト類&lt;&#x2F;h1&gt;
+&lt;p&gt;現在我が家で24時間稼働しているマシンはNASだけで、繰り返しになるがCPUのリソースは逼迫していない。そのため、ほとんどリソースを消費しないような軽いスクリプトは、電気代を節約するためにも、マシンを分けずNAS上で動かしている。例えば&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ハイパワーマシンの消し忘れチェック&lt;&#x2F;li&gt;
+&lt;li&gt;グローバルIPの変動チェック&lt;&#x2F;li&gt;
+&lt;li&gt;HDDのSmartctl&lt;&#x2F;li&gt;
+&lt;li&gt;ツイッターの自動投稿&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;などがある。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;suo-gan&quot;&gt;所感&lt;&#x2F;h1&gt;
+&lt;p&gt;自作NASはいいぞ。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
         <title>自作NAS作った話</title>
         <published>2026-01-25T00:00:00+00:00</published>
         <updated>2026-01-25T00:00:00+00:00</updated>
+        
         <author>
-            <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://662611034.github.io/blog/self-made-nas/" type="text/html"/>
-        <id>https://662611034.github.io/blog/self-made-nas/</id>
-        </entry>
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/self-made-nas/"/>
+        <id>https://662611034.github.io/self-made-nas/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/self-made-nas/">&lt;p&gt;去年の暮れに自作NASを作った話をしたい。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;dong-ji&quot;&gt;動機&lt;&#x2F;h1&gt;
+&lt;p&gt;以前から家で使うメインのパソコンをMacにしたいという気持ちがあったものの、Macに代替品がないソフトを常用してたり、お手頃なモデルがなかったりでずっと見送ってきた。2025年夏頃についに「絶対にMacに移れない理由」がなくなり、今を逃せばまた何か乗り換えられない理由ができると思ってM4 Mac miniを購入した。なぜこのことがNASにつながるかというと、WindowsのDドライブ的な大容量HDDの扱いに困ったからだ。最初は外付けHDDをUSB3.0で繋げて使っていたが、次のような問題があった。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;HDDケースが勝手にスリープに入るせいで時間をおいてアクセスするとスピンアップで待たされる&lt;&#x2F;li&gt;
+&lt;li&gt;ファイルシステムや文字コードの扱いがWindowsやLinuxと違うせいでrsyncによるLinuxサーバーへのバックアップで不具合が生じる&lt;&#x2F;li&gt;
+&lt;li&gt;APFSというアップル特有のファイルシステムなため万が一Macが壊れてしまったらサルベージが難しい
+&lt;ul&gt;
+&lt;li&gt;一応、LinuxでもAPFSを扱えるパッケージがあるがどの程度使えるか不明&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;そこで、いっそNASにしてしまえば、ファイルシステムはext4のままMacから使えるのではないか、と思いついた。Mac miniのLAN端子は10Gbpsオプションをつけてあるし、2.5Gbpsスイッチもすでに導入済みで、2.5GbpsもあればHDD単体のIO速度は使い切れるから、おそらく使い勝手はそこまで悪くないはずだ。そう考えてNASの部品を物色しはじめた。&lt;&#x2F;p&gt;
+&lt;p&gt;ちなみにNASができるまでの繋ぎとしては、元々のWindowsマシンにLinuxをいれてSambaで共有してNASとして使っていた。なぜこのマシンをそのまま使わないかというと、RTX5060Tiをつけていてアイドル時でも消費電力が高いため、24時間稼働のNASとしてはコスパが悪いからだ。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;gou-cheng&quot;&gt;構成&lt;&#x2F;h1&gt;
+&lt;p&gt;NASを組むにあたっていくつか条件があった。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;HDDのIOを使い切るために2.5Gbps以上のネットワークが確保できること&lt;&#x2F;li&gt;
+&lt;li&gt;3.5インチHDDを最低3枚以上積めること
+&lt;ul&gt;
+&lt;li&gt;手持ちのHDDが6TB、4TB、4TBの3枚で、6TBをメインに使い残り2枚に分割バックアップを取る想定&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;N100など省エネ仕様であること&lt;&#x2F;li&gt;
+&lt;li&gt;なるべく筐体が小さくなること&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;この条件で選んだパーツは以下の通りだ。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;mazabodo-cpu&quot;&gt;マザーボード、CPU&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;ja.aliexpress.com&#x2F;item&#x2F;1005009948021400.html&quot;&gt;N150 NAS Motherboard 6 SATA 3.0 2x i266-V 2.5G DDR4 ITX NAS Board 2x M.2 Nvme &lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Intel N150という省エネCPU、ITXという小ささ、2.5GbpsのLAN、SATAは6ポート、まさにおあつらえ向きなスペックだ。価格は購入当時134ドルで、2万円程度。5000円程度のA520マザボなんかを使えば安上がりにできるが、今回は省エネという条件もあったためこれに決めた。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;kesu&quot;&gt;ケース&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.jonsbo.com&#x2F;en&#x2F;products&#x2F;N4Black.html&quot;&gt;JONSBO N4&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;昨今の自作PCのケースは3.5インチベイが少ない傾向で、「ミドルタワー」といっても相当な大きさのものだったりする。HDD3枚までならどうにか乗せられる安いケースもあるにはあるが、必要以上に大きかったりする。JONSBO N4はNAS用と謳っているだけあって一般のデスクトップよりは小さいし、3.5インチベイが6つで2.5インチベイが2つある。2.5&#x2F;3.5互換ベイはない。価格は購入当時で91ドルと決して安くはなかったが、NASという目的に合っているためこれにした。&lt;&#x2F;p&gt;
+&lt;p&gt;ただ、今となっては同じメーカーの&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.jonsbo.com&#x2F;en&#x2F;products&#x2F;N2Black.html&quot;&gt;N2&lt;&#x2F;a&gt;の方がよかったと少し後悔している。N2は上記N4より少し小さいケースで&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ベイが3.5 * 5、2.5 * 1と少ない&lt;&#x2F;li&gt;
+&lt;li&gt;ITXのマザーボードにしか対応していない(N4はmicro ATXにも対応)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;という違いがある。購入当時は、なぜかN4の方がほんの数ドル安かったのと、もし今回買った怪しいマザーボードに不具合が生じた時に安いm-ATXに載せ替えができるというメリットを取ってN4を購入したが、サイズが大きすぎる。N4のサイズは286mm(W)*300mm(D)*228mm(H)で、NASにしては大きすぎる。m-ATXが乗る都合上仕方ないが、狭い日本の住宅においては、N2の方が向いていると今では考えている。ベイの数も、N4よりは少ないが十分だ。しかも、N4は3.5インチベイ6つのうち4つだけがホットスワップだが、N2は5つの3.5インチベイがすべてホットスワップになっているのも便利そうだ。とはいえ、買ってしまったものは仕方ないため、N4で組み上げた。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ram&quot;&gt;RAM&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AGI DDR4-3200MHz (PC4-25600) 16GBx1 SODIMM AGI320016SD138&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;純粋なNASであればRAMはさほど必要ないはずだが、私の場合、NASの上でいくつかDockerコンテナを動かしたいと考えていた。家に非力なパソコンは余ってて、その気になればDocker専用のマシンを立ち上げることは容易いが、NASのCPUリソースは余っているわけで、わざわざマシンを分ける必要もないと判断した。複数のDockerを回すとなるとRAMは余裕がある方がよかろうと思い16GBを選んだ。購入当時すでにDDR4の値上がりも始まっており、調べた中で一番安いDDR4がAGIだった(7300円)ため、この製品にした。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;dian-yuan&quot;&gt;電源&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.silverstonetek.com&#x2F;jp&#x2F;product&#x2F;info&#x2F;power-supplies&#x2F;ST30SF&#x2F;&quot;&gt;SilverStone ST30SF V2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;ケース(N4)がサポートする電源がSFXのみで、選択肢が事実上なかった。電源は間違えれば火災に繋がるからある程度信頼のおけるメーカーのものが欲しかったし、無駄に容量が大きいと効率が悪くなり電気代が嵩むので、「有名メーカーの小容量SFX」で絞って調べると事実上この製品しかなかった。本格的なNASに使うには電源端子が少ないが、私はHDD3つ運用なため、端子拡張は不要だった。&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;ssd&quot;&gt;SSD&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Superheer 256GB NVME&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;HDDはすべてデータ用であるため、OSを入れるためのストレージも必要だし、令和のこの世にHDDにOSを入れるなんて論外だ。2024年になにかの拍子でAliexpressで買った256GBのNVMEを使わずに保管していたので、流用することにした&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;os&quot;&gt;OS&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Ubuntu Server LTS&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;普段はArch Linuxを好んで使っているが、NASは長期間の安定運用が重要で、再起動もあまり頻繁にしたくない。安心と信頼と無難さでUbuntu Server LTSにすぐ決まった。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;zu-mili-te&quot;&gt;組み立て&lt;&#x2F;h1&gt;
+&lt;p&gt;ケースに取説がついており、組み立てでさほど苦労する箇所はなかった。ただ、&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;amzn.asia&#x2F;d&#x2F;fzQVRIu&quot;&gt;L字SATA電源アダプタ&lt;&#x2F;a&gt;を追加で購入する必要があった。&lt;&#x2F;p&gt;
+&lt;p&gt;ケース(N4)は3.5インチベイのホットスワップに対応しているが、そのホットスワップボードの電源供給はペリフェラル電源で、補助電源としてSATA電源端子も付いている。ペリフェラル1本でHDD4枚分の電源は賄えると思うが、電源のケーブルが耐えてもボードに負荷がかかることも考えられるため、できれば補助電源のSATAも繋げておきたかった。しかし、端子周辺の隙間が非常に狭く、電源のSATA端子を普通にさせば端子に負担がかかってしまう。そこで、ペリフェラル電源の使っていない端子から、この製品でL字のSATA端子を出して接続した。電源を引っ張る出所は同じだから電源モジュールの負荷は軽減できないが、あくまでもボード負荷軽減のためである。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;setutoatupu&quot;&gt;セットアップ&lt;&#x2F;h1&gt;
+&lt;p&gt;一人暮らしで、運用の仕方もいたってシンプルなため、凝ったことは何もしていない。RAIDも組まないし、ファイルシステムはext4だ。普通にUbuntu Serverをインストールして、固定IPを与えて、fstabでHDDのマウントを永続化して、sambaの基本設定をして一区切りだ。Dockerのサービスは後から少しずつ導入した。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&#x2F;dev&#x2F;disk&#x2F;by-uuid&#x2F;ROOT-DISK &#x2F;boot&#x2F;efi vfat defaults 0 1&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;&#x2F;swap.img	none	swap	sw	0	0&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;UUID=BACKUPDISK1	&#x2F;home&#x2F;admin&#x2F;hdds&#x2F;bakup1&#x2F;	ext4	defaults,nofail,noatime	0	2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;UUID=BACKUPDISK2	&#x2F;home&#x2F;admin&#x2F;hdds&#x2F;bakup2&#x2F;	ext4	defaults,nofail,noatime	0	2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;UUID=DDRIVE	&#x2F;home&#x2F;admin&#x2F;ddrive&#x2F;	ext4	defaults,nofail,noatime	0	2&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;あとはMacのシェルでマウントコマンドをエイリアスしたぐらいか。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-storage z-type&quot;&gt;alias&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; mntd&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator&quot;&gt;=&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-string z-string&quot;&gt;&amp;#39;open smb:&#x2F;&#x2F;nas.home.arpa&#x2F;ddrive&amp;#39;&lt;&#x2F;span&gt;&lt;span class=&quot;z-punctuation z-definition z-comment z-comment&quot;&gt; # Dドライブをマウント&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h1 id=&quot;suo-gan&quot;&gt;所感&lt;&#x2F;h1&gt;
+&lt;p&gt;さすがにWindowsのローカルHDDと同じ使い勝手とはいかず、ファイルのサムネ取得の遅さや、大量コピーのとき謎の詰まりが発生するなど細かい不便点はあるものの、そう頻繁に発生することでもないため、概ね満足している。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
 </feed>

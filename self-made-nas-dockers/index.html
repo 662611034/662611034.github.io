@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+      <meta name="description" content="個人ブログ" />
+      
+    
+
+      <title>愛されたいねん - 自作NASで動かしているサービス</title>
+
+      
+          
+          <link rel="alternate" type="application/atom+xml" title="RSS" href="https://662611034.github.io/atom.xml">
+          
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https://662611034.github.io/site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="https:&#x2F;&#x2F;662611034.github.io" class="logo">Even</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;662611034.github.io">Even</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://662611034.github.io/self-made-nas-dockers/#yue-lan-xi-turu" class="toc-link">閲覧系ツール</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#dao-ru-nodong-ji-du-mifei-basiteii" class="toc-link">導入の動機(読み飛ばしていい)</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#jellyfin" class="toc-link">Jellyfin</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#kavita" class="toc-link">Kavita</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#booklore" class="toc-link">Booklore</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#lanraragi" class="toc-link">Lanraragi</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#navidrome" class="toc-link">Navidrome</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#immich" class="toc-link">Immich</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/self-made-nas-dockers/#ji-neng-xing-turu" class="toc-link">機能性ツール</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#filebrowser" class="toc-link">FileBrowser</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#syncthing" class="toc-link">Syncthing</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#adguard-home" class="toc-link">AdGuard Home</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/self-made-nas-dockers/#nginx" class="toc-link">nginx</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/self-made-nas-dockers/#cron-sukuriputolei" class="toc-link">cron、スクリプト類</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/self-made-nas-dockers/#suo-gan" class="toc-link">所感</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;self-made-nas-dockers&#x2F;">自作NASで動かしているサービス</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2026-01-26</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>[去年作ったNAS]({% post_url 2026-01-25-self-made-nas %})上で動かしてるサービスの類を紹介したい。</p>
+<h1 id="yue-lan-xi-turu">閲覧系ツール</h1>
+<h2 id="dao-ru-nodong-ji-du-mifei-basiteii">導入の動機(読み飛ばしていい)</h2>
+<p>NASで動かしているDockerはほとんどNASに保存しているコンテンツを閲覧するためのものだ。というのも、MacOSではコンテンツビュワー系アプリがかなり弱いからだ。特にWindowsにあった<a rel="external" href="https://jp.bandisoft.com/bandizip/">Bandizip</a>が便利すぎたばかりに、自炊した漫画や同人誌を読むための画像アーカイブでの不便が強かった。</p>
+<p>少し本筋とはずれるが、Bandizipの機能をいくつか紹介すると</p>
+<ul>
+<li>zipだけでなくRARや7zもアーカイブのまま読める</li>
+<li>画像フォーマット対応も広く、.webpも問題なく読める</li>
+<li>「[」キーや「]」キーを使って、前のアーカイブ、次のアーカイブにスムーズに移動できる</li>
+<li>動作が極めて軽い</li>
+<li>拡大縮小や回転など、画像を鑑賞するのに必要な基本機能が揃っている</li>
+<li>アーカイブ内のファイル一覧ウィンドウを呼び出すことができ(Enterキー)、多数ある中の真ん中あたりのファイルにも簡単に飛べる</li>
+</ul>
+<p>などという至れり尽くせり具合である。流石にBandizip同等の性能までは望まないが、MacOSのXeeやComicViewerは、そもそも画像の表示がうまくできなかったりサイズ操作が簡単にできなかったりと、あまりに不便が大きい。</p>
+<p>動画のVLCプレイヤーも、Windowsで使っていたPotPlayerと比べてMKVの再生で不安定さを感じた。もしかしたらMacOSであるが故の制限があるのかもしれないが、不便なものは不便だ。</p>
+<p>そこでどうしたものかと調査をしてみたところ、サーバー上でファイルを参照して、クライアントからウェブブラウザで閲覧できる各種便利ツールが世の中にあることを知り、これならパソコンだけでなくスマホやタブレットを使ってお風呂に入ってるときなどもNASに保存してある漫画や動画を楽しめると思っていくつか導入した。</p>
+<h2 id="jellyfin"><a rel="external" href="https://jellyfin.org/">Jellyfin</a></h2>
+<p>動画再生用サービスだ。映画やテレビ番組などを管理できる。一度だけAV1でエンコードした.mkvで、2秒ほど映像を飛ばされる不具合が生じた以外に特に問題はない。Androidテレビ用のクライアントもあるそうだ。</p>
+<h2 id="kavita"><a rel="external" href="https://www.kavitareader.com/">Kavita</a></h2>
+<p>漫画の管理閲覧サービスだ。PDFにもzipにもcbzにも対応している。ライブラリルートの下にディレクトリーを作り、その中に複数のPDFやzipを配置すれば、それらを1つのシリーズの各巻として認識する。逆に、シリーズものではない、1冊のみの本の場合、1冊ごとにディレクトリーを1つずつ作らなければならないため、次で紹介するBookloreの方が向いている。</p>
+<p>表紙サムネも見れるし、ライブラリで既読、未読を管理したりできる。Kavitaに限った話ではないが、見るだけでなく管理するための機能が豊富なところが便利だ。流石に読むことだけに限るとBandizipに劣るが、管理の部分まで含めるとKavitaに軍配が上がる。</p>
+<h2 id="booklore"><a rel="external" href="https://booklore.org/">Booklore</a></h2>
+<p>上でも書いたが、一般書籍向け閲覧ツールだ。Amazon.comやGoogleから著者、出版社など書籍情報を自動で取得したり、タグで管理することができる。書籍用なので当然EPUBにも対応している。Kindleの書籍はDRMがかかっているためBookloreでは管理できないが、PDF販売される技術書などと相性が良さそうだ。</p>
+<h2 id="lanraragi"><a rel="external" href="https://sugoi.gitbook.io/lanraragi">Lanraragi</a></h2>
+<p>こっちは同人誌を管理するためのサービスで、名前は西尾維新の物語シリーズの主人公である阿良々木暦から因んでいることがドキュメントの随所から伺える。同人誌向けを標榜しているだけあって、何とは言わないが非常に似ている。LanraragiもBooklore同様、ネットから同人誌の情報を自動で取得する機能があり、管理しやすい。</p>
+<h2 id="navidrome"><a rel="external" href="https://www.navidrome.org/">Navidrome</a></h2>
+<p>音楽鑑賞のためのサービスだ。メタデータがしっかり付いていれば、アルバム名やアーティスト名などでかなり自由に検索できるし、音楽再生ツールとして当たり前の、プレイリストといった機能も対応している。</p>
+<p>また、NavidromeはSubsonic APIというものに<a rel="external" href="https://substreamerapp.com/">対応しているアプリ</a>を使えばスマホから音楽を聞けるし、適切な設定をすることで、PCではFLAC音源だけどスマホアプリにはビットレートの低いMP3で配信するといったことができる。VPNがあれば出先から自宅のNavidromeに繋げて音楽を聞くといったことも可能だ。</p>
+<h2 id="immich"><a rel="external" href="https://immich.app/">Immich</a></h2>
+<p>Google Photoの自前バージョン、とでも考えるとわかりやすい、写真をアルバムとして管理するためのサービスだ。ファイル名検索ができるため、写真に限らず画像一般の検索ツールとして使うこともできる。機械学習を使って顔面やシチュエーションなどを抽出して検索することもできるそうだが、私のNASはCPUがIntel N150と非力なため使っていない。Google Photoのサービス改変に備えたバックアップや、追加ストレージのための費用がもったいない人におすすめだ。</p>
+<h3 id="immichhasabupasunige-ridang-terutodong-kanai">Immichはサブパスに割り当てると動かない</h3>
+<p>複数のサービスをNASという1つのマシンで動かす都合上、それぞれのWebUIに別のポートを割り当てているが、サービスが増えるとポート番号とサービス名を覚えるのが段々と困難になってくる。そこで、ローカルDNSとリバースプロキシを組み合わせて、例えばnas.local/immichのようなサブパスでImmichにアクセスできるようにしたくなるものだが、それはできない。<a rel="external" href="https://docs.immich.app/administration/reverse-proxy/">ドキュメント</a>にそう書いてある。</p>
+<blockquote>
+<p>Immich does not support being served on a sub-path such as location /immich {. It has to be served on the root path of a (sub)domain.</p>
+</blockquote>
+<p>リバースプロキシを導入するならimmich.nas.localのようなサブドメイン形式にしなければならない。</p>
+<h1 id="ji-neng-xing-turu">機能性ツール</h1>
+<h2 id="filebrowser"><a rel="external" href="https://filebrowser.org/index.html">FileBrowser</a></h2>
+<p>シンプルで軽いウェブベースのファイル管理ツールだ。Google Drive的なものを想像するといい。どの程度シンプルかというと、ゴミ箱の機能がないぐらいだ。</p>
+<p>FileBrowserは、永続的なウェブストレージとしてではなく、一時的なファイル転送ツールとして入れている。NASのファイルはSambaでマウントして管理した方が楽なためウェブベースで操作する意義がない。スマホとパソコンの間でファイルを転送するツールも充実してきているが、基本的に何かをインストールする必要があったり、あるいはインターネットを経由したりといった制約がつき、何もインストールせず、ローカルネットワークのみで完結する方法は限られている。FileBrowserはブラウザさえあれば使えて、なおかつLAN内で完結するため、スマホや、立ち上げたばかりのパソコンにデータを渡すとき重宝している。</p>
+<h2 id="syncthing"><a rel="external" href="https://syncthing.net/">Syncthing</a></h2>
+<p>ネットワーク越しのファイル同期ツールで、ホームディレクトリーのバックアップに使っている。同期間隔は自由に設定することができ、同期方向も双方向と一方向で自由に選択できる。数時間に一度、ホームのディレクトリーのDocumentsやDownloadsをスキャンして、NASのバックアップ用ディスクの所定のディレクトリーに同期させている。</p>
+<h2 id="adguard-home"><a rel="external" href="https://adguard.com/ja/adguard-home/overview.html">AdGuard Home</a></h2>
+<p>説明するまでもない有名な広告ブロックDNSだ。Immichの項目で少し触れたが、Dockerで動かすサービスが増えてくるとポートを覚えるのが大変だからリバースプロキシを入れたくなるし、リバースプロキシを使うにはDNSがセットで必要になる。最初はdnsmasqを使っていたが、サーバーのリソースも余っているものだし、より高性能なものを入れたくなって導入した。kavita.local、immich.localといったドメインをすべてNASのIPアドレスで解決している。</p>
+<h2 id="nginx"><a rel="external" href="https://nginx.org/en/">nginx</a></h2>
+<p>Immichのところで少し触れた、リバースプロキシのために入れている。</p>
+<h1 id="cron-sukuriputolei">cron、スクリプト類</h1>
+<p>現在我が家で24時間稼働しているマシンはNASだけで、繰り返しになるがCPUのリソースは逼迫していない。そのため、ほとんどリソースを消費しないような軽いスクリプトは、電気代を節約するためにも、マシンを分けずNAS上で動かしている。例えば</p>
+<ul>
+<li>ハイパワーマシンの消し忘れチェック</li>
+<li>グローバルIPの変動チェック</li>
+<li>HDDのSmartctl</li>
+<li>ツイッターの自動投稿</li>
+</ul>
+<p>などがある。</p>
+<h1 id="suo-gan">所感</h1>
+<p>自作NASはいいぞ。</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://662611034.github.io/tags/zi-zuo-pc/">#自作PC</a>
+                    
+                        <a href="https://662611034.github.io/tags/nas/">#NAS</a>
+                    
+                        <a href="https://662611034.github.io/tags/docker/">#Docker</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;sudokugame-trouble&#x2F;">‹ Firefoxでsudokugame.orgの難易度変更ができない問題</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;self-made-nas&#x2F;">自作NAS作った話 ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://662611034.github.io/even.js" ></script>
+      
+    </body>
+
+</html>

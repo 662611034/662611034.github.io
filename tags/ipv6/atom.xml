@@ -1,30 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet href="https://662611034.github.io/feed_style.xsl" type="text/xsl"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-    <tabi:metadata xmlns:tabi="https://github.com/welpo/tabi">
-        <tabi:base_url>https:&#x2F;&#x2F;662611034.github.io</tabi:base_url>
-        <tabi:separator>
-            •
-        </tabi:separator>
-        <tabi:about_feeds>This is a web feed, also known as an Atom feed. Subscribe by copying the URL from the address bar into your newsreader. Visit About Feeds to learn more and get started. It&#x27;s free.</tabi:about_feeds>
-        <tabi:visit_the_site>Visit website</tabi:visit_the_site>
-        <tabi:recent_posts>Recent posts</tabi:recent_posts>
-        <tabi:last_updated_on>Updated on $DATE</tabi:last_updated_on>
-        <tabi:default_theme></tabi:default_theme>
-        <tabi:post_listing_date>date</tabi:post_listing_date>
-        <tabi:current_section>ipv6</tabi:current_section>
-    </tabi:metadata><title>愛されたいねん - ipv6</title>
-        <subtitle>個人ブログ</subtitle>
-    <link href="https://662611034.github.io/tags/ipv6/atom.xml" rel="self" type="application/atom+xml"/>
-    <link href="https://662611034.github.io/tags/ipv6/" rel="alternate" type="text/html"/>
-    <generator uri="https://www.getzola.org/">Zola</generator><updated>2026-01-24T00:00:00+00:00</updated><id>https://662611034.github.io/tags/ipv6/atom.xml</id><entry xml:lang="en">
+    <title>愛されたいねん - ipv6</title>
+    <subtitle>個人ブログ</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://662611034.github.io/tags/ipv6/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://662611034.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-01-24T00:00:00+00:00</updated>
+    <id>https://662611034.github.io/tags/ipv6/atom.xml</id>
+    <entry xml:lang="en">
         <title>自作ルーター作ろうとして諦めた</title>
         <published>2026-01-24T00:00:00+00:00</published>
         <updated>2026-01-24T00:00:00+00:00</updated>
+        
         <author>
-            <name>Unknown</name>
+          <name>
+            
+              Unknown
+            
+          </name>
         </author>
-        <link rel="alternate" href="https://662611034.github.io/blog/router-fail/" type="text/html"/>
-        <id>https://662611034.github.io/blog/router-fail/</id>
-        </entry>
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/router-fail/"/>
+        <id>https://662611034.github.io/router-fail/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/router-fail/">&lt;h1 id=&quot;matome&quot;&gt;まとめ&lt;&#x2F;h1&gt;
+&lt;p&gt;自作ルーターを作ってみようと頑張ったが、確定申告などで不具合が出そうだったので諦めた。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;fa-duan-karaji-hua&quot;&gt;発端から計画&lt;&#x2F;h1&gt;
+&lt;p&gt;特に深い理由はないが、家に自作ルーターがあると楽しそうと思ったため、自作ルーターの作り方を調べた。
+最悪ラズパイでも作ることができるし、1Gbpsの速度であればN100程度のCPUで計算能力は足りるとのこと。LANポートだけはWANとLAN用で2つ必要で、デュアルLAN搭載のミニPCで作ることにした。LANポートも足りないし無線APとしてはハードウェアが貧弱で使えないが、そこは既存ルーターをAP兼L2スイッチとしてぶら下げて使えばいいと考えた。&lt;&#x2F;p&gt;
+&lt;p&gt;次にソフトの方は、巷ではLinuxベースのOpenWrtとFreeBSDベースのOPNsenseがルーター用OSとして知名度が高いとのことで、FreeBSDは触ったことがないからOpenWrtで作ることにした。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;li-tishang-gehacheng-gong-map-edejie-maru&quot;&gt;立ち上げは成功、MAP-Eで詰まる&lt;&#x2F;h1&gt;
+&lt;p&gt;OS入れたての状態でも家のルーターの下流で使うとすぐにルーターとして動作するしインターネットもつながるが、ONUに繋げるにはすこし設定が必要で、その周りはAIに丸投げして済ませた。&lt;&#x2F;p&gt;
+&lt;p&gt;一通り設定してから導通確認してみたところ、IPv6のアドレスは取得できる、ルーターからインターネットに向けてのpingも通る、しかしLANからインターネットに出られない。理由を調べてみると、今契約しているBiglobe光はIPv6の回線で、その上で「MAP-E」という技術を使ってIPv4の通信を通していて、MAP-Eが海外ではあまり使われておらず、情報が少ない。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;vyosnicheng-rihuan-e-map-ejie-jue&quot;&gt;VyOSに乗り換え、MAP-E解決&lt;&#x2F;h1&gt;
+&lt;p&gt;VyOSという、GUIがない代わりにOpenWrtより柔軟な設定ができるルーター用OSがあるとのことで、そっちに乗り換えることにした。公式の設定ガイドやAIを頼りに設定を済ませて、なんとかこちらはLANクライアントからWANに出るところまでこぎつけた。&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;少し本筋とは離れるが、&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;docs.vyos.io&#x2F;en&#x2F;latest&#x2F;quick-start.html&quot;&gt;VyOSのQuick Start&lt;&#x2F;a&gt;のページに不備があるためここに記しておく。公式のQuick StartではファイアウォールのINPUT設定を「基本的にDROP&#x2F;REJECTして必要なものだけACCEPT」という方針をとっているが、2026年1月24時点で、DHCPのリクエストを受け取る67番ポートを解放する設定がなく、Quick Start通り設定したらクライアントにIPアドレスを割り当てない。LAN側のUDP67番INPUTをACCEPTするルールが必要だ。&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;途中で、「MAP-Eの設定は正しいはずなのになぜかpingが通らない」という問題で1日ほど使ったが、後から「ルーター本体からのpingを通さないファイアウォール設定になってただけで、クライアントからの通信は通っていた」ことが発覚した。具体的には&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;LANからのpingは通すがルーター本体からのpingは通さないファイアウォール設定になっていた&lt;&#x2F;li&gt;
+&lt;li&gt;にもかかわらず、まずルーター本体の通信が出てからクライアントのテストをしようと思い、ずっとルーターからpingを飛ばしていた&lt;&#x2F;li&gt;
+&lt;li&gt;とりあえずは導通テストということでDNSを設定していなかったせいで、クライアントから外に出られることに気づかなかった&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;といった、「あくまでもテストだから」って省いた設定が悪さをしたということになる。もし自作ルーターを作ろうとしてこの記事を読んでる人がいたら、ファイアウォールはWAN→LAN以外は全部ACCEPTにして、DNSなど、MAP-Eとは直接関係ない設定もしっかりしてからテストするといいと思う。&lt;&#x2F;p&gt;
+&lt;p&gt;何がともあれ、これでめでたくルーターがルーターとして機能するようになった。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;map-enopotoge-ridang-tenomin&quot;&gt;MAP-Eのポート割り当ての罠&lt;&#x2F;h1&gt;
+&lt;p&gt;とりあえず動くようになったので、細かい設定に移る前にAIに全体のチェックを通したところ、IPv4の通信周りで少し不備があると指摘された。&lt;&#x2F;p&gt;
+&lt;p&gt;私もよく理解していないため大雑把に書くが、BiglobeでIPv4通信のために使っているMAP-Eという方式は、IPv4通信のために使えるポートが限られており、VyOSで「IPv4通信はこのポートを通してNATするように」と指定する必要がある。そしてその「使えるポート」の番号が飛び飛びの値になっているため、一つの設定にまとめることができず&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;rule 100 { &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  outbound-interface { &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    name tun0 &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  } &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  protocol tcp_udp source { &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    address 192.168.0.0&#x2F;24 &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  } &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  translation { &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    address 123.45.67.89 port 5334-5349 &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  } &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;rule 101 { &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  outbound-interface { &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    name tun0 &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  } &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  protocol tcp_udp source { &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    address 192.168.0.0&#x2F;24 &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  } &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  translation { &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;    address 123.45.67.89 port 6358-6373 &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;  } &lt;&#x2F;span&gt;&lt;&#x2F;span&gt;
+&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;}&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;というふうにルールをいくつも設定していた(ポート番号は適当)。ところが、VyOSは通信をする時上から順番にルールを確認するため、仮にこのように設定した場合5334~5349の15ポートしか使われない。そのポートが全部使用中だと、rule 101にしたがって次のポートを使うのではなく通信ができないとのことだ。&lt;&#x2F;p&gt;
+&lt;p&gt;解決する方法は&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;IP範囲を分けて、IPアドレスごとにどのポートを使うか割り当てる&lt;&#x2F;li&gt;
+&lt;li&gt;動的ポート割り当てツールを使う&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;とあるが、後者のツールは実際正しく動作するか不明という問題があり、前者の場合も、ブラウザでIPv4サイトのタブを複数あけたりすると、1台のマシンで15ポートを使い切ることもあるため、あまり意味がない。今時GoogleやYoutubeなどほとんどのサイトはIPv6だが、官公庁のサイトが問題だ。例えば確定申告など行政手続きのために官公庁サイトを複数開くと、リダイレクトや認証関係でIPv4ポートを複数使い潰してしまうリスクがある。実際そうなるか否かは試してみなければわからないが、重要度の高いタスクでインターネットに繋がらない不具合が生じかねないのは避けたい。この場合、サイトが繋がらなくなったらルーターを繋げ直す以外方法がなく、頻度は低いものの影響が大きいリスクと判断し、自作ルーター構想は断念することにした。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;jin-hou-nozhan-wang&quot;&gt;今後の展望&lt;&#x2F;h1&gt;
+&lt;p&gt;今回はMAP-Eという通信方式に対応できず諦めることにしたが、日本で使われているIPv4 on IPv6技術のうち、DS-Liteというものが、自作ルーターで対応しやすく、トラブルも出にくいそうだ。&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;asahi-net.jp&#x2F;service&#x2F;option&#x2F;ipv6&#x2F;4over6.html&quot;&gt;AsahiNet&lt;&#x2F;a&gt;などが対応しており、今のBiglobeの契約の割引期間が終わったら乗り換えて再チャレンジするために、今回購入したミニPCはとっておこうと思う。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
 </feed>
