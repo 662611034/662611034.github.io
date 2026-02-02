@@ -5,8 +5,37 @@
     <link rel="self" type="application/atom+xml" href="https://662611034.github.io/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://662611034.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-01-27T00:00:00+00:00</updated>
+    <updated>2026-02-02T00:00:00+00:00</updated>
     <id>https://662611034.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Wireguardを立てる</title>
+        <published>2026-02-02T00:00:00+00:00</published>
+        <updated>2026-02-02T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/setup-wireguard/"/>
+        <id>https://662611034.github.io/setup-wireguard/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/setup-wireguard/">&lt;h1 id=&quot;vpnhaiizo&quot;&gt;VPNはいいぞ&lt;&#x2F;h1&gt;
+&lt;p&gt;家にVPNサーバーがあると出先でパソコンの中の書類などにアクセスして持って来れたりと非常に便利になるため、8年前ぐらいから家にVPNサーバーを常備している。今ではお手頃な価格のルーターでもワンタッチでVPNサーバーが立てられるし、実際我が家でもAsusルーターでOpenVPNを立てており、とくに不自由はしていないのだが、なんとなくルーターに依存しないVPN環境が欲しいなと思い立ったためWireguard環境を構築してみた。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;gou-cheng&quot;&gt;構成&lt;&#x2F;h1&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;出先 - OCI VM - LAN内拠点(NAT) - LAN内各デバイス&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Wireguardは非常に軽く、Raspberry Piに立ち上げてルーターでポートフォワードするだけで快適に使えるそうだが、あいにく我が家のルーターはUDPのポートフォワードに対応しておらず、最小構成ができない。そこで、インターネットからアクセスできる固定IPを持つVPSを立てて中継ポイントにすることにした。&lt;&#x2F;p&gt;
+&lt;p&gt;無料のVPSが中々ないが、&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;www.oracle.com&#x2F;jp&#x2F;cloud&#x2F;&quot;&gt;Oracle Cloud Infrastructure&lt;&#x2F;a&gt;で一部構成が無料になっているため、ありがたく使わせてもらうことにした。&lt;&#x2F;p&gt;
+&lt;p&gt;出先のスマホやノーパソ、そしてLAN拠点マシンからOCIのVMにWireguardで繋げると、OCIのVMがパケットを右から左へ流してくれる。そしてLAN拠点デバイスはWireguardのサブネット(10.33.4.0&#x2F;24)からLANのサブネット(192.168.1.0&#x2F;24)にNATする。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;nan-sikatutakoto&quot;&gt;難しかったこと&lt;&#x2F;h1&gt;
+&lt;p&gt;Wireguardの設定ファイルの方はさほど難しくなかったし、ChatGPTが出してくれる通り数行書けば動いたが、Firewallの方で手間取った。OCIと拠点マシンでForward設定を見落としたまま繋げようとして接続ができなくてかなり時間を食ってしまった。&lt;&#x2F;p&gt;
+&lt;p&gt;あと、OCIのVMの初期設定の用語が軒並みオフチョベットで大変わかりにくかった。ChatGPTがなければできなかっただろう。何をどうやって動くようになったのかさっぱり覚えていないため、設定一覧などは載せられない。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>Firefoxでsudokugame.orgの難易度変更ができない問題</title>
         <published>2026-01-27T00:00:00+00:00</published>

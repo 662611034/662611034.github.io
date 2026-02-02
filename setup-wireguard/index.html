@@ -13,7 +13,7 @@
       
     
 
-      <title>愛されたいねん - Firefoxでsudokugame.orgの難易度変更ができない問題</title>
+      <title>愛されたいねん - Wireguardを立てる</title>
 
       
           
@@ -124,17 +124,17 @@
             <ul>
                 
                 <li>
-                    <a href="https://662611034.github.io/sudokugame-trouble/#qi-kotutawen-ti" class="toc-link">起こった問題</a>
+                    <a href="https://662611034.github.io/setup-wireguard/#vpnhaiizo" class="toc-link">VPNはいいぞ</a>
                     
                 </li>
                 
                 <li>
-                    <a href="https://662611034.github.io/sudokugame-trouble/#yarifang" class="toc-link">やり方</a>
+                    <a href="https://662611034.github.io/setup-wireguard/#gou-cheng" class="toc-link">構成</a>
                     
                 </li>
                 
                 <li>
-                    <a href="https://662611034.github.io/sudokugame-trouble/#bu-ju-he-noyuan-yin" class="toc-link">不具合の原因</a>
+                    <a href="https://662611034.github.io/setup-wireguard/#nan-sikatutakoto" class="toc-link">難しかったこと</a>
                     
                 </li>
                 
@@ -148,34 +148,25 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;sudokugame-trouble&#x2F;">Firefoxでsudokugame.orgの難易度変更ができない問題</a>
+            <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;setup-wireguard&#x2F;">Wireguardを立てる</a>
         </h1>
         <div class="post__meta">
-            <span class="post__time">2026-01-27</span>
+            <span class="post__time">2026-02-02</span>
             
         </div>
     </header>
 
     <div class="post-content">
-      <h1 id="qi-kotutawen-ti">起こった問題</h1>
-<p>私は宗教上の理由でFirefoxや派生ブラウザーを使っているが、ある日から<a rel="external" href="http://sudokugame.org/">sudokugame.org</a>の難易度変更が機能しない問題が発生した。ブラウザアドオンのuBlockを無効化しても解決しないので、jsを直で叩いて難易度を変更する方法を見つけた。</p>
-<h1 id="yarifang">やり方</h1>
-<ul>
-<li>どれでもいいので難易度変更ボタンを右クリックして「調査」を選択する
-<ul>
-<li>これをしないとjs直打ちが効かない</li>
-</ul>
-</li>
-<li>管理者メニューが開くから、そこで「コンソール」を選ぶ</li>
-<li>jump(難易度, 年, 月, 日)を打ち込むと難易度が変わる
-<ul>
-<li>jump単体だけ打つと定義が確認できる</li>
-<li>難易度は初級が0、中級が1、...</li>
-</ul>
-</li>
-</ul>
-<h1 id="bu-ju-he-noyuan-yin">不具合の原因</h1>
-<p>わからない。私はフインキで数独をやってる。</p>
+      <h1 id="vpnhaiizo">VPNはいいぞ</h1>
+<p>家にVPNサーバーがあると出先でパソコンの中の書類などにアクセスして持って来れたりと非常に便利になるため、8年前ぐらいから家にVPNサーバーを常備している。今ではお手頃な価格のルーターでもワンタッチでVPNサーバーが立てられるし、実際我が家でもAsusルーターでOpenVPNを立てており、とくに不自由はしていないのだが、なんとなくルーターに依存しないVPN環境が欲しいなと思い立ったためWireguard環境を構築してみた。</p>
+<h1 id="gou-cheng">構成</h1>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>出先 - OCI VM - LAN内拠点(NAT) - LAN内各デバイス</span></span></code></pre>
+<p>Wireguardは非常に軽く、Raspberry Piに立ち上げてルーターでポートフォワードするだけで快適に使えるそうだが、あいにく我が家のルーターはUDPのポートフォワードに対応しておらず、最小構成ができない。そこで、インターネットからアクセスできる固定IPを持つVPSを立てて中継ポイントにすることにした。</p>
+<p>無料のVPSが中々ないが、<a rel="external" href="https://www.oracle.com/jp/cloud/">Oracle Cloud Infrastructure</a>で一部構成が無料になっているため、ありがたく使わせてもらうことにした。</p>
+<p>出先のスマホやノーパソ、そしてLAN拠点マシンからOCIのVMにWireguardで繋げると、OCIのVMがパケットを右から左へ流してくれる。そしてLAN拠点デバイスはWireguardのサブネット(10.33.4.0/24)からLANのサブネット(192.168.1.0/24)にNATする。</p>
+<h1 id="nan-sikatutakoto">難しかったこと</h1>
+<p>Wireguardの設定ファイルの方はさほど難しくなかったし、ChatGPTが出してくれる通り数行書けば動いたが、Firewallの方で手間取った。OCIと拠点マシンでForward設定を見落としたまま繋げようとして接続ができなくてかなり時間を食ってしまった。</p>
+<p>あと、OCIのVMの初期設定の用語が軒並みオフチョベットで大変わかりにくかった。ChatGPTがなければできなかっただろう。何をどうやって動くようになったのかさっぱり覚えていないため、設定一覧などは載せられない。</p>
 
     </div>
 
@@ -187,19 +178,17 @@
             
                 <div class="post-tags">
                     
-                        <a href="https://662611034.github.io/tags/firefox/">#firefox</a>
+                        <a href="https://662611034.github.io/tags/wireguard/">#wireguard</a>
                     
-                        <a href="https://662611034.github.io/tags/js/">#js</a>
+                        <a href="https://662611034.github.io/tags/vpn/">#vpn</a>
                     
                 </div>
             
             
                 <div class="post-nav">
                     
-                        <a class="previous" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;setup-wireguard&#x2F;">‹ Wireguardを立てる</a>
                     
-                    
-                        <a class="next" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;self-made-nas-dockers&#x2F;">自作NASで動かしているサービス ›</a>
+                        <a class="next" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;sudokugame-trouble&#x2F;">Firefoxでsudokugame.orgの難易度変更ができない問題 ›</a>
                     
                 </div>
             
