@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>愛されたいねん - OTP</title>
+    <subtitle>個人ブログ</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://662611034.github.io/tags/otp/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://662611034.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-02-25T00:00:00+00:00</updated>
+    <id>https://662611034.github.io/tags/otp/atom.xml</id>
+    <entry xml:lang="en">
+        <title>アプリと同じOTPをPCでも使いたい</title>
+        <published>2026-02-25T00:00:00+00:00</published>
+        <updated>2026-02-25T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/otp-on-pc/"/>
+        <id>https://662611034.github.io/otp-on-pc/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/otp-on-pc/">&lt;h1 id=&quot;otpapurinotamenisumahojian-runogamendokusai&quot;&gt;OTPアプリのためにスマホ見るのがめんどくさい&lt;&#x2F;h1&gt;
+&lt;p&gt;この頃一部のネットサービスで専用のアプリで生成されるOTP(One-Time Password)を要求されるようになってきた。私の場合アマゾンやマネックス証券で必要で、&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;bitwarden.com&#x2F;ja-jp&#x2F;products&#x2F;authenticator&#x2F;&quot;&gt;Bitwarden Authenticator&lt;&#x2F;a&gt;を使っている。&lt;&#x2F;p&gt;
+&lt;p&gt;アプリの立ち上げは指紋認証だから手間はほぼかからないが、私は普段パソコンを使ってる時間が長く、パソコンを使ってるのにOTPのためだけにスマホを取ってアプリを立ち上げるというのがどうも面倒に感じ、OTPもパソコンで完結したくなった。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;diao-betemitarapu-tong-niatuta&quot;&gt;調べてみたら普通にあった&lt;&#x2F;h1&gt;
+&lt;p&gt;どうやらOTP生成アルゴリズムは標準化されてるらしく、アプリからOTP生成のキーさえ取得できれば汎用ツールで同じOTPが生成できるそうだ。幸いBitwarden Autenticatorではデータエクスポート機能があるし、&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;2026-02-25-top-on-pc&#x2F;auth_ss.PNG&quot; alt=&quot;アプリスクショ&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;FirefoxのアドオンでOTP生成を調べると&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;addons.mozilla.org&#x2F;ja&#x2F;firefox&#x2F;addon&#x2F;auth-helper&#x2F;&quot;&gt;Authenticator&lt;&#x2F;a&gt;や&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;addons.mozilla.org&#x2F;ja&#x2F;firefox&#x2F;addon&#x2F;local-2fa-secure-otp-manager&quot;&gt;Local 2FA&lt;&#x2F;a&gt;といったものが見つかった。&lt;&#x2F;p&gt;
+&lt;p&gt;Local 2FAをインストールして、「+Add」ボタンを押すと名前と秘密キー(アプリでエクスポートしたファイルで確認できる)を入れればアプリと同じ数字が生成できる。&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;2026-02-25-top-on-pc&#x2F;addon_ss.png&quot; alt=&quot;アドオンスクショ&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;これでOTPのためだけにいちいちスマホを手に取らないで済む。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
