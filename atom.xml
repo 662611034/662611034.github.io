@@ -5,8 +5,39 @@
     <link rel="self" type="application/atom+xml" href="https://662611034.github.io/atom.xml"/>
     <link rel="alternate" type="text/html" href="https://662611034.github.io"/>
     <generator uri="https://www.getzola.org/">Zola</generator>
-    <updated>2026-02-25T00:00:00+00:00</updated>
+    <updated>2026-02-28T00:00:00+00:00</updated>
     <id>https://662611034.github.io/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Misskeyで削除したユーザー名を再利用する</title>
+        <published>2026-02-28T00:00:00+00:00</published>
+        <updated>2026-02-28T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/misskey-reuse-username/"/>
+        <id>https://662611034.github.io/misskey-reuse-username/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/misskey-reuse-username/">&lt;h1 id=&quot;misskeydehaxiao-sitayuzanoming-qian-gazai-li-yong-dekinai&quot;&gt;misskeyでは消したユーザーの名前が再利用できない&lt;&#x2F;h1&gt;
+&lt;p&gt;自宅サーバーでMisskeyを試してたところ、動作テスト用に作ったtestやtest1というアカウントを削除したあと、同じ名前で再登録しようとしたら「利用できない」とエラーが発生した。どうやら、なりすまし防止のためか、消したユーザーを保存しているようだ。セルフホストする側からしたら迷惑な話である。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;xue-chu-ji-miyuzanoxiao-sifang&quot;&gt;削除済みユーザーの消し方&lt;&#x2F;h1&gt;
+&lt;p&gt;以下のコマンドは&lt;a rel=&quot;external&quot; href=&quot;https:&#x2F;&#x2F;misskey-hub.net&#x2F;ja&#x2F;docs&#x2F;for-admin&#x2F;install&#x2F;guides&#x2F;docker&#x2F;&quot;&gt;Misskeyのドキュメント&lt;&#x2F;a&gt;通り、ほぼデフォルトのままインストールしたケースを想定したものである。&lt;&#x2F;p&gt;
+&lt;p&gt;まずDockerのコンテナ経由でPostgreSQLに接続する。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;shellscript&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-entity z-name z-function&quot;&gt;docker&lt;&#x2F;span&gt;&lt;span class=&quot;z-string&quot;&gt; compose exec db psql -U example-misskey-user misskey&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;もし.config&#x2F;default.ymlでDBユーザー名を変えた場合example-misskey-userのところは変更したDBユーザー名に読み替える。&lt;&#x2F;p&gt;
+&lt;p&gt;DBにアクセスできたら削除済みユーザーリストを確認できる。&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;SELECT&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword z-operator&quot;&gt; *&lt;&#x2F;span&gt;&lt;span class=&quot;z-keyword&quot;&gt; FROM&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; used_username;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;全削除する場合は&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span class=&quot;z-keyword&quot;&gt;DELETE FROM&lt;&#x2F;span&gt;&lt;span class=&quot;z-source&quot;&gt; used_username;&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;個別削除は適宜AIに相談すればすぐ見つかると思う。&lt;em&gt;&lt;strong&gt;公開サーバーでやるときはくれぐれも気を付けるように。&lt;&#x2F;strong&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
     <entry xml:lang="en">
         <title>アプリと同じOTPをPCでも使いたい</title>
         <published>2026-02-25T00:00:00+00:00</published>
