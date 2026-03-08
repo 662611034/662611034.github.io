@@ -49,6 +49,10 @@
         <loc>https://662611034.github.io/page/2/</loc>
     </url>
     <url>
+        <loc>https://662611034.github.io/radicale-install/</loc>
+        <lastmod>2026-03-09</lastmod>
+    </url>
+    <url>
         <loc>https://662611034.github.io/router-fail/</loc>
         <lastmod>2026-01-24</lastmod>
     </url>
@@ -116,6 +120,9 @@
     </url>
     <url>
         <loc>https://662611034.github.io/tags/python/</loc>
+    </url>
+    <url>
+        <loc>https://662611034.github.io/tags/radicale/</loc>
     </url>
     <url>
         <loc>https://662611034.github.io/tags/rust/</loc>

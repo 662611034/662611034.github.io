@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+      
+      <meta name="description" content="個人ブログ" />
+      
+    
+
+      <title>愛されたいねん - Radicaleを導入してGoogle連絡先から移行</title>
+
+      
+          
+          <link rel="alternate" type="application/atom+xml" title="RSS" href="https://662611034.github.io/atom.xml">
+          
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https://662611034.github.io/site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="https:&#x2F;&#x2F;662611034.github.io" class="logo">Even</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;categories">
+                            Categories
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;662611034.github.io">Even</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;categories">
+                                    Categories
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://662611034.github.io/radicale-install/#zui-jin-seruhuhosutogale-sii" class="toc-link">最近セルフホストが楽しい</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/radicale-install/#radicalenodao-ru" class="toc-link">Radicaleの導入</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/radicale-install/#insutoru" class="toc-link">インストール</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/radicale-install/#yuzasheng-cheng" class="toc-link">ユーザー生成</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/radicale-install/#quan-xian-zhi-ding" class="toc-link">権限指定</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/radicale-install/#httpshua" class="toc-link">HTTPS化</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/radicale-install/#maclian-xi" class="toc-link">Mac連携</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://662611034.github.io/radicale-install/#googlekaralian-luo-xian-noyi-xing" class="toc-link">Googleから連絡先の移行</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/radicale-install/#lian-luo-xian-noekusupoto" class="toc-link">連絡先のエクスポート</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/radicale-install/#xia-zhun-bei" class="toc-link">下準備</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/radicale-install/#vcfhuairunojia-gong" class="toc-link">.vcfファイルの加工</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://662611034.github.io/radicale-install/#dan-chun-huairukopidemodekiruga" class="toc-link">単純ファイルコピーでもできるが</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;662611034.github.io&#x2F;radicale-install&#x2F;">Radicaleを導入してGoogle連絡先から移行</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2026-03-09</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <h1 id="zui-jin-seruhuhosutogale-sii">最近セルフホストが楽しい</h1>
+<p>この頃自宅サーバーにあれこれウェブサービスをdockerで入れるのがマイブームで、もはや手段と目的が反転してなにかしらセルフホストできるものはないかと調査したりもしてる。今回は、CalDAVというプロトコルでカレンダーとToDo、CardDAVというプロトコルで連絡先を管理するRadicaleのサーバーをホスティングした。</p>
+<p>CalDAV、CardDAVの同期はローカルデータが保存されるため、家の外で繋がらない(繋げるのが大変)というセルフホスティングサービスの弱点にあまり影響されないのも大変良い。</p>
+<h1 id="radicalenodao-ru">Radicaleの導入</h1>
+<h2 id="insutoru">インストール</h2>
+<p><a rel="external" href="https://radicale.org/v3.html">Radicaleのドキュメント</a>にリンクが貼られてる<a rel="external" href="https://raw.githubusercontent.com/Kozea/Radicale/refs/heads/master/compose.yaml">compose.yaml</a>を落として'docker compose up -d'してもよいが、私はいくつか修正している</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>services:</span></span>
+<span class="giallo-l"><span>  radicale:</span></span>
+<span class="giallo-l"><span>    image: ghcr.io/kozea/radicale:stable</span></span>
+<span class="giallo-l"><span>    container_name: radicale</span></span>
+<span class="giallo-l"><span>    ports:</span></span>
+<span class="giallo-l"><span>      - 5313:5232</span></span>
+<span class="giallo-l"><span>    volumes:</span></span>
+<span class="giallo-l"><span>      - ./config:/etc/radicale</span></span>
+<span class="giallo-l"><span>      - ./data:/var/lib/radicale</span></span>
+<span class="giallo-l"><span>    restart: unless-stopped</span></span>
+<span class="giallo-l"><span>    logging:</span></span>
+<span class="giallo-l"><span>      driver: &quot;json-file&quot;</span></span>
+<span class="giallo-l"><span>      options:</span></span>
+<span class="giallo-l"><span>        max-size: &quot;5m&quot;</span></span>
+<span class="giallo-l"><span>        max-file: &quot;1&quot;</span></span></code></pre>
+<p>変更点の意図は以下の通りだ。</p>
+<ul>
+<li>ports: 我が家では5300から順番にポートを当てているため、ポート修正は必須だ</li>
+<li>volumes: 本家ではvolumeを別途定義しているが、個人のシンプルな使い方ならvolumesで直接相対パスで</li>
+<li>restart: サーバー再起動で自動で立ち上がるように</li>
+<li>logging: ログの容量制限</li>
+</ul>
+<h2 id="yuzasheng-cheng">ユーザー生成</h2>
+<p>RadicaleのユーザーはWebUIからは登録できず、CLIで生成しなければならない。</p>
+<p>まずは「パスワード認証を使う」という設定を、コンテナ内における/etc/radicaleディレクトリーに作る。上のcomposeファイルでいうと./configに当たる。次の内容で./config/configというファイルを生成する。</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>type = htpasswd</span></span>
+<span class="giallo-l"><span>htpasswd_filename = /etc/radicale/users</span></span>
+<span class="giallo-l"><span>htpasswd_encryption = bcrypt</span></span></code></pre>
+<p>/etc/radicale/usersというのは無難に決めたファイル名だ。次に、このusersファイルを作る。場所は/etc/radicale/なので、configと同じディレクトリーになる。usersの中身は</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>ユーザー名:パスワード</span></span>
+<span class="giallo-l"><span>ユーザー名:パスワード</span></span>
+<span class="giallo-l"><span>ユーザー名:パスワード</span></span>
+<span class="giallo-l"><span>...</span></span></code></pre>
+<p>と、利用したいユーザー情報を列挙する。ただし、パスワードは平文ではなくハッシュ値を生成しなければならない。htpasswdというコマンドで作れるそうだが、私はPythonで生成した。</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> bcrypt</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">password</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;veryverystrongpassword&quot;</span><span class="z-punctuation z-definition z-comment z-comment">  # 適宜変更</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">hashed</span><span class="z-keyword z-operator"> =</span><span class="z-source"> bcrypt</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">hashpw</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">password</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">encode</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;utf-8&quot;</span><span class="z-punctuation">),</span><span class="z-meta z-function-call z-arguments z-python"> bcrypt</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">gensalt</span><span class="z-punctuation">())</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">print</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">hashed</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">decode</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;utf-8&quot;</span><span class="z-punctuation">))</span></span></code></pre>
+<p>これで出力されるハッシュ値と好きなユーザー名をusersに書き込む。</p>
+<h2 id="quan-xian-zhi-ding">権限指定</h2>
+<p>Radicaleのdockerイメージ内ではRadicaleがUID:GID=1000:1000となっているようで、今の設定のままdockerを起動すると権限エラーで立ち上がらない。configとdataはcompose upする前に作るか、権限変更をする。</p>
+<pre class="giallo z-code"><code data-lang="shellscript"><span class="giallo-l"><span class="z-entity z-name z-function">sudo</span><span class="z-string"> chown -R 1000:1000 config data</span></span></code></pre>
+<p>これで動作するはずだ。</p>
+<h1 id="httpshua">HTTPS化</h1>
+<p>CalDAVサーバーとしてはこれで動作するが、iOSやMacOSで使うためにはHTTPS化、それも自己署名ではない、<strong>外部認証局によるHTTPS化が必要だ</strong>。HTTPや自己署名HTTPSだとiOSのアカウント追加で認証エラーになって進めない。私は以前自前のサーバーをLet's EncryptでHTTPS化したため、今回追加で何かすることはなかった。そのうちHTTPS化の記事も書かないとと思ってる。</p>
+<p>次のMac連携はHTTPS化できてる前提で進める。</p>
+<h1 id="maclian-xi">Mac連携</h1>
+<p>iOSもMacOSもやり方はそう変わらない。インターネットアカウントの追加メニューで、CalDAVとCardDAVそれぞれに今立ち上げたRadicaleサーバーのURL、ユーザー名、パスワードを入れるだけだ。</p>
+<p><img src="/2026-03-09-radicale-install/macos_account.png" alt="アカウント種類選択" /></p>
+<p><img src="/2026-03-09-radicale-install/macos_input.png" alt="アカウント情報入力" /></p>
+<p>ログインできれば、CalDAVではカレンダーとリマインダー、CardDAVでは連絡先の同期が取れるようになるし、カレンダーアプリやリマインダーアプリを立ち上げるとRadicaleアカウントが登録されていることを確認できる。</p>
+<h1 id="googlekaralian-luo-xian-noyi-xing">Googleから連絡先の移行</h1>
+<p>私は予定とTodoは量が少なくて手打ち移行できたが、連絡先は手打ちでは大変すぎる。しかし、Google連絡先をエクスポートしたファイルをそのままアップロードということもできず、少し手間取った。</p>
+<h2 id="lian-luo-xian-noekusupoto">連絡先のエクスポート</h2>
+<p>Google連絡先のWeb画面からダウンロードする。エクスポートメニューから「Android または iOS 用 vCard」を選ぶと.vcfファイルでダウンロードされる。そのファイルを、RadicaleのWebUI(下の画像)の右下にある、いかにもアップロードボタンのように見える青い丸をクリックしてアップロードすれば済みそうに思えるが、そうはいかない。</p>
+<p><img src="/2026-03-09-radicale-install/main.png" alt="メイン画面" /></p>
+<p>なぜかJavascriptエラーになってアップロードできない。Firefox、Safari、Edgeのいずれのブラウザでもできなかった。別の方法を取る必要がある。</p>
+<h2 id="xia-zhun-bei">下準備</h2>
+<p>まず下準備として、アップロード先の連絡先ディレクトリーを作成する。RadicaleではTodoのグループやカレンダー、連絡先をそれぞれ個別のディレクトリーで管理するため、アップロードする前にファイルを入れる「箱」を用意する必要がある。上のメインUIの右下の緑の丸(+と書いてある)を押してTypeとしてAddress bookを選んで生成する。</p>
+<p><img src="/2026-03-09-radicale-install/makeaddress.png" alt="連絡先生成" /></p>
+<p>そうすれば次のように空の連絡先が生成され、紐づいたURLが表示される。このURLがアップロード先となる。</p>
+<p><img src="/2026-03-09-radicale-install/emptyaddress.png" alt="空の連絡先" /></p>
+<h2 id="vcfhuairunojia-gong">.vcfファイルの加工</h2>
+<p>HTTPリクエストを用いて連絡先をRadicaleにアップロードするときは、連絡先1つにつき1ファイルである必要があり、Googleからダウンロードした.vcfファイルを個別ファイルに分割しなければならない。</p>
+<p>また、Googleの.vcfファイルの各連絡先にはUID欄がないが、Radicaleは連絡先にUIDがないとエラーになって登録できない。</p>
+<p>大変なので、AIに頼んでオリジナルの.vcfファイルを分解し、連絡先1つずつファイルとして生成してHTTPリクエストを送るPythonスクリプトを作ってもらった。次のスクリプトで、URL、USER、PASS、ORIGINAL_FILEを環境に合わせて書き換えて実行すればよい。</p>
+<pre class="giallo z-code"><code data-lang="python"><span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> re</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> subprocess</span></span>
+<span class="giallo-l"><span class="z-keyword">import</span><span class="z-source"> uuid</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">URL</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;上で作った連絡先のURL&quot;</span></span>
+<span class="giallo-l"><span class="z-source">USER</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;Radicaleユーザー名&quot;</span></span>
+<span class="giallo-l"><span class="z-source">PASS</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;パスワード&quot;</span></span>
+<span class="giallo-l"><span class="z-source">ORIGINAL_FILE</span><span class="z-keyword z-operator"> =</span><span class="z-punctuation z-definition z-string z-string"> &quot;Googleからダウンロードした.vcfファイルのパス&quot;</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">text</span><span class="z-keyword z-operator"> =</span><span class="z-support z-function z-builtin z-python"> open</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">ORIGINAL_FILE</span><span class="z-punctuation">,</span><span class="z-variable z-parameter"> encoding</span><span class="z-keyword z-operator">=</span><span class="z-punctuation z-definition z-string z-string">&quot;utf-8-sig&quot;</span><span class="z-punctuation">).</span><span class="z-meta z-function-call z-python">read</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-source">cards</span><span class="z-keyword z-operator"> =</span><span class="z-source"> re</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">findall</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">r</span><span class="z-punctuation z-definition z-string z-begin">&quot;</span><span class="z-string">BEGIN:VCARD.</span><span class="z-keyword z-operator z-quantifier z-regexp">*?</span><span class="z-string">END:VCARD</span><span class="z-punctuation z-definition z-string z-end">&quot;</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> text</span><span class="z-punctuation">,</span><span class="z-meta z-function-call z-arguments z-python"> re</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-arguments z-python">DOTALL</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">for</span><span class="z-source"> card</span><span class="z-keyword z-control z-flow z-python"> in</span><span class="z-source"> cards</span><span class="z-punctuation">:</span></span>
+<span class="giallo-l"><span class="z-source">    uid</span><span class="z-keyword z-operator"> =</span><span class="z-support z-type z-python"> str</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">uuid</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">uuid4</span><span class="z-punctuation">()).</span><span class="z-meta z-function-call z-python">upper</span><span class="z-punctuation">()</span><span class="z-punctuation z-definition z-comment z-comment">  # ランダムUIDを生成</span></span>
+<span class="giallo-l"><span class="z-source">    card</span><span class="z-keyword z-operator"> =</span><span class="z-source"> card</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">replace</span><span class="z-punctuation">(</span><span class="z-punctuation z-definition z-string z-string">&quot;END:VCARD&quot;</span><span class="z-punctuation">,</span><span class="z-storage z-type z-string z-python"> f</span><span class="z-string">&quot;UID:</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">uid</span><span class="z-constant z-character z-format z-placeholder z-other z-python z-constant z-character z-escape">}\n</span><span class="z-string">END:VCARD&quot;</span><span class="z-punctuation">)</span><span class="z-punctuation z-definition z-comment z-comment">  # 連絡先に追加</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-source">    path</span><span class="z-keyword z-operator"> =</span><span class="z-storage z-type z-string z-python"> f</span><span class="z-string">&quot;./</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-source">uid</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">.vcf&quot;</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">    open</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">path</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;w&quot;</span><span class="z-punctuation">).</span><span class="z-meta z-function-call z-python">write</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">card</span><span class="z-punctuation">)</span><span class="z-punctuation z-definition z-comment z-comment">  # UID.vcfで個別ファイル生成</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # サーバーへ転送</span></span>
+<span class="giallo-l"><span class="z-source">    result</span><span class="z-keyword z-operator"> =</span><span class="z-source"> subprocess</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">run</span><span class="z-punctuation">(</span></span>
+<span class="giallo-l"><span class="z-punctuation">        [</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;curl&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;-s&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;-o&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;/dev/null&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;-w&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;%</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{http_code}</span><span class="z-punctuation z-definition z-string">&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;-u&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-string z-python">            f</span><span class="z-string">&quot;</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">USER</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">:</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">PASS</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;-X&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;PUT&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;-H&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;Content-Type: text/vcard; charset=utf-8&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-string z-string">            &quot;-T&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-meta z-function-call z-arguments z-python">            path</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-storage z-type z-string z-python">            f</span><span class="z-string">&quot;</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">URL</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}{</span><span class="z-meta z-function-call z-arguments z-python">uid</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">.vcf&quot;</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">        ],</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">        capture_output</span><span class="z-keyword z-operator">=</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-variable z-parameter">        text</span><span class="z-keyword z-operator">=</span><span class="z-constant z-language z-python">True</span><span class="z-punctuation">,</span></span>
+<span class="giallo-l"><span class="z-punctuation">    )</span></span>
+<span class="giallo-l"><span class="z-source">    code</span><span class="z-keyword z-operator"> =</span><span class="z-source"> result</span><span class="z-punctuation">.</span><span class="z-source">stdout</span><span class="z-punctuation">.</span><span class="z-meta z-function-call z-python">strip</span><span class="z-punctuation">()</span></span>
+<span class="giallo-l"><span class="z-punctuation z-definition z-comment z-comment">    # エラーになったファイルの告知</span></span>
+<span class="giallo-l"><span class="z-keyword z-control z-flow z-python">    if</span><span class="z-source"> code</span><span class="z-keyword z-operator z-logical z-python"> not in</span><span class="z-punctuation"> (</span><span class="z-punctuation z-definition z-string z-string">&quot;200&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;201&quot;</span><span class="z-punctuation">,</span><span class="z-punctuation z-definition z-string z-string"> &quot;204&quot;</span><span class="z-punctuation">):</span></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">        print</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;[FAIL </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">code</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">] </span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-meta z-function-call z-arguments z-python">uid</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string">&quot;</span><span class="z-punctuation">)</span></span>
+<span class="giallo-l"></span>
+<span class="giallo-l"><span class="z-support z-function z-builtin z-python">print</span><span class="z-punctuation">(</span><span class="z-storage z-type z-string z-python">f</span><span class="z-string">&quot;</span><span class="z-constant z-character z-format z-placeholder z-other z-python">{</span><span class="z-support z-function z-builtin z-python">len</span><span class="z-punctuation">(</span><span class="z-meta z-function-call z-arguments z-python">cards</span><span class="z-punctuation">)</span><span class="z-constant z-character z-format z-placeholder z-other z-python">}</span><span class="z-string"> 件完了&quot;</span><span class="z-punctuation">)</span></span></code></pre>
+<p>完了したあとRadicaleのWebUIをリフレッシュすれば、エラーがでてなければ連絡先が増えているはずだ。</p>
+<h2 id="dan-chun-huairukopidemodekiruga">単純ファイルコピーでもできるが</h2>
+<p>Radicaleは連絡先を単にファイルとして保持してるだけなため、HTTPリクエストを使わず、生成した個別ファイルを単純コピーしてしまうという手もある。コピー先の場所は以下の通りだ。</p>
+<pre class="giallo z-code"><code data-lang="plain"><span class="giallo-l"><span>Dockerディレクトリー/data/collections/collection-root/ユーザー名/連絡先のUUID(URLの末尾)</span></span></code></pre>
+<p>HTTPリクエストより単純コピーの方が高速だしシンプルだが、この方法だと万が一正常に登録されてない連絡先があったときどれなのか調べるのが大変になるので、HTTPリクエストの方が安全だろう。</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https://662611034.github.io/tags/radicale/">#radicale</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;662611034.github.io&#x2F;misskey-reuse-username&#x2F;">Misskeyで削除したユーザー名を再利用する ›</a>
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://662611034.github.io/even.js" ></script>
+      
+    </body>
+
+</html>
