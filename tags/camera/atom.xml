@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>愛されたいねん - camera</title>
+    <subtitle>個人ブログ</subtitle>
+    <link rel="self" type="application/atom+xml" href="https://662611034.github.io/tags/camera/atom.xml"/>
+    <link rel="alternate" type="text/html" href="https://662611034.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2026-03-12T00:00:00+00:00</updated>
+    <id>https://662611034.github.io/tags/camera/atom.xml</id>
+    <entry xml:lang="en">
+        <title>JOOAN A6M-UのRTSPセットアップ</title>
+        <published>2026-03-12T00:00:00+00:00</published>
+        <updated>2026-03-12T00:00:00+00:00</updated>
+        
+        <author>
+          <name>
+            
+              Unknown
+            
+          </name>
+        </author>
+        
+        <link rel="alternate" type="text/html" href="https://662611034.github.io/jooan-a6m-u-setup/"/>
+        <id>https://662611034.github.io/jooan-a6m-u-setup/</id>
+        
+        <content type="html" xml:base="https://662611034.github.io/jooan-a6m-u-setup/">&lt;h1 id=&quot;matome&quot;&gt;まとめ&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;JOOAN A6M-Uという屋外用Wi-Fi監視カメラを買った&lt;&#x2F;li&gt;
+&lt;li&gt;設定にRTSPのURLが記載されていなかった&lt;&#x2F;li&gt;
+&lt;li&gt;頑張って rtsp:&#x2F;&#x2F;admin:admin123@${IP_ADDRESS}:554&#x2F;live&#x2F;ch0　であると突き止めた&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;she-zu&quot;&gt;蛇足&lt;&#x2F;h1&gt;
+&lt;p&gt;ブログなので、なぜこのカメラを購入し、どのような苦難と逆境を乗り越えてこの情報に辿り着いたのかについて少しぐらい書き留めたいところだが、明らかに「情報」との分量配分がおかしくなりそうなので、分かったことだけ書く。&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;rtspnourl&quot;&gt;RTSPのURL&lt;&#x2F;h1&gt;
+&lt;p&gt;上で書いた通り&lt;&#x2F;p&gt;
+&lt;pre class=&quot;giallo z-code&quot;&gt;&lt;code data-lang=&quot;plain&quot;&gt;&lt;span class=&quot;giallo-l&quot;&gt;&lt;span&gt;rtsp:&#x2F;&#x2F;admin:admin123@${IP_ADDRESS}:554&#x2F;live&#x2F;ch0&lt;&#x2F;span&gt;&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;だ。${IP_ADDRESS}にはカメラIPアドレスが入る。カメラのIPアドレスは、専用アプリ「Cam720」の設定メニューの「カメラパラメーター」から確認できるし、ルーターのネットワークマップで調べてもよい。&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;ユーザー名：admin。アプリでは見つけることができず、Google検索で分かった&lt;&#x2F;li&gt;
+&lt;li&gt;パスワード：admin123。パスワードの方は、「カメラパラメーター」の下位メニューの「セキュリティ設定」から見つけることができた&lt;&#x2F;li&gt;
+&lt;li&gt;サブパス: &#x2F;live&#x2F;ch0。Claudeに「RTSPカメラでよく使われるパス名」を調べさせて総当たりした。&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;web-ui&quot;&gt;Web UI&lt;&#x2F;h1&gt;
+&lt;p&gt;Webブラウザを使ってカメラのIPアドレスにアクセスするとWebUIがある。admin&#x2F;admin123でログインすれば設定の復元やRTSP認証方法の変更などができるがLAN内で使うのであれば基本的に必要ないだろう。&lt;&#x2F;p&gt;
+&lt;p&gt;英語にも対応しておらず100%中国語で、ユーザーが使うことを想定していないように見える。&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
